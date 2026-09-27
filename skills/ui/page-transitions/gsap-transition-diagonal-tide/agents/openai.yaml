@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagonal Tide Page Transition"
+  short_description: "Diagonal Tide draw, swell and reveal transition"
+  default_prompt: "Use $gsap-transition-diagonal-tide to add the Diagonal Tide page transition to this site."
