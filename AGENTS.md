@@ -1,6 +1,6 @@
 # skills — repo guide
 
-Louis's agent skills, published at https://github.com/loouis/skills. **This repo is public.** On this Mac it is checked out at `Tools/claude-skills` (a folder named `skills` would collide with the existing `Tools/Skills` on the case-insensitive disk). Skills live in category folders, each skill with `SKILL.md`, `REFERENCES.md`, `agents/openai.yaml` and, for visual skills, a `demo/`.
+Louis's agent skills, published at https://github.com/loouis/skills. **This repo is public.** Multiple local checkouts may exist; use the active project checkout and verify its `origin` before making changes. Resolve the private labs generator location before rebuilding generated skills in a different checkout. Skills live in category folders, each skill with `SKILL.md`, `REFERENCES.md`, `agents/openai.yaml` and, for visual skills, a `demo/`.
 
 ## What to do here
 - Add new skills under `skills/<group>/<category>/`, for example `skills/ui/sections/`.

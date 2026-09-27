@@ -1,6 +1,6 @@
 # STATUS
 
-_Updated 2026-09-24._
+_Updated 2026-09-27._
 
 ## Completed
 - Public home for Louis's skills, starting with the nine `gooey-section-*` skills (moved from the private labs repo).
@@ -8,6 +8,9 @@ _Updated 2026-09-24._
 - `scripts/validate-skills.cjs` checks the contract (names, frontmatter, openai.yaml, links-only references, demo files and preview size, private paths, engine copies). It caught all five faults planted in a test copy.
 
 ## Current
+
+- 2026-09-27: Connected the active Skills workspace to the existing `loouis/skills` repository, checked out its history on `main`, and configured tracking of `origin/main`. No push performed.
+- In progress: reusable hand-drawn page transition skills covering Suite, Wide Tide, Diagonal Tide, Double Swell, Signature Loop and Figure Eight. “Suite” currently assumes the Tidal sweep shape; the source animation project remains unchanged. Follow this repository's established category structure and public-content rules.
 - 2026-09-24: the repo moved from `ahoiadigital` to Louis's personal account, `loouis/claude-skills`, then was renamed to `loouis/skills` and given an MIT license. GitHub redirects both old addresses.
 - Louis is testing the gooey-section skills in real builds.
 - 2026-09-25: skills now sit under a `ui` group (`skills/ui/sections/`), and the gooey generator moved to the private labs repo, so this repo holds only finished skills, scripts and docs.
