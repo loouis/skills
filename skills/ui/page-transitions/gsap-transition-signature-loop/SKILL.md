@@ -46,6 +46,10 @@ Maintain one connected gesture: no unrelated cover fill, visible shape/origin sw
 
 Hide the scrollbar for the entire active transition while preserving its space with `scrollbar-gutter: stable` in the shared site styles. Use `overflow: hidden` for the scroll lock and restore the previous state on completion or interruption, so the page never jumps sideways. Follow the [scroll and input guidance](references/integration.md#scroll-and-input) when connecting the host scroll runtime.
 
+## Accessibility
+
+Honor the phone/browser's `prefers-reduced-motion` setting and any site motion-off preference. Skip the moving stroke and use static loading text or a still indicator; keep navigation, readiness and error handling functional without animation or artificial delay. The core handles the motion bypass; the host supplies accessible loading feedback. Keep polite status announcements outside the decorative overlay, preserve keyboard focus and clear loading/busy state on every exit. Follow the [reduced-motion and accessibility guidance](references/integration.md#accessibility-and-reduced-motion), including changes to the preference mid-transition and screen-reader checks.
+
 ## Check the result
 
 - Run `node --test scripts/*.test.mjs` from this skill directory (Node 20+).
