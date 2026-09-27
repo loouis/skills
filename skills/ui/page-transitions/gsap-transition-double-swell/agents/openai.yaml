@@ -1,0 +1,4 @@
+interface:
+  display_name: "Double Swell Page Transition"
+  short_description: "Double Swell draw, swell and reveal transition"
+  default_prompt: "Use $gsap-transition-double-swell to add the Double Swell page transition to this site."
