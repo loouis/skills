@@ -1,0 +1,4 @@
+interface:
+  display_name: "Signature Loop Page Transition"
+  short_description: "Signature Loop draw, swell and reveal transition"
+  default_prompt: "Use $gsap-transition-signature-loop to add the Signature Loop page transition to this site."

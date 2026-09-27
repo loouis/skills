@@ -1,0 +1,7 @@
+- [Motion parameters and viewport treatment](references/motion.md)
+- [Core and Astro integration](references/integration.md)
+- [Reference and validation record](references/provenance.md)
+- [GSAP object tweens](https://gsap.com/docs/v3/GSAP/gsap.to%28%29/)
+- [Astro view transition lifecycle](https://docs.astro.build/en/guides/view-transitions/)
+- [SVG preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio)
+- [Reduced-motion preference](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)

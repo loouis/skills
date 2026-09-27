@@ -1,0 +1,21 @@
+.hand-drawn-transition {
+  position: fixed;
+  inset: 0;
+  z-index: var(--hand-drawn-z-index, 2147483000);
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  /* No background: coverage comes from the continuous stroke itself. */
+}
+.hand-drawn-transition[data-phase]:not([data-phase="idle"]) {
+  visibility: visible;
+  pointer-events: auto;
+}
+.hand-drawn-transition > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
