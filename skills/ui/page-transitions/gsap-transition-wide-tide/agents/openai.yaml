@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wide Tide Page Transition"
+  short_description: "Wide Tide draw, swell and reveal transition"
+  default_prompt: "Use $gsap-transition-wide-tide to add the Wide Tide page transition to this site."
