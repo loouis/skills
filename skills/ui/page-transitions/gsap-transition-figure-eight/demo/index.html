@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Figure Eight · Hand-drawn page transitions</title>
+  <link rel="stylesheet" href="../assets/core/transition.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f4ef; color: #212621; font: 14px/1.4 system-ui, sans-serif; }
+    main { max-width: 1440px; margin: auto; padding: 28px 40px; }
+    header { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
+    .eyebrow { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: #677067; }
+    h1 { margin: 6px 0 4px; font-size: clamp(30px, 4vw, 50px); font-weight: 500; letter-spacing: -.05em; line-height: 1.05; }
+    header p { margin: 0; max-width: 340px; color: #677067; }
+    nav { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 24px 0 20px; }
+    button, select, input { font: inherit; accent-color: #344b3d; }
+    button, select, input[type=number] { border: 1px solid #cbd0c7; background: transparent; border-radius: 6px; padding: 9px 12px; color: inherit; }
+    button { cursor: pointer; } button:hover { border-color: #344b3d; }
+    button[aria-pressed=true], #play { background: #273e30; color: #fff; border-color: #273e30; }
+    button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #547e64; outline-offset: 3px; }
+    nav button { display: flex; align-items: center; gap: 10px; padding: 10px; font-size: 12px; text-align: left; }
+    nav svg { width: 40px; height: 26px; flex: none; }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 235px; gap: 24px; }
+    .label { display: flex; justify-content: space-between; color: #677067; font-size: 11px; margin-bottom: 8px; }
+    .stage { position: relative; isolation: isolate; overflow: hidden; height: 320px; background: #e7ebdf; border-radius: 8px; }
+    .phone { width: 148px; height: 320px; margin: auto; border-radius: 16px; }
+    .page { position: absolute; inset: 0; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+    .page span { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
+    .page strong { font-size: clamp(40px, 5vw, 70px); font-weight: 450; letter-spacing: -.06em; line-height: .95; }
+    .page-b { background: #2d4839; color: #e7ebdf; visibility: hidden; }
+    .phone .page { padding: 18px; } .phone .page strong { font-size: 36px; }
+    .phone .page span { font-size: 9px; }
+    .hand-drawn-transition { position: absolute; }
+    .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+    .controls label { display: flex; align-items: center; gap: 7px; color: #526052; font-size: 12px; }
+    #scrubber { flex: 1; min-width: 160px; } #frame { width: 72px; }
+    #status { min-width: 135px; font-variant-numeric: tabular-nums; }
+    .note { color: #677067; font-size: 11px; margin-top: 16px; }
+    @media(max-width: 800px) { main { padding: 22px; } header { align-items: start; flex-direction: column; gap: 12px; } nav { grid-template-columns: repeat(3, 1fr); } .workspace { grid-template-columns: 1fr; } .stage:not(.phone) { height: 270px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header><div><div class="eyebrow">Motion library / Page transitions</div><h1 id="title">Figure Eight</h1></div><p>One continuous curve. Draw, swell, cover, then carry the tail into the next page.</p></header>
+  <nav aria-label="Transition variant"></nav>
+  <div class="workspace">
+    <section><div class="label"><span>Desktop</span><span>Original curve & trailing reveal</span></div>
+      <div class="stage" id="desktop">
+        <div class="page page-a"><span>Page A / Starting here</span><strong>A change<br>of scene.</strong><span>Continuous gesture</span></div>
+        <div class="page page-b"><span>Page B / Arriving here</span><strong>Room for<br>what’s next.</strong><span>Ready before reveal</span></div>
+        <div class="hand-drawn-transition" data-phase="idle" aria-hidden="true"></div>
+      </div>
+    </section>
+    <section><div class="label"><label for="viewport">Portrait</label><select id="viewport" aria-label="Portrait viewport"><option value="390/844">390 × 844</option><option value="320/568">320 × 568</option><option value="360/1000">360 × 1000</option><option value="844/390">844 × 390</option></select></div>
+      <div class="stage phone" id="portrait">
+        <div class="page page-a"><span>Page A</span><strong>A change<br>of scene.</strong><span>Rounded front</span></div>
+        <div class="page page-b"><span>Page B</span><strong>Room for<br>what’s next.</strong><span>Forward tail</span></div>
+        <div class="hand-drawn-transition" data-phase="idle" aria-hidden="true"></div>
+      </div>
+    </section>
+  </div>
+  <div class="controls">
+    <button id="play">Run navigation</button><button id="cancel">Cancel</button>
+    <label>Loading <select id="loading"><option value="0">Ready</option><option value="2000">2 seconds</option></select></label>
+    <label><input id="reduced" type="checkbox"> Reduced motion</label>
+    <label>Ink <input id="color" type="color" value="#bfd0b2"></label>
+    <output id="status" aria-live="polite">Idle · 0.00s</output>
+  </div>
+  <div class="controls">
+    <label for="frame">Inspect frame</label><input id="frame" type="number" min="0" max="135" value="0">
+    <input id="scrubber" aria-label="Frame timeline" type="range" min="0" max="135" value="0">
+    <button id="handoff">Full cover</button><button id="reset">Reset</button>
+  </div>
+  <p class="note" id="note">Suite provisionally maps to Tidal sweep (wave). 2.25s motion · page swap at 1s · loading holds only at full cover.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="../assets/hand-drawn.js"></script>
+<script>
+(() => {
+  const DEFAULT_VARIANT = 'figure-eight';
+  const { createPainter, createDriver, getShape, VARIANTS, frame } = HandDrawn;
+  const $ = selector => document.querySelector(selector);
+  const overlays = [...document.querySelectorAll('.hand-drawn-transition')];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  $('#reduced').checked = reduced.matches;
+  let painters = [], driver, id = DEFAULT_VARIANT, time = 0, direction = false, incoming = false;
+  const pages = next => {
+    incoming = next;
+    document.querySelectorAll('.page-a').forEach(page => { page.style.visibility = next ? 'hidden' : 'visible'; page.setAttribute('aria-hidden', String(next)); });
+    document.querySelectorAll('.page-b').forEach(page => { page.style.visibility = next ? 'visible' : 'hidden'; page.setAttribute('aria-hidden', String(!next)); });
+  };
+  const paint = value => {
+    time = value; painters.forEach(p => p.paint(value));
+    $('#frame').value = $('#scrubber').value = Math.round(value * 60);
+    $('#status').textContent = `${overlays[0].dataset.phase} · ${value.toFixed(2)}s`;
+  };
+  const phase = value => { overlays.forEach(el => { el.dataset.phase = value; }); $('#status').textContent = `${value} · ${time.toFixed(2)}s`; };
+  const select = value => {
+    driver?.destroy(); painters.forEach(p => p.destroy());
+    id = value; const shape = getShape(id);
+    painters = overlays.map(overlay => createPainter(overlay, { shape, color: $('#color').value }));
+    driver = createDriver({ gsap: window.gsap, paint, onPhase: phase, reducedMotion: () => $('#reduced').checked });
+    $('#title').textContent = VARIANTS.find(v => v.id === id).name;
+    $('#note').textContent = (id === 'wave' ? 'Suite provisionally maps to Tidal sweep (wave). ' : '') + '2.25s motion · page swap at 1s · loading holds only at full cover.';
+    document.querySelectorAll('nav button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.id === id)));
+    pages(false); phase('idle'); paint(0);
+  };
+  const inspect = value => {
+    driver.cancel(); const t = Math.min(135, Math.max(0, Number(value) || 0)) / 60;
+    phase(t > 0 && t < 2.25 ? 'inspect' : 'idle'); pages(frame(t, getShape(id)).incoming); paint(t);
+  };
+  VARIANTS.forEach(variant => {
+    const button = document.createElement('button'); button.dataset.id = variant.id;
+    const shape = getShape(variant.id);
+    button.innerHTML = `<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="45" stroke-linecap="round" d="M${shape.start.join(' ')} ${shape.curves.map(c => 'C' + c.join(' ')).join(' ')}" /></svg><span>${variant.name}</span>`;
+    button.onclick = () => select(variant.id); $('nav').append(button);
+  });
+  $('#play').onclick = async () => {
+    if (!window.gsap) { $('#status').textContent = 'GSAP unavailable'; return; }
+    direction = incoming;
+    const destination = !direction;
+    await driver.run({ load: () => new Promise(resolve => setTimeout(resolve, Number($('#loading').value))), swap: () => pages(destination) });
+  };
+  $('#cancel').onclick = () => driver.cancel();
+  $('#reset').onclick = () => inspect(0);
+  $('#handoff').onclick = () => inspect(60);
+  $('#frame').oninput = event => inspect(event.target.value);
+  $('#scrubber').oninput = event => inspect(event.target.value);
+  $('#reduced').onchange = () => { if ($('#reduced').checked) driver.reduce(); };
+  reduced.onchange = () => { $('#reduced').checked = reduced.matches; if (reduced.matches) driver.reduce(); };
+  $('#color').oninput = () => { const position = time; select(id); inspect(position * 60); };
+  $('#viewport').onchange = () => {
+    const [width, height] = $('#viewport').value.split('/').map(Number);
+    const scale = Math.min(210 / width, 320 / height);
+    $('#portrait').style.width = `${width * scale}px`; $('#portrait').style.height = `${height * scale}px`;
+    painters.forEach(p => p.resize());
+  };
+  window.__demoPose = () => inspect(35);
+  addEventListener('pagehide', () => { driver.destroy(); painters.forEach(p => p.destroy()); });
+  select(DEFAULT_VARIANT);
+  if (!window.gsap) $('#note').textContent = 'Frame inspection works offline. Run the supplied preview server with --gsap for local GSAP playback.';
+})();
+</script>
+</body>
+</html>

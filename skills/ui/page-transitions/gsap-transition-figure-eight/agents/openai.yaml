@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figure Eight Page Transition"
+  short_description: "Figure Eight draw, swell and reveal transition"
+  default_prompt: "Use $gsap-transition-figure-eight to add the Figure Eight page transition to this site."
