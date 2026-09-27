@@ -50,7 +50,7 @@ for (const s of skills) {
   // public hygiene
   for (const f of fs.readdirSync(s.dir, { recursive: true })) {
     const full = path.join(s.dir, f);
-    if (fs.statSync(full).isFile() && /\.(md|js|html|yaml|json)$/.test(f) && /\/Users\/|[A-Z]:\\\\Users\\\\/.test(fs.readFileSync(full, 'utf8'))) fail(`${at}/${f}`, 'contains a private file path');
+    if (fs.statSync(full).isFile() && /\.(md|[cm]?js|[cm]?ts|py|css|astro|html|yaml|json)$/.test(f) && /\/Users\/|[A-Z]:\\\\Users\\\\/.test(fs.readFileSync(full, 'utf8'))) fail(`${at}/${f}`, 'contains a private file path');
   }
 }
 for (const c of categories(skills)) if (!c.text) fail(`skills/${c.id}`, 'missing category README.md');
@@ -62,6 +62,18 @@ if (gooey.length) {
   const hash = f => fs.existsSync(f) ? crypto.createHash('sha1').update(fs.readFileSync(f)).digest('hex') : null;
   const want = hash(gooey[0][1]);
   for (const [s, f] of gooey) if (!want || hash(f) !== want) fail(s.rel, 'engine copy differs from the other gooey-section skills (rebuild them together)');
+}
+
+// Portable page-transition packages share code, with one per-package default.
+const drawn = skills.filter(s => s.name.startsWith('gsap-transition-'));
+if (drawn.length) {
+  const core = s => path.join(s.dir, 'assets/core');
+  const files = fs.readdirSync(core(drawn[0])).filter(f => f !== 'config.mjs');
+  for (const s of drawn) for (const file of files) {
+    const expected = fs.readFileSync(path.join(core(drawn[0]), file));
+    const target = path.join(core(s), file);
+    if (!fs.existsSync(target) || !fs.readFileSync(target).equals(expected)) fail(s.rel, `shared transition core differs: ${file}`);
+  }
 }
 
 if (failures.length) { console.error(failures.join('\n')); console.error(`\n${failures.length} problem(s) in ${skills.length} skills`); process.exit(1); }

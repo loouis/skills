@@ -28,3 +28,9 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 ## gooey-section family
 - Generated: the sources (engine, `engine.md`, `demo.html`, `PROMPT.md`, `REFERENCES.md`, per-variant text and `build.py`) live in Louis's private labs repo at `../labs/skills/gooey-section/`, next to the original lab. Edit them there and run `python3 skills/gooey-section/build.py` from the labs repo; it writes into `skills/ui/sections/` here. Never hand-edit `skills/ui/sections/gooey-section-*`.
 - The engine must stay a 1:1 port of the original lab. After changing it or rebuilding, run `node tests/gooey-section-parity.cjs` and `node tests/gooey-section-browser.cjs` in the labs repo.
+
+## hand-drawn page transitions
+- Six self-contained `gsap-transition-*` skills live under `skills/ui/page-transitions/`. Keep shared `assets/core/` files identical across the family except `config.mjs`, which selects each package's default. These packages are maintained here; they do not depend on the private gooey generator.
+- Preserve the exact source curves and 2.25s renderer. “Suite” provisionally aliases Tidal sweep (`wave`); see each package's `references/motion.md` for the six IDs, mobile constants and customization rules.
+- After core changes, run `node scripts/build-bundle.mjs` inside each affected skill, then `node --test scripts/*.test.mjs` and `node scripts/build-bundle.mjs --check`. The root validator checks shared-core consistency and public paths across module/TypeScript/Python assets too.
+- Demos use a pinned GSAP CDN or the skill's loopback `scripts/serve_preview.py --gsap <local-gsap.min.js>` for offline playback. Keep each demo's selected default and preview aligned with its skill.

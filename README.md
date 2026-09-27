@@ -84,7 +84,18 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **9 skills** across 1 category. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **15 skills** across 2 categories. `find skills -name SKILL.md | sort` is the source of truth.
+
+### Page Transition Skills (6)
+
+[Category guide](skills/ui/page-transitions/README.md)
+
+- [`gsap-transition-diagonal-tide`](skills/ui/page-transitions/gsap-transition-diagonal-tide/SKILL.md) - Diagonal Tide draw, swell and reveal transition
+- [`gsap-transition-double-swell`](skills/ui/page-transitions/gsap-transition-double-swell/SKILL.md) - Double Swell draw, swell and reveal transition
+- [`gsap-transition-figure-eight`](skills/ui/page-transitions/gsap-transition-figure-eight/SKILL.md) - Figure Eight draw, swell and reveal transition
+- [`gsap-transition-signature-loop`](skills/ui/page-transitions/gsap-transition-signature-loop/SKILL.md) - Signature Loop draw, swell and reveal transition
+- [`gsap-transition-suite`](skills/ui/page-transitions/gsap-transition-suite/SKILL.md) - Suite draw, swell and reveal transition
+- [`gsap-transition-wide-tide`](skills/ui/page-transitions/gsap-transition-wide-tide/SKILL.md) - Wide Tide draw, swell and reveal transition
 
 ### Section Skills (9)
 

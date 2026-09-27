@@ -34,14 +34,21 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 9
-- With demos: 9
+- Total: 15
+- With demos: 15
+- ui/page-transitions: 6
 - ui/sections: 9
 
 ## Demo index
 
 | Skill | Category | Demo | Preview | Prompt |
 | --- | --- | --- | --- | --- |
+| gsap-transition-diagonal-tide | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/PROMPT.md) |
+| gsap-transition-double-swell | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-double-swell/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-double-swell/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-double-swell/demo/PROMPT.md) |
+| gsap-transition-figure-eight | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-figure-eight/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-figure-eight/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-figure-eight/demo/PROMPT.md) |
+| gsap-transition-signature-loop | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-signature-loop/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-signature-loop/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-signature-loop/demo/PROMPT.md) |
+| gsap-transition-suite | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-suite/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-suite/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-suite/demo/PROMPT.md) |
+| gsap-transition-wide-tide | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-wide-tide/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-wide-tide/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-wide-tide/demo/PROMPT.md) |
 | gooey-section-drift | ui/sections | [Open](skills/ui/sections/gooey-section-drift/demo/index.html) | [Preview](skills/ui/sections/gooey-section-drift/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-drift/demo/PROMPT.md) |
 | gooey-section-elastic | ui/sections | [Open](skills/ui/sections/gooey-section-elastic/demo/index.html) | [Preview](skills/ui/sections/gooey-section-elastic/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-elastic/demo/PROMPT.md) |
 | gooey-section-goo | ui/sections | [Open](skills/ui/sections/gooey-section-goo/demo/index.html) | [Preview](skills/ui/sections/gooey-section-goo/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-goo/demo/PROMPT.md) |

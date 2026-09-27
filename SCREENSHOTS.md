@@ -2,8 +2,58 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 9
+- Captured demos: 15
 - Format: JPEG
+
+## ui/page-transitions (6)
+
+### gsap-transition-diagonal-tide
+
+Build the Diagonal Tide hand-drawn GSAP page transition. A broad S sweeps across the page on a slant. Use when the user asks for Diagonal Tide, the diagonal-tide transition, or this named draw-swell-cover-reveal effect on a website. Ships reusable curves, adaptive portrait fronts, a covered routing lifecycle and a working demo.
+
+[Open demo](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/index.html) · [Skill](skills/ui/page-transitions/gsap-transition-diagonal-tide/SKILL.md) · [Prompt](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/PROMPT.md)
+
+![gsap-transition-diagonal-tide preview](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/preview.jpg)
+
+### gsap-transition-double-swell
+
+Build the Double Swell hand-drawn GSAP page transition. Two rounded waves rise and fall across the screen. Use when the user asks for Double Swell, the double-swell transition, or this named draw-swell-cover-reveal effect on a website. Ships reusable curves, adaptive portrait fronts, a covered routing lifecycle and a working demo.
+
+[Open demo](skills/ui/page-transitions/gsap-transition-double-swell/demo/index.html) · [Skill](skills/ui/page-transitions/gsap-transition-double-swell/SKILL.md) · [Prompt](skills/ui/page-transitions/gsap-transition-double-swell/demo/PROMPT.md)
+
+![gsap-transition-double-swell preview](skills/ui/page-transitions/gsap-transition-double-swell/demo/preview.jpg)
+
+### gsap-transition-figure-eight
+
+Build the Figure Eight hand-drawn GSAP page transition. Two loose loops cross and open across the frame. Use when the user asks for Figure Eight, the figure-eight transition, or this named draw-swell-cover-reveal effect on a website. Ships reusable curves, adaptive portrait fronts, a covered routing lifecycle and a working demo.
+
+[Open demo](skills/ui/page-transitions/gsap-transition-figure-eight/demo/index.html) · [Skill](skills/ui/page-transitions/gsap-transition-figure-eight/SKILL.md) · [Prompt](skills/ui/page-transitions/gsap-transition-figure-eight/demo/PROMPT.md)
+
+![gsap-transition-figure-eight preview](skills/ui/page-transitions/gsap-transition-figure-eight/demo/preview.jpg)
+
+### gsap-transition-signature-loop
+
+Build the Signature Loop hand-drawn GSAP page transition. A tilted loop with a long, handwritten flourish. Use when the user asks for Signature Loop, the signature transition, or this named draw-swell-cover-reveal effect on a website. Ships reusable curves, adaptive portrait fronts, a covered routing lifecycle and a working demo.
+
+[Open demo](skills/ui/page-transitions/gsap-transition-signature-loop/demo/index.html) · [Skill](skills/ui/page-transitions/gsap-transition-signature-loop/SKILL.md) · [Prompt](skills/ui/page-transitions/gsap-transition-signature-loop/demo/PROMPT.md)
+
+![gsap-transition-signature-loop preview](skills/ui/page-transitions/gsap-transition-signature-loop/demo/preview.jpg)
+
+### gsap-transition-suite
+
+Build the Suite hand-drawn GSAP page transition. One broad S-curve rolls from top to bottom. Use when the user asks for Suite, the wave transition, or this named draw-swell-cover-reveal effect on a website. Ships reusable curves, adaptive portrait fronts, a covered routing lifecycle and a working demo.
+
+[Open demo](skills/ui/page-transitions/gsap-transition-suite/demo/index.html) · [Skill](skills/ui/page-transitions/gsap-transition-suite/SKILL.md) · [Prompt](skills/ui/page-transitions/gsap-transition-suite/demo/PROMPT.md)
+
+![gsap-transition-suite preview](skills/ui/page-transitions/gsap-transition-suite/demo/preview.jpg)
+
+### gsap-transition-wide-tide
+
+Build the Wide Tide hand-drawn GSAP page transition. Long horizontal sweeps with turns beyond the frame. Use when the user asks for Wide Tide, the wide-tide transition, or this named draw-swell-cover-reveal effect on a website. Ships reusable curves, adaptive portrait fronts, a covered routing lifecycle and a working demo.
+
+[Open demo](skills/ui/page-transitions/gsap-transition-wide-tide/demo/index.html) · [Skill](skills/ui/page-transitions/gsap-transition-wide-tide/SKILL.md) · [Prompt](skills/ui/page-transitions/gsap-transition-wide-tide/demo/PROMPT.md)
+
+![gsap-transition-wide-tide preview](skills/ui/page-transitions/gsap-transition-wide-tide/demo/preview.jpg)
 
 ## ui/sections (9)
 
