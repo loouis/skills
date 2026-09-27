@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suite Page Transition"
+  short_description: "Suite draw, swell and reveal transition"
+  default_prompt: "Use $gsap-transition-suite to add the Suite page transition to this site."

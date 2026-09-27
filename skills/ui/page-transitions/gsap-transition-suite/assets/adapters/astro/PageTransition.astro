@@ -1,0 +1,20 @@
+---
+// Copy assets/core to src/motion/hand-drawn and this file to src/components.
+// Put one instance in the shared layout alongside the existing ClientRouter.
+import '../motion/hand-drawn/transition.css';
+import { getShape } from '../motion/hand-drawn/transition.mjs';
+interface Props { variant?: string; color?: string }
+const { variant = getShape().id, color = '#202020' } = Astro.props;
+---
+<div
+  id="hand-drawn-transition"
+  class="hand-drawn-transition"
+  data-phase="idle"
+  data-variant={variant}
+  data-color={color}
+  aria-hidden="true"
+  transition:persist="hand-drawn-transition"
+/>
+<script>
+  import '../scripts/page-transition';
+</script>
