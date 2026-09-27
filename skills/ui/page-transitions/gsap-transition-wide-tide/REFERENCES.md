@@ -5,3 +5,5 @@
 - [Astro view transition lifecycle](https://docs.astro.build/en/guides/view-transitions/)
 - [SVG preserveAspectRatio](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/preserveAspectRatio)
 - [Reduced-motion preference](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [W3C guidance on disabling interaction animation](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html)
+- [W3C guidance on accessible status messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html)
