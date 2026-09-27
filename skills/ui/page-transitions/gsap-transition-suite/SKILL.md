@@ -46,6 +46,8 @@ For portrait screens, map the centreline to the actual viewport before stroking,
 
 Maintain one connected gesture: no unrelated cover fill, visible shape/origin switch, flash at handoff or reversed tail. Use an opaque solid ink color. Keep reduced-motion, cancellation, readiness and teardown behavior from the controller. Preserve native link eligibility and existing seamless handoffs in the host router.
 
+Hide the scrollbar for the entire active transition while preserving its space with `scrollbar-gutter: stable` in the shared site styles. Use `overflow: hidden` for the scroll lock and restore the previous state on completion or interruption, so the page never jumps sideways. Follow the [scroll and input guidance](references/integration.md#scroll-and-input) when connecting the host scroll runtime.
+
 ## Check the result
 
 - Run `node --test scripts/*.test.mjs` from this skill directory (Node 20+).
