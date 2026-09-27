@@ -55,7 +55,18 @@ The persisted overlay retains its configuration. For a site-wide theme/variant c
 
 ## Scroll and input
 
-The overlay blocks pointer input while active. If the host requires scroll/keyboard locking, pass `lock()` returning a cleanup callback. Coordinate that lock with the existing scroll runtime; restore its previous state on idle, cancellation and destroy. Keep `scrollbar-gutter: stable` where supported. If an existing smooth-scroll stop mode uses `overflow: clip`, consider the site's tested `overflow: hidden` override so the gutter does not disappear. Do not create another scroll runtime or impose global overflow rules inside this skill.
+Hide the scrollbar while the transition is active, from the start of cover through the loading hold and the end of reveal. Reserve its space before the animation starts so hiding and restoring it cannot change the page width or make the content jump sideways. Keep the gutter rule in the shared site styles on both routes:
+
+```css
+html { scrollbar-gutter: stable; }
+html[data-page-transition-active] { overflow: hidden; }
+```
+
+Manage the active marker through the host's `lock()` callback, alongside its existing scroll runtime. Keep the lock active across the route swap; reapply the marker if the router replaces the root attributes. The returned cleanup callback must restore the previous scroll/overflow state on completion, cancellation, failure or destroy. Skip the lock when reduced motion bypasses the animation.
+
+Use `overflow: hidden` for the active lock: `overflow: clip` can discard the reserved gutter and cause the sideways jump. Override an existing smooth-scroll stopped-state rule if it uses `clip`. The overlay blocks pointer input, but does not hide the scrollbar or lock scrolling by itself. Keep this integration in the host rather than creating another scroll runtime.
+
+Check a page with a visible scrollbar and navigate to both long and short pages. The content's horizontal position should stay fixed when the lock starts, through the covered swap, and when scrolling is restored.
 
 ## Verification in the receiving project
 
