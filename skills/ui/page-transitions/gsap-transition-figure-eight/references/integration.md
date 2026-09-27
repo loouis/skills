@@ -53,6 +53,20 @@ The adapter lets Astro own anchor eligibility, external URLs, modified clicks, d
 
 The persisted overlay retains its configuration. For a site-wide theme/variant change, destroy and recreate the controller deliberately instead of mounting duplicate overlays. Preserve any existing scroll-to-next effect, focus management and native link behavior.
 
+## Accessibility and reduced motion
+
+Respect `prefers-reduced-motion: reduce` before starting a transition, including the preference exposed by a phone's accessibility settings. The core already checks this preference and responds to changes while running. If the site also offers a motion-off setting, make the host bypass the effect when either preference requests less motion. A site preference must not silently re-enable motion disabled by the operating system.
+
+Use a non-animated loading alternative. Keep the current page visible while the destination loads, show a static “Loading…” label or still icon with text when feedback is needed, and swap directly when the router can commit. Do not substitute a spinner, shimmer, pulse, zoom, slide or fade for someone requesting no motion. Do not add the normal 2.25s duration as an artificial delay. Keep the actual fetch, readiness, timeout, cancellation and error paths working even when no animation plays; never depend on an animation-end event to complete navigation.
+
+The bundled controller provides the motion bypass; the receiving site's router must supply the static loading feedback and accessibility state described here. The decorative SVG overlay remains `aria-hidden="true"`. Put the loading message outside that overlay and outside any hidden or inert subtree. Reuse one persistent `role="status"` region with polite announcements rather than moving focus into the message. Update it when loading starts and settles, without announcing frames or repeated progress ticks. If the router already announces the new page, avoid a duplicate completion announcement. Mark the updating content region `aria-busy="true"` while appropriate, and clear it on success, failure or cancellation; keep the status region outside the busy region so its message is not deferred with the content update.
+
+Keep the status text readable against its background and do not communicate loading or errors through color alone. Preserve the router's keyboard focus, document-title and history behavior. After a route swap, ensure focus reaches the destination's meaningful content through the host's existing focus strategy; preserve hash targets and history restoration. A static status message must not steal focus or create a keyboard trap. Keep ordinary links and failure/retry navigation usable.
+
+Skip the decorative overlay and animation-only scroll lock in this mode. If reduced motion is enabled mid-transition, stop the moving effect, clear its overlay/lock and continue the pending navigation with static feedback. Remove stale status/busy state on completion, failure, abort, superseding navigation and teardown. Use the active navigation's identity so an older request cannot clear the newer request's loading state.
+
+Verify the system/browser preference before loading the page and when changed during cover or reveal. Check slow and failed loads, repeated navigation, back/forward and keyboard-only use in both modes. Check announcements with a screen reader and the real phone accessibility preference in the receiving site. An animated-demo checkbox or a geometry test alone does not establish accessibility compliance.
+
 ## Scroll and input
 
 Hide the scrollbar while the transition is active, from the start of cover through the loading hold and the end of reveal. Reserve its space before the animation starts so hiding and restoring it cannot change the page width or make the content jump sideways. Keep the gutter rule in the shared site styles on both routes:
