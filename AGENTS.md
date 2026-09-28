@@ -22,6 +22,10 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 - `node scripts/build-gallery.cjs` — regenerate DEMOS.md, SCREENSHOTS.md/.html and the generated README lists.
 - `node scripts/validate-skills.cjs` — check every skill against the contract. Run before committing.
 
+## Prototypes
+- User-requested motion studies can live under `prototypes/<name>/` while their behavior is being reviewed. These are not installed skills and are excluded from generated library lists. Each prototype documents its local preview command and the remaining work before skill packaging.
+- `prototypes/expanding-scroll-panel/` is a dependency-free scroll expansion study. Its background and content must remain siblings so only the empty background changes shape.
+
 ## Public hygiene (check before every commit)
 - No client or project names, no private file paths, no emails, keys or tokens, nothing from private repos beyond what a skill needs. The validator flags private paths.
 

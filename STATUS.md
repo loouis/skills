@@ -1,8 +1,10 @@
 # STATUS
 
-_Updated 2026-09-27._
+_Updated 2026-09-28._
 
 ## Completed
+- 2026-09-28: Built `prototypes/expanding-scroll-panel/`, a dependency-free scroll study with a sticky preceding section, an expanding white background and independently sized content. Includes margin/radius/completion controls, alignment guides, replay, reset, reduced-motion preview and implementation notes for later skill packaging. Added prototype conventions to `AGENTS.md`.
+- Prototype validation: desktop 1280×720 start/midpoint/end/reverse preserve heading, content and card x/width/height exactly; mobile 390×844 start/end preserve geometry; controls fit 320×640. Full expansion reaches 0px side inset and radius. Reduced-motion preview removes clipping, sticky positioning and overlap. No browser errors/warnings or horizontal overflow; JS syntax checks and all 15 existing skill contracts pass. Physical-device Safari and OS-level motion preference switching remain untested.
 - 2026-09-27: Added accessibility/reduced-motion guidance to all six transition skills: respect system/site motion preferences, use static loading feedback, preserve navigation without animation delays, provide polite status/busy state and focus handling, and clean up on interruption. The core already bypasses motion; the notes specify the host loading UI responsibilities. Documentation-only; repository and skill validators pass.
 - 2026-09-27: Added explicit scrollbar guidance to all six page-transition skills: hide it throughout cover/hold/reveal, reserve the gutter to prevent horizontal jumps, preserve the lock through route swaps, and restore the prior state on every exit. Documentation-only; repository and skill validators pass.
 - Public home for Louis's skills, starting with the nine `gooey-section-*` skills (moved from the private labs repo).
@@ -14,10 +16,11 @@ _Updated 2026-09-27._
 
 ## Current
 
+- The expanding scroll panel is ready for visual review. It is a prototype, not an installed skill; the reusable skill is the next stage. Local preview command is in its README. No push or deployment was requested.
 - 2026-09-27: Connected the active Skills workspace to the existing `loouis/skills` repository, checked out its history on `main`, and configured tracking of `origin/main`. The six transition skills and scrollbar notes were pushed to `origin/main` at `c7b7cd9`.
 - 2026-09-24: the repo moved from `ahoiadigital` to Louis's personal account, `loouis/claude-skills`, then was renamed to `loouis/skills` and given an MIT license. GitHub redirects both old addresses.
 - Louis is testing the gooey-section skills in real builds.
-- 2026-09-25: skills now sit under a `ui` group (`skills/ui/sections/`), and the gooey generator moved to the private labs repo, so this repo holds only finished skills, scripts and docs.
+- 2026-09-25: skills now sit under a `ui` group (`skills/ui/sections/`), and the gooey generator moved to the private labs repo. User-requested motion studies now live separately under `prototypes/` until ready for skill packaging.
 
 ## Decisions
 - New categories (for example `ui`) are created with their first skill, not as empty folders.
@@ -25,5 +28,6 @@ _Updated 2026-09-27._
 - Page transitions follow the existing one-skill-per-feel convention. “Suite” provisionally maps to Tidal sweep (`wave`). First three portrait fronts retain approved constants; Double Swell/Signature Loop/Figure Eight have new conservative portrait widths, validated separately from source parity. No client branding or private source paths are bundled.
 
 ## Next
+- Refine the expanding panel from visual feedback, then package its controller, CSS structure, working demo and invariant checks as a section skill.
 - Add more skills; run `build-previews`, `build-gallery` and `validate-skills`, then `python3 install.py`.
 - Use the new transition skills in a receiving site and check its real router/scroll runtime on physical devices. Clarify the Suite alias if the user identifies a different intended shape. Publish only when requested.
