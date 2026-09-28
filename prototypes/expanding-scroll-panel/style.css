@@ -14,7 +14,8 @@
 body { margin: 0; }
 .content-width { width: var(--content-width); margin-inline: auto; }
 .transition-stage { position: relative; isolation: isolate; }
-.previous-section { min-height: 100svh; background: var(--page); overflow: clip; }
+.previous-section { position: relative; isolation: isolate; min-height: 100svh; background: var(--page); overflow: clip; }
+.previous-section::after { content: ""; position: absolute; inset: 0; z-index: 1; background: #000; opacity: var(--backdrop-opacity, 0); pointer-events: none; }
 .motion-ready .previous-section { position: sticky; top: 0; }
 .intro-content { padding-block: clamp(72px, 10vh, 128px) 48px; }
 h1 { font-size: clamp(44px, 5.7vw, 88px); line-height: 1.02; letter-spacing: -.058em; font-weight: 400; margin: 0; }
@@ -47,10 +48,12 @@ h3 { font-size: clamp(18px, 1.65vw, 28px); line-height: 1.38; font-weight: 400; 
 
 /* Static full-width layout for both no-JS and reduced-motion users. */
 .is-reduced .previous-section { position: relative; }
+.is-reduced .previous-section::after { opacity: 0; }
 .is-reduced .expanding-panel { margin-top: 0; }
 .is-reduced .panel-surface { clip-path: none; }
 @media (prefers-reduced-motion: reduce) {
   .motion-ready .previous-section { position: relative; }
+  .previous-section::after { opacity: 0; }
   .motion-ready .expanding-panel { margin-top: 0; }
   .panel-surface { clip-path: none; }
 }

@@ -3,6 +3,7 @@
  *
  *   0%  Panel top reaches 78% of viewport; inset 24px, top corners 20px.
  * 0–100%  Incoming panel covers the sticky previous section.
+ *         A neutral overlay dims the previous section from 0% to 18%.
  *         Only the empty background expands. Content scrolls naturally.
  * 100%  Panel top reaches 6% of viewport; inset 0px, top corners 0px.
  *         Scrolling back reverses the same geometry without a new trigger.
@@ -10,6 +11,7 @@
 export const DEFAULTS = Object.freeze({
   inset: 24,             // Starting side margin in CSS pixels.
   radius: 20,            // Starting top corner radius in CSS pixels.
+  backdropOpacity: 0.18, // Maximum dimming of the section underneath.
   startViewport: 0.78,   // Panel top at animation start, as viewport fraction.
   endViewport: 0.06,     // Panel top at animation end, as viewport fraction.
   reduced: false,        // Preview only; cannot override a system preference.
@@ -22,6 +24,7 @@ export function mountExpandingPanel(stage, onUpdate = () => {}) {
   const panel = stage.querySelector('[data-panel]');
   const surface = panel.querySelector('[data-surface]');
   const content = panel.querySelector('[data-content]');
+  const underlay = stage.querySelector('[data-underlay]');
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const options = { ...DEFAULTS };
   let frame = 0;
@@ -41,9 +44,11 @@ export function mountExpandingPanel(stage, onUpdate = () => {}) {
     const safeInset = Math.min(options.inset, Math.max(0, (panelRect.width - contentRect.width) / 2 - 8));
     const inset = safeInset * (1 - eased);
     const radius = options.radius * (1 - eased);
+    const backdropOpacity = reduced ? 0 : options.backdropOpacity * eased;
     surface.style.setProperty('--panel-inset', `${inset.toFixed(3)}px`);
     surface.style.setProperty('--panel-radius', `${radius.toFixed(3)}px`);
-    onUpdate({ progress, inset, radius, reduced });
+    underlay?.style.setProperty('--backdrop-opacity', backdropOpacity.toFixed(4));
+    onUpdate({ progress, inset, radius, backdropOpacity, reduced });
   }
 
   function schedule() {
@@ -64,11 +69,12 @@ export function mountExpandingPanel(stage, onUpdate = () => {}) {
   return {
     update(next) {
       if (destroyed) return;
-      for (const key of ['inset', 'radius', 'startViewport', 'endViewport']) {
+      for (const key of ['inset', 'radius', 'backdropOpacity', 'startViewport', 'endViewport']) {
         if (Number.isFinite(next[key])) options[key] = next[key];
       }
       options.inset = clamp(options.inset, 0, 160);
       options.radius = clamp(options.radius, 0, 96);
+      options.backdropOpacity = clamp(options.backdropOpacity, 0, 1);
       options.startViewport = clamp(options.startViewport, 0.1, 1);
       options.endViewport = clamp(options.endViewport, 0, options.startViewport - 0.05);
       if (typeof next.reduced === 'boolean') options.reduced = next.reduced;
@@ -93,6 +99,7 @@ export function mountExpandingPanel(stage, onUpdate = () => {}) {
       stage.classList.remove('motion-ready', 'is-reduced');
       surface.style.removeProperty('--panel-inset');
       surface.style.removeProperty('--panel-radius');
+      underlay?.style.removeProperty('--backdrop-opacity');
     },
   };
 }

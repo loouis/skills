@@ -14,7 +14,7 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory prototypes/expanding-sc
 
 Open <http://127.0.0.1:4173>. No installation, build step, external fonts or animation dependencies are needed. Serve over HTTP so the browser can load the ES modules.
 
-Scroll down and back up to view the transition. Adjust side margin, radius and completion position in `DEFAULTS` in `expanding-panel.js`. System reduced-motion preferences remove both expansion and sticky overlap.
+Scroll down and back up to view the transition. Adjust side margin, radius, backdrop opacity and completion position in `DEFAULTS` in `expanding-panel.js`. System reduced-motion preferences remove expansion, sticky overlap and backdrop dimming.
 
 ## Implementation
 
@@ -27,13 +27,15 @@ The wrapper occupies the available page width at every scroll position. Only the
 
 The preceding section sticks inside the shared stage. A negative top margin brings the incoming panel into view at 78% of the viewport. Its higher stacking order covers the earlier section. No scroll locking or smoothing library is used.
 
+The preceding section's `data-underlay` hosts a black pseudo-element overlay. Its opacity follows the same eased scroll progress from 0 to 0.18, giving the background a subtle grey fade as the white panel covers it. The overlay stays inside the preceding section's stacking context, cannot dim the incoming panel and ignores pointer events. It reverses on upward scroll and is transparent without JavaScript, with reduced motion or after controller cleanup.
+
 Progress is `clamp((0.78 × viewportHeight − panelTop) / (0.72 × viewportHeight), 0, 1)`. A smoothstep maps that progress to side inset `24 → 0px` and top radius `20 → 0px`; the panel is fully expanded at 6% from the viewport top. These values live in `DEFAULTS`. Side inset is capped at the content gutter minus 8px on narrow viewports. The initial overlap is controlled independently by `-22svh` in CSS.
 
 Scroll events schedule one animation frame; there is no permanent animation loop or delayed scrub. Resize, content size changes, font readiness and page restoration refresh the geometry. Call `destroy()` when unmounting in a client router. Without JavaScript or with reduced motion, the sections use normal flow and the panel stays full width.
 
 ## Review checklist
 
-- Scroll down and up slowly: only the background edges and radius change.
+- Scroll down and up slowly: the panel edges and radius change while the preceding section dims and brightens in sync.
 - Compare the heading and cards at start, middle and end: horizontal bounds and line wrapping stay identical.
 - At completion, side inset and radius are exactly zero.
 - The old section stays behind the new one; there is no gap, horizontal overflow or blocked scrolling.
@@ -42,6 +44,6 @@ Scroll events schedule one animation frame; there is no permanent animation loop
 
 ## Validation
 
-The original controller passed desktop 1280×720 start/midpoint/end/reverse and mobile 390×844 start/end geometry checks. Full expansion reaches 0px inset and radius, with no horizontal overflow. Reduced-motion behavior was checked using the original preview controls before their removal. The presentation cleanup leaves that controller unchanged. Physical-device Safari and OS-level preference switching remain untested.
+The original controller passed desktop 1280×720 start/midpoint/end/reverse and mobile 390×844 start/end geometry checks. Full expansion reaches 0px inset and radius, with no horizontal overflow. Reduced-motion behavior was checked using the original preview controls before their removal. Backdrop dimming is an additional scroll-driven layer on the preceding section. Physical-device Safari and OS-level preference switching remain untested.
 
 Visual reference: [Scale homepage](https://scale.com/). This prototype uses original demo text and CSS artwork.
