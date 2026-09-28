@@ -2,7 +2,7 @@
 
 A scroll study: an inset white panel rises over a sticky preceding section, expands to the viewport edges and loses its top corner radius. Its content keeps the same horizontal position, width, font sizes and card dimensions throughout the transition. Content moves vertically with normal page scrolling; it is not pinned to the screen.
 
-Prototype first; the reusable skill is the next step after motion review. This folder is deliberately outside the installed skill library and generated galleries.
+The motion has been reviewed. The prototype now contains only the large section headings and cards, without branding, eyebrows, arrows, supporting copy or demo controls. The reusable skill is the next step. This folder is deliberately outside the installed skill library and generated galleries.
 
 ## Run
 
@@ -14,14 +14,14 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory prototypes/expanding-sc
 
 Open <http://127.0.0.1:4173>. No installation, build step, external fonts or animation dependencies are needed. Serve over HTTP so the browser can load the ES modules.
 
-Use **Replay** and **Full width** to revisit the endpoints. **Tune** adjusts side margin, radius and completion position. Alignment guides show the stationary content boundaries. Reduced-motion preview removes both expansion and sticky overlap; the system preference always takes priority.
+Scroll down and back up to view the transition. Adjust side margin, radius and completion position in `DEFAULTS` in `expanding-panel.js`. System reduced-motion preferences remove both expansion and sticky overlap.
 
 ## Implementation
 
-- `index.html`: preceding section, empty panel surface, sibling content and demo controls.
+- `index.html`: preceding section, empty panel surface and sibling content.
 - `style.css`: responsive layout, sticky overlap, background clipping and static fallback.
 - `expanding-panel.js`: reusable mount/update/destroy controller, named defaults and scroll storyboard.
-- `demo.js`: optional prototype controls.
+- `demo.js`: mounts the scroll animation.
 
 The wrapper occupies the available page width at every scroll position. Only the empty background's `clip-path` changes. The content is a sibling of that background, with its own stable width. Never animate the content ancestor's scale, width, horizontal padding or margin to create this effect.
 
@@ -38,10 +38,10 @@ Scroll events schedule one animation frame; there is no permanent animation loop
 - At completion, side inset and radius are exactly zero.
 - The old section stays behind the new one; there is no gap, horizontal overflow or blocked scrolling.
 - Resize while partway through, including narrow phones and short landscape windows.
-- Try the tuning controls, alignment guides, reset and reduced-motion preview.
+- Confirm the page shows only the section headings and cards.
 
 ## Validation
 
-Browser checks cover desktop 1280×720 and mobile 390×844, with an additional 320×640 control-fit check. Desktop measurements at the start, midpoint, end and reverse have identical content, heading and card horizontal bounds and dimensions; mobile start/end checks agree. No horizontal overflow was observed. The full-width endpoint has 0px inset and 0px radius. Reduced-motion preview removes clipping, sticky positioning and negative overlap. Physical-device Safari and OS-level preference switching remain untested.
+The original controller passed desktop 1280×720 start/midpoint/end/reverse and mobile 390×844 start/end geometry checks. Full expansion reaches 0px inset and radius, with no horizontal overflow. Reduced-motion behavior was checked using the original preview controls before their removal. The presentation cleanup leaves that controller unchanged. Physical-device Safari and OS-level preference switching remain untested.
 
 Visual reference: [Scale homepage](https://scale.com/). This prototype uses original demo text and CSS artwork.

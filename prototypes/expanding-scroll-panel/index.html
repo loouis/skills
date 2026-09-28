@@ -13,18 +13,12 @@
   <main>
     <div class="transition-stage" data-stage>
       <section class="previous-section" aria-labelledby="intro-title">
-        <header class="masthead">
-          <a href="#" class="wordmark" aria-label="Scroll study home"><span class="brand-mark" aria-hidden="true">↗</span> Form & space</a>
-          <span class="eyebrow">Scroll study <span class="muted">/ 01</span></span>
-        </header>
         <div class="intro-content content-width">
-          <div class="section-heading"><span class="eyebrow">A study in perspective</span><span class="small-arrow" aria-hidden="true">↓</span></div>
           <h1 id="intro-title">A little space.<br>A bigger entrance.</h1>
-          <p class="intro-copy">Scroll to bring the next chapter into view.</p>
           <div class="previous-cards" aria-hidden="true">
-            <div class="previous-card"><span>01 / Discover</span><div class="orbit"></div></div>
-            <div class="previous-card"><span>02 / Shape</span><div class="stack"><i></i><i></i><i></i></div></div>
-            <div class="previous-card"><span>03 / Make room</span><div class="steps"><i></i><i></i><i></i><i></i></div></div>
+            <div class="previous-card"><div class="orbit"></div></div>
+            <div class="previous-card"><div class="stack"><i></i><i></i><i></i></div></div>
+            <div class="previous-card"><div class="steps"><i></i><i></i><i></i><i></i></div></div>
           </div>
         </div>
       </section>
@@ -33,55 +27,22 @@
         <!-- Only this empty surface changes shape. Content is its sibling. -->
         <div class="panel-surface" data-surface aria-hidden="true"></div>
         <div class="panel-content content-width" data-content>
-          <div class="section-heading"><span class="eyebrow">Room for what comes next</span><span class="chapter-number">02</span></div>
           <h2 id="panel-title">Good ideas deserve room to grow.</h2>
           <div class="feature-grid">
             <article class="feature-card">
-              <div class="card-icon mauve" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m5 24 8-8 5 5L27 9M19 9h8v8" stroke="currentColor" stroke-width="2.4"/></svg></div>
               <h3>A small beginning.<br>A wider possibility.</h3>
-              <p>The next section starts with a little breathing room, then opens up as you scroll.</p>
-              <span class="card-caption">01 <span>The entrance</span></span>
             </article>
             <article class="feature-card">
-              <div class="card-icon sand" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M5 15h5v12H5zM14 5h5v22h-5zM23 11h5v16h-5z"/></svg></div>
               <h3>Everything stays<br>right where it belongs.</h3>
-              <p>The words, cards and spacing keep their proportions. A quiet constant inside a changing frame.</p>
-              <span class="card-caption">02 <span>The content</span></span>
             </article>
             <article class="feature-card blue-card">
-              <div class="card-icon blue" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="12" cy="16" r="8" stroke="currentColor" stroke-width="2.4"/><circle cx="21" cy="16" r="8" stroke="currentColor" stroke-width="2.4"/></svg></div>
               <h3>One continuous<br>change of scene.</h3>
-              <p>Soft corners become clean edges. The new chapter settles into the full width of the screen.</p>
-              <span class="card-caption">03 <span>The arrival</span></span>
             </article>
           </div>
-          <div class="panel-footnote"><span>Same content. More room.</span><span aria-hidden="true">↘</span></div>
         </div>
       </section>
     </div>
-    <footer class="outro content-width"><p>Space changes.<br>The story holds its place.</p><a href="#" data-replay>Back to the beginning <span aria-hidden="true">↑</span></a></footer>
   </main>
 
-  <div class="alignment-guides content-width" aria-hidden="true" hidden><span>Content stays aligned</span></div>
-  <aside class="demo-dock" aria-label="Prototype controls" hidden>
-    <div class="progress-label"><span class="status-dot"></span><span data-progress>0%</span><span class="dock-caption">expanded</span></div>
-    <div class="dock-divider"></div>
-    <button type="button" data-replay>Replay <span aria-hidden="true">↺</span></button>
-    <button type="button" data-finish>Full width <span aria-hidden="true">↗</span></button>
-    <button type="button" class="tune-button" aria-expanded="false" aria-controls="tuning-panel">Tune <span aria-hidden="true">☷</span></button>
-  </aside>
-  <aside id="tuning-panel" class="tuning-panel" aria-label="Motion settings" hidden>
-    <div class="tuning-heading"><strong>Make it your own</strong><button type="button" data-close aria-label="Close settings">×</button></div>
-    <label for="inset">Starting side margin <output id="inset-value">24 px</output></label>
-    <input id="inset" type="range" min="12" max="96" value="24" step="1">
-    <label for="radius">Starting corner radius <output id="radius-value">20 px</output></label>
-    <input id="radius" type="range" min="0" max="64" value="20" step="1">
-    <label for="finish">Full width at <output id="finish-value">6% from top</output></label>
-    <input id="finish" type="range" min="0" max="40" value="6" step="1">
-    <label class="check-row"><input type="checkbox" id="guides"> Show content alignment</label>
-    <label class="check-row"><input type="checkbox" id="reduce"> Preview reduced motion</label>
-    <p class="motion-note">Scroll up and down to compare. Side margins are capped on narrow screens to protect the content. System reduced-motion preferences are always respected.</p>
-    <button type="button" class="reset-button" data-reset>Reset settings</button>
-  </aside>
 </body>
 </html>
