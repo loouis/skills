@@ -3,7 +3,7 @@
 _Updated 2026-10-02._
 
 ## Completed
-- 2026-10-02: Added `prototypes/expanding-scroll-panel/PROMPT.md` with short and detailed reusable prompts covering the approved layout, expansion, backdrop fade and minimal presentation. Linked it from the prototype README. This remains a prototype, not a packaged skill, and has not been pushed.
+- 2026-10-02: Published the expanding scroll panel prototype and its reusable `PROMPT.md` to `loouis/skills` on `main` through commit `304818e`, with Louis's approval. The prompt includes short and detailed instructions for the approved layout, expansion, backdrop fade and minimal presentation, and is linked from the prototype README. Repository validation and public hygiene checks passed.
 - 2026-09-28: Built `prototypes/expanding-scroll-panel/`, a dependency-free scroll study with a sticky preceding section, an expanding white background and independently sized content. Added prototype conventions to `AGENTS.md` and implementation notes for later skill packaging. The user confirmed the motion works well.
 - 2026-09-28: Simplified the prototype to large section headings and cards: removed branding, arrows/icons, eyebrows, supporting copy, captions, footer and tuning controls. Deleted unused presentation CSS and control wiring; the scroll controller remains unchanged. Updated the prototype README to match.
 - 2026-09-28: Added a subtle neutral overlay to the preceding section, driven by the same scroll progress as the expansion (0–18% opacity). The overlay is confined beneath the incoming white panel, ignores pointer events, reverses with scroll and is removed for reduced motion and controller cleanup. Browser checks confirm opacity 0 → 0.0901 → 0.18 → 0, unchanged content bounds and an opaque white foreground; no browser errors/warnings. Updated implementation notes; syntax and all 15 skill contract checks pass.
@@ -19,7 +19,7 @@ _Updated 2026-10-02._
 
 ## Current
 
-- The expanding scroll panel's base motion is approved, its presentation is reduced to headings and cards, and the underlying section now dims during overlap. It is a prototype, not an installed skill; the reusable skill is the next stage. Local preview command is in its README. No push or deployment was requested.
+- The expanding scroll panel is available on GitHub at `prototypes/expanding-scroll-panel/`, including its source, README and reusable prompt. It remains a prototype, not an installed skill; packaging is the next stage. Local preview command is in its README. The repository push did not deploy a hosted demo.
 - 2026-09-27: Connected the active Skills workspace to the existing `loouis/skills` repository, checked out its history on `main`, and configured tracking of `origin/main`. The six transition skills and scrollbar notes were pushed to `origin/main` at `c7b7cd9`.
 - 2026-09-24: the repo moved from `ahoiadigital` to Louis's personal account, `loouis/claude-skills`, then was renamed to `loouis/skills` and given an MIT license. GitHub redirects both old addresses.
 - Louis is testing the gooey-section skills in real builds.
