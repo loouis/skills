@@ -4,6 +4,8 @@ A scroll study: an inset white panel rises over a sticky preceding section, expa
 
 The motion has been reviewed. The prototype now contains only the large section headings and cards, without branding, eyebrows, arrows, supporting copy or demo controls. The reusable skill is the next step. This folder is deliberately outside the installed skill library and generated galleries.
 
+For a copyable brief, use [PROMPT.md](PROMPT.md): it includes a short request and a detailed implementation prompt matching this prototype.
+
 ## Run
 
 From the repository root:
