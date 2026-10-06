@@ -34,9 +34,10 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 17
-- With demos: 17
+- Total: 18
+- With demos: 18
 - 3d/materials: 1
+- motion/logo: 1
 - ui/masking: 1
 - ui/page-transitions: 6
 - ui/sections: 9
@@ -46,6 +47,7 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 | Skill | Category | Demo | Preview | Prompt |
 | --- | --- | --- | --- | --- |
 | blender-polished-chrome | 3d/materials | [Open](skills/3d/materials/blender-polished-chrome/demo/index.html) | [Preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg) | [Prompt](skills/3d/materials/blender-polished-chrome/demo/PROMPT.md) |
+| logo-mask-motion | motion/logo | [Open](skills/motion/logo/logo-mask-motion/demo/index.html) | [Preview](skills/motion/logo/logo-mask-motion/demo/preview.jpg) | [Prompt](skills/motion/logo/logo-mask-motion/demo/PROMPT.md) |
 | vector-masking | ui/masking | [Open](skills/ui/masking/vector-masking/demo/index.html) | [Preview](skills/ui/masking/vector-masking/demo/preview.jpg) | [Prompt](skills/ui/masking/vector-masking/demo/PROMPT.md) |
 | gsap-transition-diagonal-tide | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/PROMPT.md) |
 | gsap-transition-double-swell | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-double-swell/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-double-swell/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-double-swell/demo/PROMPT.md) |

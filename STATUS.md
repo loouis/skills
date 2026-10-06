@@ -4,6 +4,7 @@ _Updated 2026-10-06._
 
 ## Completed
 
+- 2026-10-06: published `logo-mask-motion` (`skills/motion/logo/`, the first skill in the `motion` group) and extended it with the open-line case from a second build, a hexagonal mark with six blades between two rings: lines extended along their tangents under the rings, masks cut from the front stroke, rings that grow with their weight held, threading, draw-on gated by the junction, and an in-page landing check. Its demo gained a ring-and-spokes section (turn, grow, thread). `vector-masking` received the same material in its own structure (SKILL.md, `masking-method.md`, `tool-notes.md`). Validated and galleries rebuilt.
 - Renamed the masking skill to `vector-masking` under `skills/ui/masking/` following the clarification that its purpose is teaching vector mask construction. The entrypoint now leads with whole shapes, occluding silhouettes, joins and gaps; motion-specific steps are conditional on animation being requested. Updated metadata, prompts, repository guidance, links and preview labels.
 - Packaged the full supplied construction method and SVG, After Effects / Lottie and Figma implementation notes. Preserved constant strokes, flush travel, landing-only gap growth, hidden geometry, chained occluders, symmetry joins and exact artwork handover for animated masking.
 - Added an original three-panel SVG demo with two final-gap variants, forward/reverse playback, frame scrubbing, phase jumps, mask inspection, static-source comparison and reduced motion. Includes a portable frame-export/check script, recreation prompts and a 1280 × 720 preview. No private source artwork, names or paths are packaged.
@@ -13,6 +14,7 @@ _Updated 2026-10-06._
 
 ## Current
 
+- Two skills now teach one masking method in different voices: `vector-masking` (construction first) and `logo-mask-motion` (motion first). They were written in separate sessions from the same source. Keep them in step until Louis decides whether to fold one into the other.
 - This public repository is `loouis/skills`. The library contains 17 skills in 4 categories; verify the active checkout's remote before changes.
 - Vector mask publication is authorised. The web study covers stationary geometric occluders; organic reconstructions, moving-front chains and tapered root gaps are documented methods, not demonstrated by this fixture. After Effects, Lottie, Figma and physical-device behavior remain unverified.
 - The expanding scroll panel remains a prototype under `prototypes/expanding-scroll-panel/`, excluded from installation and generated skill lists. Its background and content stay siblings.

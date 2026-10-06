@@ -100,13 +100,19 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **17 skills** across 4 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **18 skills** across 5 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
 ### 3D Materials (1)
 
 [Category guide](skills/3d/materials/README.md)
 
 - [`blender-polished-chrome`](skills/3d/materials/blender-polished-chrome/SKILL.md) - Mirror-polished metal materials and studio reflections
+
+### Logo Skills (1)
+
+[Category guide](skills/motion/logo/README.md)
+
+- [`logo-mask-motion`](skills/motion/logo/logo-mask-motion/SKILL.md) - Move the pieces of a line-drawn mark with masks and land on the artwork
 
 ### Masking Skills (1)
 

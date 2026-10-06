@@ -37,6 +37,7 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 
 ## Vector masking skills
 - Mask construction methods live under `skills/ui/masking/`. `vector-masking` teaches whole pieces, accurate occluding silhouettes, clean joins and controlled gaps. Its animation application adds stationary windows, landing-only gap growth and exact source-artwork handover.
+- The open-line case (lines extended under their neighbours, cut-outs made from the front stroke, rings that grow with their weight held, threading, draw-on gated by the junction, the in-page landing check) is in both masking skills: `skills/ui/masking/vector-masking` (construction first) and `skills/motion/logo/logo-mask-motion` (motion first, with the ring-and-spokes demo). When the method changes, change both.
 - Keep the full construction method in `references/masking-method.md` and renderer-specific details in `references/tool-notes.md`. Public demos use original generic geometry; they do not establish parity for a private source logo or for other renderers.
 - Run `node demo/verify.cjs <output-directory>` from the masking skill folder with Puppeteer available, then inspect the exported frames before rebuilding the preview. Keep capture output outside the package. `NODE_PATH` and `PUPPETEER_EXECUTABLE_PATH` can select an existing installation.
 

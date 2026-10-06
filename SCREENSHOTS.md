@@ -2,7 +2,7 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 17
+- Captured demos: 18
 - Format: JPEG
 
 ## 3d/materials (1)
@@ -15,11 +15,21 @@ Create realistic chrome and mirror-polished metal renders in Blender Cycles. Use
 
 ![blender-polished-chrome preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg)
 
+## motion/logo (1)
+
+### logo-mask-motion
+
+Animates a line-drawn logo or illustration by moving its pieces (petals fanning out of a bud, letters rising, bars sliding from behind each other, spokes threading under rings) so they come out from behind one another like cut-out shapes and land on the finished artwork to the pixel, using one mask per piece: no fades, no scaling, no painted-over patches. Covers closed shapes with gaps that open on landing, and open-line marks (rings with spokes, strokes under other strokes) where each line runs on under its neighbours and is revealed, turned or threaded inside its mask. Use it whenever the user wants to animate, bloom, unfold, assemble, reveal, spin or trace an outlined logo or monogram whose pieces overlap or lines meet, when they talk about masking shapes or lines so one slides from behind or under another, or when a logo animation must end on the exact artwork, even without the word "mask". Also for seams, slivers, notches where a line meets a ring, gaps opening too early or line ends in mid-air.
+
+[Open demo](skills/motion/logo/logo-mask-motion/demo/index.html) · [Skill](skills/motion/logo/logo-mask-motion/SKILL.md) · [Prompt](skills/motion/logo/logo-mask-motion/demo/PROMPT.md)
+
+![logo-mask-motion preview](skills/motion/logo/logo-mask-motion/demo/preview.jpg)
+
 ## ui/masking (1)
 
 ### vector-masking
 
-Construct accurate masks for overlapping outlined vector logos, icons and illustrations using whole shapes, occluding silhouettes, clean joins and controlled gaps. Use when masking vector pieces, fixing seams or hidden edges, or keeping their occlusion correct as pieces move.
+Construct accurate masks for overlapping outlined vector logos, icons and illustrations using whole shapes, occluding silhouettes, clean joins and controlled gaps. Use when masking vector pieces, fixing seams or hidden edges, or keeping their occlusion correct as pieces move. Also covers open-line marks such as rings with spokes or strokes that pass under other strokes: each line is extended under its neighbours and revealed, turned or threaded inside a mask cut from the front stroke, so no notch shows where a line meets a ring.
 
 [Open demo](skills/ui/masking/vector-masking/demo/index.html) · [Skill](skills/ui/masking/vector-masking/SKILL.md) · [Prompt](skills/ui/masking/vector-masking/demo/PROMPT.md)
 
