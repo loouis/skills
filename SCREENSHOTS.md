@@ -2,8 +2,18 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 15
+- Captured demos: 16
 - Format: JPEG
+
+## 3d/materials (1)
+
+### blender-polished-chrome
+
+Create realistic chrome and mirror-polished metal renders in Blender Cycles. Use for polished stainless steel, chrome plating, satin-looking metal, harsh reflection bands, and studio material or lighting refinement while preserving product geometry.
+
+[Open demo](skills/3d/materials/blender-polished-chrome/demo/index.html) · [Skill](skills/3d/materials/blender-polished-chrome/SKILL.md) · [Prompt](skills/3d/materials/blender-polished-chrome/demo/PROMPT.md)
+
+![blender-polished-chrome preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg)
 
 ## ui/page-transitions (6)
 

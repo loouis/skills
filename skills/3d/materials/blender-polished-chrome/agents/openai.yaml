@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Polished Chrome"
+  short_description: "Mirror-polished metal materials and studio reflections"
+  default_prompt: "Use $blender-polished-chrome to refine this Blender scene into convincing mirror-polished metal while preserving its material identity and geometry."

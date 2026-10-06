@@ -1,10 +1,10 @@
 # Skills
 
-Agent skills for building motion and interface on the web, with [Claude Code](https://claude.com/claude-code), Codex and other coding agents.
+Agent skills for web motion, interfaces and 3D rendering, with [Claude Code](https://claude.com/claude-code), Codex and other coding agents.
 
 ![The nine gooey section feels](assets/skills-preview.jpg)
 
-Most of these rebuild effects from Louis's motion labs, exactly. Instead of describing an animation and hoping the agent guesses the feel, a skill ships the lab's own engine, a working demo and the checks to prove the result matches.
+The motion skills rebuild effects from Louis's motion labs, with the original engine, a working demo and parity checks. The 3D skills package material and lighting workflows, tested helpers and original Blender-rendered studies.
 
 Start with the section edges:
 
@@ -16,6 +16,8 @@ Start with the section edges:
    A broad, flowing crest with a soft shoulder. The calm one.
 
 Browse [all demos and their prompts](DEMOS.md), or the [screenshot gallery](SCREENSHOTS.md).
+
+For rendering, explore [3D](skills/3d/README.md), starting with [Blender polished chrome](skills/3d/materials/blender-polished-chrome/SKILL.md): mirror-polished metals, reflection control and preservation checks.
 
 ---
 
@@ -53,6 +55,11 @@ skills/
       gooey-section-goo/
       gooey-section-taffy/
       ...
+  3d/
+    README.md
+    materials/
+      README.md
+      blender-polished-chrome/
 scripts/                # previews, gallery, validation
 install.py              # link skills into Claude Code
 ```
@@ -84,7 +91,13 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **15 skills** across 2 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **16 skills** across 3 categories. `find skills -name SKILL.md | sort` is the source of truth.
+
+### 3D Materials (1)
+
+[Category guide](skills/3d/materials/README.md)
+
+- [`blender-polished-chrome`](skills/3d/materials/blender-polished-chrome/SKILL.md) - Mirror-polished metal materials and studio reflections
 
 ### Page Transition Skills (6)
 
@@ -135,7 +148,7 @@ ln -s "$PWD/skills/ui/sections/gooey-section-taffy" ~/.claude/skills/
 ## Adding a skill
 
 1. Pick a group and category under `skills/`, such as `skills/ui/sections/`, or create one with a `README.md` (copy `skills/ui/sections/README.md`).
-2. Create `skills/<group>/<category>/<skill-name>/SKILL.md, then add `agents/openai.yaml` and, if it has sources, `REFERENCES.md`.
+2. Create `skills/<group>/<category>/<skill-name>/SKILL.md`, then add `agents/openai.yaml` and, if it has sources, `REFERENCES.md`.
 3. For a visual skill, add `demo/index.html` and `demo/PROMPT.md`, then render the preview:
    ```bash
    node scripts/build-previews.cjs <skill-name>
@@ -146,7 +159,7 @@ ln -s "$PWD/skills/ui/sections/gooey-section-taffy" ~/.claude/skills/
    node scripts/build-gallery.cjs
    node scripts/validate-skills.cjs
    ```
-5. Run `python3 install.py`, then commit: small commits, one skill each, `Add <skill-name> skill` or `Update <skill-name> skill`.
+5. Commit: small commits, one skill each, `Add <skill-name> skill` or `Update <skill-name> skill`. Run `python3 install.py` only when local Claude Code installation is wanted; publishing does not require it.
 
 ---
 

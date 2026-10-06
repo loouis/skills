@@ -26,6 +26,12 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 - User-requested motion studies can live under `prototypes/<name>/` while their behavior is being reviewed. These are not installed skills and are excluded from generated library lists. Each prototype documents its local preview command and the remaining work before skill packaging.
 - `prototypes/expanding-scroll-panel/` is a dependency-free scroll expansion study. Its background and content must remain siblings so only the empty background changes shape.
 
+## 3D skills
+- Display the `skills/3d/` group as **3D**. Blender material workflows live under `skills/3d/materials/` and use the same skill/demo contract.
+- Public render demos use original generic geometry. Keep source-project scenes, geometry, textures, renders and private paths out of the package; a portable generator may create local `.blend` files without committing them.
+- For `blender-polished-chrome`, run Blender with `--python-exit-code 1 -P scripts/test_reflection_card.py` from the skill folder. Rebuild its generic images with `scripts/render_demo.py`; see `demo/PROMPT.md` for the full command. Inspect actual renders and saved-scene checks before refreshing the browser preview.
+- Publishing does not require app-wide installation. Run `install.py` only when local Claude Code links are requested.
+
 ## Public hygiene (check before every commit)
 - No client or project names, no private file paths, no emails, keys or tokens, nothing from private repos beyond what a skill needs. The validator flags private paths.
 

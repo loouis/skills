@@ -1,0 +1,6 @@
+- [Blender Principled BSDF](https://docs.blender.org/manual/en/5.2/render/shader_nodes/shader/principled.html)
+- [Blender Cycles object visibility](https://docs.blender.org/manual/en/5.2/render/cycles/object_settings/object_data.html)
+- [Blender Color Ramp node](https://docs.blender.org/manual/en/5.2/render/shader_nodes/converter/color_ramp.html)
+- [Blender bump node](https://docs.blender.org/manual/en/5.2/render/shader_nodes/vector/bump.html)
+- [Blender color management](https://docs.blender.org/manual/en/5.2/render/color_management.html)
+- [Worldstainless surface treatments](https://worldstainless.org/about-stainless/process-and-production/surface-treatment/)

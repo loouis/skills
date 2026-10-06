@@ -34,8 +34,9 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 15
-- With demos: 15
+- Total: 16
+- With demos: 16
+- 3d/materials: 1
 - ui/page-transitions: 6
 - ui/sections: 9
 
@@ -43,6 +44,7 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 | Skill | Category | Demo | Preview | Prompt |
 | --- | --- | --- | --- | --- |
+| blender-polished-chrome | 3d/materials | [Open](skills/3d/materials/blender-polished-chrome/demo/index.html) | [Preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg) | [Prompt](skills/3d/materials/blender-polished-chrome/demo/PROMPT.md) |
 | gsap-transition-diagonal-tide | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/PROMPT.md) |
 | gsap-transition-double-swell | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-double-swell/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-double-swell/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-double-swell/demo/PROMPT.md) |
 | gsap-transition-figure-eight | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-figure-eight/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-figure-eight/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-figure-eight/demo/PROMPT.md) |

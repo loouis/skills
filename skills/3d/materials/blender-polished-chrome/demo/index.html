@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polished metal — Blender material study</title>
+<style>
+:root { color-scheme: light; --paper:#f0efeb; --ink:#252823; --muted:#646860; --line:#c9cbc3; --split:50%; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+main { max-width:1440px; margin:auto; padding:24px 48px; }
+header { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:16px; }
+header p { margin:0; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+header a { color:inherit; text-decoration:none; font-size:13px; }
+.layout { display:grid; grid-template-columns:minmax(245px,1fr) minmax(0,620px); gap:60px; align-items:center; padding-top:24px; }
+h1 { font-size:clamp(40px,4.4vw,65px); font-weight:450; line-height:1.01; letter-spacing:-.055em; margin:16px 0 24px; }
+.eyebrow { color:var(--muted); font-size:11px; letter-spacing:.13em; text-transform:uppercase; }
+.intro { max-width:310px; color:var(--muted); font-size:16px; line-height:1.6; }
+.options { display:grid; gap:8px; margin-top:30px; }
+button { text-align:left; font:inherit; color:inherit; background:transparent; border:1px solid var(--line); border-radius:0; padding:11px 14px; cursor:pointer; }
+button[aria-pressed=true] { background:var(--ink); border-color:var(--ink); color:var(--paper); }
+button span { font-size:11px; margin-right:12px; opacity:.65; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline:2px solid #476550; outline-offset:4px; }
+.note { color:var(--muted); font-size:12px; margin:19px 0 0; max-width:320px; }
+figure { margin:0; min-width:0; }
+.image { position:relative; aspect-ratio:4/3; background:#9c9c97; overflow:hidden; touch-action:pan-y; cursor:ew-resize; user-select:none; }
+.image img { display:block; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+.image .before { position:absolute; inset:0; clip-path:inset(0 calc(100% - var(--split)) 0 0); }
+.divider { position:absolute; left:var(--split); top:0; bottom:0; width:1px; background:#fff9; pointer-events:none; }
+.divider::after { content:'↔'; display:grid; place-items:center; position:absolute; top:48%; left:-16px; width:33px; height:33px; border-radius:50%; background:var(--paper); color:var(--ink); font-size:16px; }
+.caption { display:flex; justify-content:space-between; gap:12px; margin-top:10px; font-size:12px; color:var(--muted); }
+.slider { display:flex; gap:16px; align-items:center; margin-top:18px; }
+.slider label { font-size:12px; white-space:nowrap; }
+input { width:100%; min-width:0; accent-color:var(--ink); }
+.downloads { display:flex; gap:20px; flex-wrap:wrap; font-size:12px; margin-top:15px; }
+a { color:inherit; text-underline-offset:4px; }
+footer { margin-top:18px; padding-top:12px; border-top:1px solid var(--line); font-size:11px; color:var(--muted); display:flex; justify-content:space-between; gap:20px; }
+@media(max-width:850px) { main { padding:24px; } .layout { gap:28px; grid-template-columns:1fr; padding-top:20px; } h1 { max-width:500px; font-size:52px; margin:10px 0 18px; } .intro { max-width:550px; } .options { grid-template-columns:repeat(3,1fr); gap:6px; margin-top:20px; } button { font-size:12px; padding:10px; } button span { display:block; margin-bottom:5px; } .note { max-width:550px; } footer { flex-wrap:wrap; } }
+@media(max-width:390px) { main { padding:18px; } h1 { font-size:44px; } .options { grid-template-columns:1fr; } button span { display:inline; } header p { font-size:10px; } header a { font-size:11px; } .caption { font-size:10px; } }
+</style>
+</head>
+<body>
+<main>
+<header><p>3D / Material studies</p><a href="../SKILL.md">Blender polished chrome ↗</a></header>
+<div class="layout">
+<section aria-label="Study controls">
+<div class="eyebrow">Cycles · Original geometry</div>
+<h1>Polish is a<br>reflection.</h1>
+<p class="intro">Sharpness comes from the finish. Depth comes from what the metal sees.</p>
+<div class="options" aria-label="Comparison baseline">
+<button type="button" data-version="satin" aria-pressed="false"><span>01</span>Satin finish</button>
+<button type="button" data-version="polish-only" aria-pressed="true"><span>02</span>Lower roughness</button>
+<button type="button" data-version="controlled" aria-pressed="false"><span>03</span>Reflection control</button>
+</div>
+<p class="note" id="description" aria-live="polite">Roughness 0.035 sharpens the reflection, but the broad grey floor remains visible in the metal.</p>
+</section>
+<figure>
+<div class="image" id="compare" role="group" aria-label="Render comparison; use the reveal slider below">
+<img src="controlled.jpg" alt="Mirror-polished stainless study with a feathered dark floor reflection">
+<img class="before" id="before" src="polish-only.jpg" alt="Same scene with lower roughness and no floor card">
+<div class="divider" id="divider" aria-hidden="true"></div>
+</div>
+<figcaption class="caption"><span id="before-label">Lower roughness</span><span>With reflection control</span></figcaption>
+<div class="slider"><label for="reveal">Reveal baseline</label><input id="reveal" type="range" min="0" max="100" value="50" aria-valuetext="50% lower roughness"></div>
+<div class="downloads"><a id="baseline-download" href="polish-only.jpg" download>Baseline · native JPG</a><a href="controlled.jpg" download>Controlled · native JPG</a><a href="PROMPT.md">Recreate the study</a></div>
+</figure>
+</div>
+<footer><span>Polished stainless steel · Artistic reflectance approximation</span><span>Same geometry, camera & exposure · Actual Blender renders</span></footer>
+</main>
+<script>
+const versions = {
+  'satin': { label:'Satin finish', alt:'Same scene with satin roughness and no floor card', description:'Roughness 0.120 softens reflections. Metal identity, geometry, lighting and exposure are held constant.' },
+  'polish-only': { label:'Lower roughness', alt:'Same scene with lower roughness and no floor card', description:'Roughness 0.035 sharpens the reflection, but the broad grey floor remains visible in the metal.' },
+  'controlled': { label:'Reflection control', alt:'Mirror-polished stainless study with a feathered dark floor reflection', description:'The same 0.035 finish gains tonal depth from a feathered floor card. Floor reflections and the object’s contact shadow remain.' }
+};
+const compare = document.querySelector('#compare'), slider = document.querySelector('#reveal');
+let current = 'polish-only';
+function reveal(value) {
+  slider.value = value;
+  compare.style.setProperty('--split', `${slider.value}%`);
+  slider.setAttribute('aria-valuetext', `${slider.value}% ${versions[current].label.toLowerCase()}`);
+}
+slider.addEventListener('input', () => reveal(slider.value));
+for (const button of document.querySelectorAll('[data-version]')) button.addEventListener('click', () => {
+  current = button.dataset.version;
+  for (const item of document.querySelectorAll('[data-version]')) item.setAttribute('aria-pressed', String(item === button));
+  const version = versions[current];
+  document.querySelector('#before').src = `${current}.jpg`;
+  document.querySelector('#before').alt = version.alt;
+  document.querySelector('#before-label').textContent = version.label;
+  document.querySelector('#description').textContent = version.description;
+  document.querySelector('#baseline-download').href = `${current}.jpg`;
+  document.querySelector('#divider').hidden = current === 'controlled';
+  reveal(slider.value);
+});
+function drag(event) {
+  const rect = compare.getBoundingClientRect();
+  reveal(Math.round(Math.max(0, Math.min(100, (event.clientX - rect.left) / rect.width * 100))));
+}
+compare.addEventListener('pointerdown', event => { compare.setPointerCapture(event.pointerId); drag(event); });
+compare.addEventListener('pointermove', event => { if (compare.hasPointerCapture(event.pointerId)) drag(event); });
+compare.addEventListener('pointerup', event => { if (compare.hasPointerCapture(event.pointerId)) compare.releasePointerCapture(event.pointerId); });
+window.__demoPose = () => { document.querySelector('[data-version="controlled"]').click(); };
+</script>
+</body>
+</html>
