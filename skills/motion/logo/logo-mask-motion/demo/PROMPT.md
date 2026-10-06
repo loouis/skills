@@ -20,6 +20,7 @@ Make the masks the demonstration. Show the parts of one mask first (the petal, t
 - Two players side by side with one transport: A, the cut-out tilts (the gap is uneven and nicks the base); B, the cut-out grows above the waist only (even gap, lines meet at the base). B is the one to use.
 - Controls: play, scrub, slow motion, and a "show the left petal's mask" switch that draws the mask over the player.
 - Each leaf only shows on its own side of the centre line, so no leaf's pointed base pokes out past the centre leaf.
+- A last section, lines under lines: a ring-and-spokes mark (an outer ring, an inner ring, six slanted spokes extended straight past both ends) in three players sharing one transport: Turn (the spokes turn 120° behind still rings), Grow (the outer ring starts on the inner ring and grows out with its line weight held, uncovering the still spokes) and Thread (each spoke slides in along its own line from outside). Switches to show the mask and the hidden extensions.
 
 ### Deliverable
 

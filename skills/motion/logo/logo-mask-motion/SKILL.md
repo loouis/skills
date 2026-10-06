@@ -1,6 +1,6 @@
 ---
 name: logo-mask-motion
-description: Animates a line-drawn logo or illustration by moving its pieces (petals fanning out of a bud, letters rising, bars sliding out from behind each other) so they come out from behind one another like real cut-out shapes and land on the finished artwork to the pixel, using one mask per piece and nothing else: no fades, no scaling, no painted-over patches. Use this skill whenever the user wants to animate, bloom, unfold, assemble or reveal an outlined logo, mark, monogram or line illustration whose pieces overlap, whenever they talk about masking shapes so one slides out from behind another, or whenever a logo animation has to end on the exact artwork, even if they do not say "mask". Also use it when a logo animation shows seams, slivers, overlapping strokes, gaps that open too early or pieces that pop, since those are the faults it is built to remove.
+description: Animates a line-drawn logo or illustration by moving its pieces (petals fanning out of a bud, letters rising, bars sliding from behind each other, spokes threading under rings) so they come out from behind one another like cut-out shapes and land on the finished artwork to the pixel, using one mask per piece: no fades, no scaling, no painted-over patches. Covers closed shapes with gaps that open on landing, and open-line marks (rings with spokes, strokes under other strokes) where each line runs on under its neighbours and is revealed, turned or threaded inside its mask. Use it whenever the user wants to animate, bloom, unfold, assemble, reveal, spin or trace an outlined logo or monogram whose pieces overlap or lines meet, when they talk about masking shapes or lines so one slides from behind or under another, or when a logo animation must end on the exact artwork, even without the word "mask". Also for seams, slivers, notches where a line meets a ring, gaps opening too early or line ends in mid-air.
 ---
 
 # Logo mask motion
@@ -9,7 +9,7 @@ Take a flat, outlined mark apart into pieces, move them as if they were cut-out 
 
 ## What is fixed
 
-- Strokes never change thickness. Nothing scales.
+- Strokes never change thickness. Nothing scales, with one exception for rings that have to arrive (see Line marks): a ring may grow about its centre with its line weight held.
 - Nothing fades, and nothing is painted over anything. No background-coloured patches, borders or fills to fake a hidden edge or a gap. If something must be hidden, a mask hides it.
 - Lines never overlap or cross each other as lines mid-motion. A line can run under another shape (hidden) or butt up to it (flush); it cannot be seen crossing it.
 - The end state is the untouched artwork, to the pixel. When everything has landed, swapping in the original paths must make no visible change.
@@ -37,7 +37,7 @@ Take a flat, outlined mark apart into pieces, move them as if they were cut-out 
 
 ## Build order
 
-1. Read the artwork's paths and work out the stacking: which piece is in front of which, where lines merge, where the real gaps are and how wide (measure them; a logo's gap is usually an even offset of the piece in front, about half a stroke width).
+1. Read the artwork's paths and work out the stacking: which piece is in front of which, where lines merge, where the real gaps are and how wide (measure them; a logo's gap is usually an even offset of the piece in front, about half a stroke width). If the artwork is open lines with no gaps, read Line marks below before building.
 2. Make each piece whole (next section). Keep every edge the artwork draws exactly as drawn.
 3. Build each piece's mask (the section after). Start with everything flush and no growth.
 4. Add the choreography, then the gap opening, then the hand-over to the original artwork.
@@ -63,6 +63,24 @@ Take a flat, outlined mark apart into pieces, move them as if they were cut-out 
 
 `references/svg-recipe.md` has the SVG markup and the per-frame maths for all of this.
 
+## Line marks: pieces that run under other lines
+
+Some marks are open lines rather than closed shapes: rings with spokes, a monogram whose strokes pass under other strokes, a spiral threading in and out of a frame. The model is the same, but the artwork has no gaps (every join is lines meeting), so the whole gap stage is skipped and three things change. This came out of a second build, a hexagonal mark with six blades between two rings, whose draw-on version showed a notch at every junction.
+
+- **The piece is the line, extended straight along its own tangent at both ends**, far enough that each end sits under a front piece in every pose the piece will take. A straight continuation is the true geometry of a line, so if it ever shows during an overshoot it still reads as the same line. Size the extensions from the geometry, not by eye: the butt end, with its corners half a stroke either side, has to stay inside the front piece's painted band at the band's *narrowest* reach (the flat side of a polygon ring, not its corner). A line drawn only to its artwork end stops a fraction short of the ring at some angles and pokes through it at others; that is the notch.
+- **The mask is the front piece's own stroke.** Window: the front ring's path *filled*, to its centreline, which hides everything outside the ring, so the outward extension can be any length. Cut-out: the same path stroked black, `stroke-width − 2 × inset` wide (the model's twentieth-of-a-stroke inset), plus `fill: black` where the line must never show inside it, such as a ring's hole. For stroked front pieces this replaces the sampled offset polygon: a narrower stroke *is* the inset.
+- **Either side can move.** The default is a back piece moving out from behind a still front piece. With lines, the strongest reveal is the reverse: the lines stay still and a front piece moves over them (a ring growing from the centre, or contracting to it), so each line is uncovered flush at both ends and no line end is ever visible. The copy in the mask follows the moving ring, as always.
+
+Rings that have to arrive may grow about the centre with the line weight held: scale the geometry and set `stroke-width = w / s`, and `(w − 2 × inset) / s` on the copy in every mask. Two similar rings can start as one line (the small one scaled to the big one's size by the ratio of their widths) and peel apart; while they coincide the band between them is empty, so the lines behind can be present from frame zero without any hiding bookkeeping.
+
+When a line end has to be seen, it is a real end of the line, never a mask edge:
+
+- **Threading**: slide the piece along its own track with the line extended far behind it, so the trailing end starts outside the window and never shows; only the leading end travels, and it finishes under the front piece.
+- **Draw-on gated by the junction**: a line drawing on inside its mask must not reach a front piece that is not painted yet, or it stops dead at an invisible edge. Start each line only after the front piece's own drawing end has passed their junction (the junction's arc position on the front path, the easing inverted to get the time, plus a few frames), and have the front piece at the far end fully drawn before the line arrives.
+- A drawing head or cursor goes in the same mask as the lines, so it dives under the rings instead of crossing them.
+
+A small twist as the lines are uncovered (a few degrees, driven by the moving ring's progress so it reaches zero as the ring lands) reads as the mark settling rather than moving; the extensions make it safe.
+
 ## The closed state
 
 When pieces are closed up together (two petals meeting as one bud, say) they must read as one continuous line: a single point at the top, and sides that run straight on into the piece in front with no notch, no corner sticking out and no step. Do not get there by turning each piece to its resting angle and hoping. Solve the closed pose: turn and shift the piece until the inside corner of its tip sits on the centre line (so the two outer edges meet in one clean point and neither piece's far side shows), its outer edge meets the front piece's edge at the same angle (no kink), and below that join it stays inside the front piece (so nothing pops into view when it starts to move). Measure these; do not eyeball them.
@@ -78,15 +96,18 @@ When pieces are closed up together (two petals meeting as one bud, say) they mus
 - Export frames (25fps is enough), make contact sheets, and zoom in on every join, tip and base. Never judge from the live player.
 - Numeric checks: the closed state must be pixel-identical to the front piece drawn alone; the last masked frame must differ from the original artwork by sub-pixel anti-aliasing only; a frame just before and just after any window or schedule switch must match.
 - Look especially for: white slivers at joins, hairlines where two shapes abut, lines ending in mid-air against an invisible mask, little points poking out at a base, and holes where a hidden piece's mask is cutting something it should not.
+- A check that needs no tooling: in the page, clone the SVG, inline the stroke and fill colours on the clone (CSS variables do not survive serialisation), render it to a canvas through a Blob URL at the last masked frame and at the artwork frame, and count the pixels that differ. A few hundred at 800 px, spread thinly along the junctions, is anti-aliasing; thousands in one place is a shape. This caught a spring that had not settled at the hand-over, with the ring a pixel out; the calm factor fixed it. `references/svg-recipe.md` §11 has the code.
 
 ## Doing it in different tools
 
-- **SVG / web**: one `<mask>` per piece (`maskUnits="userSpaceOnUse"`), a white window path, black cut-out paths, the piece inside a `<g mask>` with its transform on an inner group so the mask stays put. Rebuild the cut-out `d` each frame from the sampled points. Use `clip-path` for the "only inside the other piece" strip. See `references/svg-recipe.md`.
+- **SVG / web**: one `<mask>` per piece (`maskUnits="userSpaceOnUse"`), a white window path, black cut-out paths, the piece inside a `<g mask>` with its transform on an inner group so the mask stays put. Rebuild the cut-out `d` each frame from the sampled points. Use `clip-path` for the "only inside the other piece" strip. For a stroked front piece the cut-out is its path stroked narrower, and a ring that grows takes `stroke-width = w / s`. See `references/svg-recipe.md`.
 - **After Effects / Lottie**: each piece is a shape layer with an alpha inverted track matte that is a copy of the front piece, parented to the front piece's layer. The gap is a stroke on the matte layer, animated from 0 to the gap width on landing. Lottie keeps all of this.
 - **Figma (for a still or a storyboard)**: a mask group of a rectangle with the front shape subtracted (boolean subtract), used as a mask over the piece; the gap is an outside stroke on the subtracted shape.
 
-`demo/index.html` is a small working example of the whole model on five generic leaves: the parts of one mask, then the motion with a mask you can switch on to see.
+`demo/index.html` is a small working example of the whole model on five generic leaves: the parts of one mask, then the motion with a mask you can switch on to see. Its last section is the line-mark case on a ring-and-spokes mark: turn, grow and thread, with the mask and the hidden extensions switchable.
 
 ## Working with the designer
 
 Build switchable variations rather than one answer, label each with what it does, and send exported frames with the link. When the designer says "flush" they mean no gap at all; "the gap should only be there when it lands" means exactly that; "it should look like a continuous stroke" means solve the join, not soften it. If they send a file showing how they mask by hand, read its layers before building: this model came from one.
+
+Alongside "show the mask", give them "show hidden parts": the extended pieces drawn unmasked and dim, so they can see what the masks hide and why the joins are clean. Keep the old build off the review page, or label it: a frame the designer sends with a fault you believe is fixed may come from the earlier version, so check which build it is before changing anything. A fault the mask makes impossible, such as a line end outside the window, is the tell.

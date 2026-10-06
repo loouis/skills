@@ -31,6 +31,8 @@ figcaption b { display: block; color: var(--ink); font-weight: 600; font-size: 1
 button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .petal { fill: var(--stage); stroke: var(--ink); stroke-width: 4; stroke-miterlimit: 10; }
 .show { fill: var(--mask); fill-opacity: .25; }
+.spoke { fill: none; stroke: var(--ink); stroke-width: 3; }
+.spoke.ghost { stroke: var(--accent); opacity: .35; display: none; }
 </style>
 </head>
 <body>
@@ -58,6 +60,19 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
       <figure><svg id="tilt" viewBox="-12 -8 113 76"></svg><figcaption><b>A. The copy tilts</b>The copy of the centre petal leans out from the base, like a hinge. The gap is uneven and it nicks the petals near the base.</figcaption></figure>
       <figure><svg id="top" viewBox="-12 -8 113 76"></svg><figcaption><b>B. The copy grows, top half only</b>The copy of the centre petal gets 3 bigger above the waist and stays as it is below. Even gap at the top, lines still meet at the base. This is the one to use.</figcaption></figure>
     </div>
+  </section>
+  <section style="display:grid;gap:14px">
+    <h2>Lines under lines: the same model on a ring-and-spokes mark</h2>
+    <p>Open lines instead of closed shapes, and no gaps anywhere. Each spoke is extended straight along its own line past both ends, so its ends sit under the rings however it moves. Its mask is the outer ring filled, as the window, with both rings' strokes cut out a twentieth of a stroke narrower than they are painted. Nothing grows on landing.</p>
+    <div class="transport">
+      <button id="lplay" type="button">Pause</button>
+      <input id="lscrub" type="range" min="0" max="1" step="0.001" value="0" aria-label="Scrub the spokes">
+      <output id="ltime">0.00s</output>
+      <label><input id="lslow" type="checkbox"> Slow motion</label>
+      <label><input id="lmask" type="checkbox"> Show the mask</label>
+      <label><input id="lghost" type="checkbox"> Show hidden parts</label>
+    </div>
+    <div class="grid" id="lines"></div>
   </section>
 </main>
 
@@ -208,6 +223,86 @@ window.__demoPose = () => { showMask.checked = true; setT(0.95); };   // the fra
 setPlaying(playing);
 render(0);
 requestAnimationFrame(tick);
+</script>
+<script>
+// Lines under lines: a ring-and-spokes mark. Same model, open lines, no gaps.
+(() => {
+const NS = 'http://www.w3.org/2000/svg';
+const R = 30, r = 12, W = 3, INSET = 0.15, SIL = W - 2 * INSET, N = 6, BACK = 10, FWD = 4, TRACK = 60, LDUR = 2.0, LHOLD = 0.9;
+const lplay = document.getElementById('lplay'), lscrub = document.getElementById('lscrub'), ltime = document.getElementById('ltime');
+const lslow = document.getElementById('lslow'), lmask = document.getElementById('lmask'), lghost = document.getElementById('lghost');
+const el = (t, a = {}) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+// spoke k is a chord from the outer ring at k·60° to the inner ring 50° further round, so it crosses the band at a slant
+const spokes = [];
+for (let k = 0; k < N; k++) { const a = k * Math.PI / 3, b = a + 50 * Math.PI / 180; spokes.push({ s: [R * Math.cos(a), R * Math.sin(a)], e: [r * Math.cos(b), r * Math.sin(b)] }); }
+// the piece: the chord plus a straight run past each end along its own line
+const piece = (k, back) => {
+  const { s, e } = spokes[k], L = Math.hypot(e[0] - s[0], e[1] - s[1]), d = [(e[0] - s[0]) / L, (e[1] - s[1]) / L];
+  return `M${(s[0] - d[0] * back).toFixed(3)} ${(s[1] - d[1] * back).toFixed(3)} L${(e[0] + d[0] * FWD).toFixed(3)} ${(e[1] + d[1] * FWD).toFixed(3)}`;
+};
+const outQuart = t => 1 - Math.pow(1 - t, 4), outQuint = t => 1 - Math.pow(1 - t, 5), clamp01 = v => Math.max(0, Math.min(1, v));
+const modes = [
+  ['turn', 'Turn', 'The spokes turn 120° into place behind still rings. Their ends are under the rings at every angle, so what you see is six slants sliding through a band.'],
+  ['grow', 'Grow', 'The spokes are still. The outer ring starts on the inner ring and grows out, line weight held, uncovering them flush at both ends. No line end is ever visible.'],
+  ['thread', 'Thread', 'Each spoke slides in along its own line from outside, far longer than the artwork shows. Only its leading end is ever seen, and it finishes under the inner ring.']
+];
+const players = modes.map(([mode, title, text]) => {
+  const fig = document.createElement('figure'), svg = el('svg', { viewBox: '-40 -40 80 80' }), defs = el('defs');
+  svg.append(defs);
+  const back = mode === 'thread' ? TRACK : BACK, masks = [], pcs = [], ghosts = [], ghostG = el('g');
+  for (let k = 0; k < N; k++) {
+    // one mask per spoke: the outer ring filled is the window, both rings stroked narrower are the cut-outs, the inner ring filled hides its hole
+    const m = el('mask', { id: `l-${mode}-${k}`, maskUnits: 'userSpaceOnUse', x: -45, y: -45, width: 90, height: 90 });
+    const win = el('circle', { r: R, fill: '#fff' }), mo = el('circle', { r: R, fill: 'none', stroke: '#000', 'stroke-width': SIL }), mi = el('circle', { r: r, fill: '#000', stroke: '#000', 'stroke-width': SIL });
+    m.append(win, mo, mi); defs.append(m); masks.push({ win, mo, mi });
+    const g = el('path', { d: piece(k, back), class: 'spoke ghost' }); ghostG.append(g); ghosts.push(g);
+  }
+  svg.append(ghostG);
+  for (let k = 0; k < N; k++) { const gm = el('g', { mask: `url(#l-${mode}-${k})` }), p = el('path', { d: piece(k, back), class: 'spoke' }); gm.append(p); svg.append(gm); pcs.push(p); }
+  const outer = el('circle', { r: R, class: 'spoke' }), inner = el('circle', { r: r, class: 'spoke' });
+  const show = el('rect', { x: -45, y: -45, width: 90, height: 90, class: 'show', mask: `url(#l-${mode}-0)` });
+  svg.append(outer, inner, show);
+  const cap = document.createElement('figcaption'); cap.innerHTML = `<b>${title}</b>${text}`;
+  fig.append(svg, cap); document.getElementById('lines').append(fig);
+  return { mode, masks, pcs, ghosts, outer, show, back, Lt: pcs.map(p => p.getTotalLength()) };
+});
+function lrender(t) {
+  for (const P of players) {
+    for (let k = 0; k < N; k++) for (const x of [P.pcs[k], P.ghosts[k]]) { x.removeAttribute('transform'); x.style.strokeDasharray = ''; x.style.strokeDashoffset = ''; }
+    P.outer.removeAttribute('transform'); P.outer.style.strokeWidth = '';
+    for (const m of P.masks) { m.win.removeAttribute('transform'); m.mo.removeAttribute('transform'); m.mo.setAttribute('stroke-width', SIL); }
+    if (P.mode === 'turn') {
+      const a = 120 * (1 - outQuart(clamp01((t - 0.1) / 1.4)));
+      for (let k = 0; k < N; k++) for (const x of [P.pcs[k], P.ghosts[k]]) x.setAttribute('transform', `rotate(${a})`);
+    }
+    if (P.mode === 'grow') {
+      // the outer ring grows from the inner ring's size on a spring, its line weight held; its copy in every mask (and the window) follows
+      const s = r / R + (1 - r / R) * spring(t - 0.15, 6, 0.62);
+      P.outer.setAttribute('transform', `scale(${s})`); P.outer.style.strokeWidth = String(W / s);
+      for (const m of P.masks) { m.win.setAttribute('transform', `scale(${s})`); m.mo.setAttribute('transform', `scale(${s})`); m.mo.setAttribute('stroke-width', String(SIL / s)); }
+    }
+    if (P.mode === 'thread') for (let k = 0; k < N; k++) {
+      // one dash the length of the resting piece, slid along a track that runs far out past the outer ring
+      const L = P.Lt[k], chord = L - P.back - FWD, Wd = BACK + chord + FWD, D = chord + FWD + 2;
+      const pr = outQuint(clamp01((t - 0.15 - k * 0.08) / 1.1)), a0 = P.back - BACK - D * (1 - pr);
+      for (const x of [P.pcs[k], P.ghosts[k]]) { x.style.strokeDasharray = `${Wd} ${L + 20}`; x.style.strokeDashoffset = String(-a0); }
+    }
+    P.show.style.display = lmask.checked ? '' : 'none';
+    for (const g of P.ghosts) g.style.display = lghost.checked ? '' : 'none';
+  }
+  lscrub.value = Math.min(t / LDUR, 1); ltime.value = Math.min(t, LDUR).toFixed(2) + 's';
+}
+let lt = 0, lplaying = !new URLSearchParams(location.search).has('still'), llast = null;
+function ltick(now) {
+  if (lplaying && llast !== null) { lt += (now - llast) / 1000 * (lslow.checked ? 0.2 : 1); if (lt > LDUR + LHOLD) lt = 0; lrender(lt); }
+  llast = now; requestAnimationFrame(ltick);
+}
+const lset = on => { lplaying = on; lplay.textContent = on ? 'Pause' : 'Play'; };
+lplay.onclick = () => { if (!lplaying && lt >= LDUR) lt = 0; lset(!lplaying); };
+lscrub.oninput = () => { lset(false); lt = lscrub.value * LDUR; lrender(lt); };
+lmask.onchange = lghost.onchange = () => lrender(lt);
+lset(lplaying); lrender(0); requestAnimationFrame(ltick);
+})();
 </script>
 </body>
 </html>
