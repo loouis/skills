@@ -4,7 +4,7 @@ Agent skills for web motion, interfaces and 3D rendering, with [Claude Code](htt
 
 ![The nine gooey section feels](assets/skills-preview.jpg)
 
-The motion skills rebuild effects from Louis's motion labs, with the original engine, a working demo and parity checks. The 3D skills package material and lighting workflows, tested helpers and original Blender-rendered studies.
+The section and page-transition skills rebuild effects from Louis's motion labs, with the original engine, a working demo and parity checks. Vector animation skills package geometry and masking methods with original studies. The 3D skills package material and lighting workflows, tested helpers and original Blender-rendered studies.
 
 Start with the section edges:
 
@@ -16,6 +16,8 @@ Start with the section edges:
    A broad, flowing crest with a soft shoulder. The calm one.
 
 Browse [all demos and their prompts](DEMOS.md), or the [screenshot gallery](SCREENSHOTS.md).
+
+For logos and illustrations, explore [Vector Animation](skills/ui/vector-animation/README.md), starting with [Vector Mask Reveal](skills/ui/vector-animation/vector-mask-reveal/SKILL.md): whole moving pieces, flush reveals and gaps that open only on landing.
 
 For rendering, explore [3D](skills/3d/README.md), starting with [Blender polished chrome](skills/3d/materials/blender-polished-chrome/SKILL.md): mirror-polished metals, reflection control and preservation checks.
 
@@ -55,6 +57,13 @@ skills/
       gooey-section-goo/
       gooey-section-taffy/
       ...
+    page-transitions/
+      README.md
+      gsap-transition-wide-tide/
+      ...
+    vector-animation/
+      README.md
+      vector-mask-reveal/
   3d/
     README.md
     materials/
@@ -91,7 +100,7 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **16 skills** across 3 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **17 skills** across 4 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
 ### 3D Materials (1)
 
@@ -123,6 +132,12 @@ This snapshot contains **16 skills** across 3 categories. `find skills -name SKI
 - [`gooey-section-taffy`](skills/ui/sections/gooey-section-taffy/SKILL.md) - Stretches on scroll, snaps back with one wobble
 - [`gooey-section-twin`](skills/ui/sections/gooey-section-twin/SKILL.md) - Main bulge plus a smaller blob beside it
 - [`gooey-section-wave`](skills/ui/sections/gooey-section-wave/SKILL.md) - Broad flowing crest pulled by scroll speed
+
+### Vector Animation Skills (1)
+
+[Category guide](skills/ui/vector-animation/README.md)
+
+- [`vector-mask-reveal`](skills/ui/vector-animation/vector-mask-reveal/SKILL.md) - Whole vector pieces, flush reveals and exact landings
 <!-- library:end -->
 
 ---

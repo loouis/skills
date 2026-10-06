@@ -2,7 +2,7 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 16
+- Captured demos: 17
 - Format: JPEG
 
 ## 3d/materials (1)
@@ -138,3 +138,13 @@ Rebuilds the 'Wave' gooey section edge from Louis's motion labs (gooey-sections.
 [Open demo](skills/ui/sections/gooey-section-wave/demo/index.html) · [Skill](skills/ui/sections/gooey-section-wave/SKILL.md) · [Prompt](skills/ui/sections/gooey-section-wave/demo/PROMPT.md)
 
 ![gooey-section-wave preview](skills/ui/sections/gooey-section-wave/demo/preview.jpg)
+
+## ui/vector-animation (1)
+
+### vector-mask-reveal
+
+Animate overlapping pieces of outlined vector logos and illustrations with per-piece masks, constant strokes, flush travel and gaps that open only on landing. Use for petals, letters or bars moving apart or assembling when hidden edges, joins and the final artwork must remain exact.
+
+[Open demo](skills/ui/vector-animation/vector-mask-reveal/demo/index.html) · [Skill](skills/ui/vector-animation/vector-mask-reveal/SKILL.md) · [Prompt](skills/ui/vector-animation/vector-mask-reveal/demo/PROMPT.md)
+
+![vector-mask-reveal preview](skills/ui/vector-animation/vector-mask-reveal/demo/preview.jpg)

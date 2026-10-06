@@ -35,6 +35,11 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 ## Public hygiene (check before every commit)
 - No client or project names, no private file paths, no emails, keys or tokens, nothing from private repos beyond what a skill needs. The validator flags private paths.
 
+## Vector animation skills
+- Logo, icon and illustration motion methods live under `skills/ui/vector-animation/`. `vector-mask-reveal` preserves whole pieces, per-piece stationary windows, constant line weight, landing-only gap growth and exact source-artwork handover.
+- Keep the full construction method in `references/masking-method.md` and renderer-specific details in `references/tool-notes.md`. Public demos use original generic geometry; they do not establish parity for a private source logo or for other renderers.
+- Run `node demo/verify.cjs <output-directory>` from the masking skill folder with Puppeteer available, then inspect the exported frames before rebuilding the preview. Keep capture output outside the package. `NODE_PATH` and `PUPPETEER_EXECUTABLE_PATH` can select an existing installation.
+
 ## gooey-section family
 - Generated: the sources (engine, `engine.md`, `demo.html`, `PROMPT.md`, `REFERENCES.md`, per-variant text and `build.py`) live in Louis's private labs repo at `../labs/skills/gooey-section/`, next to the original lab. Edit them there and run `python3 skills/gooey-section/build.py` from the labs repo; it writes into `skills/ui/sections/` here. Never hand-edit `skills/ui/sections/gooey-section-*`.
 - The engine must stay a 1:1 port of the original lab. After changing it or rebuilding, run `node tests/gooey-section-parity.cjs` and `node tests/gooey-section-browser.cjs` in the labs repo.

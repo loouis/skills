@@ -34,11 +34,12 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 16
-- With demos: 16
+- Total: 17
+- With demos: 17
 - 3d/materials: 1
 - ui/page-transitions: 6
 - ui/sections: 9
+- ui/vector-animation: 1
 
 ## Demo index
 
@@ -60,3 +61,4 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 | gooey-section-taffy | ui/sections | [Open](skills/ui/sections/gooey-section-taffy/demo/index.html) | [Preview](skills/ui/sections/gooey-section-taffy/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-taffy/demo/PROMPT.md) |
 | gooey-section-twin | ui/sections | [Open](skills/ui/sections/gooey-section-twin/demo/index.html) | [Preview](skills/ui/sections/gooey-section-twin/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-twin/demo/PROMPT.md) |
 | gooey-section-wave | ui/sections | [Open](skills/ui/sections/gooey-section-wave/demo/index.html) | [Preview](skills/ui/sections/gooey-section-wave/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-wave/demo/PROMPT.md) |
+| vector-mask-reveal | ui/vector-animation | [Open](skills/ui/vector-animation/vector-mask-reveal/demo/index.html) | [Preview](skills/ui/vector-animation/vector-mask-reveal/demo/preview.jpg) | [Prompt](skills/ui/vector-animation/vector-mask-reveal/demo/PROMPT.md) |

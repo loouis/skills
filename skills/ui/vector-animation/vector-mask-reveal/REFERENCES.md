@@ -1,0 +1,5 @@
+- [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/)
+- [SVG painting and stroke geometry](https://www.w3.org/TR/SVG2/painting.html)
+- [After Effects track mattes and traveling mattes](https://helpx.adobe.com/after-effects/desktop/work-with-transparency-and-compositing/work-with-track-mattes-and-traveling-mattes/track-mattes-and-traveling-mattes.html)
+- [Lottie web supported features](https://github.com/airbnb/lottie-web/wiki/Features)
+- [Figma masks](https://help.figma.com/hc/en-us/articles/360040450253-Masks)

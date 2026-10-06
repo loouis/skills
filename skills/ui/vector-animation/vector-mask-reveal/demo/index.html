@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vector Mask Reveal — motion study</title>
+<style>
+  :root { color-scheme: light; --paper:#f5f3ec; --ink:#233d39; --muted:#687570; --line:#d2d8cf; --accent:#d7ef83; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+  main { max-width:1440px; margin:auto; padding:30px 44px 24px; }
+  .eyebrow,.meta,.number,.time { font:11px/1.4 ui-monospace,SFMono-Regular,monospace; letter-spacing:.1em; text-transform:uppercase; }
+  header { display:flex; align-items:start; justify-content:space-between; gap:30px; }
+  h1 { font-size:clamp(36px,4.3vw,62px); font-weight:500; line-height:1.02; letter-spacing:-.055em; margin:14px 0 20px; }
+  .intro { max-width:285px; color:var(--muted); margin:32px 0 0; }
+  .study { display:grid; grid-template-columns:minmax(0,1.85fr) minmax(250px,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .stage { position:relative; min-width:0; }
+  .stage-top { position:absolute; top:20px; left:0; z-index:1; display:flex; align-items:center; gap:8px; }
+  .dot { width:7px; height:7px; background:var(--ink); border-radius:50%; }
+  .stage svg { display:block; width:100%; height:354px; }
+  .stage-bottom { position:absolute; bottom:16px; left:0; right:26px; display:flex; justify-content:space-between; color:var(--muted); }
+  aside { border-left:1px solid var(--line); padding:24px 0 16px 28px; }
+  .rules { margin:0; padding:0; list-style:none; }
+  .rules li { display:grid; grid-template-columns:24px 1fr; gap:12px; padding:0 0 17px; }
+  .number { color:var(--muted); padding-top:3px; }
+  .rules strong { display:block; font-weight:550; font-size:16px; letter-spacing:-.02em; }
+  .rules p { margin:3px 0 0; color:var(--muted); font-size:13px; line-height:1.45; }
+  .controls { display:flex; align-items:center; flex-wrap:wrap; gap:9px; padding:18px 0 0; }
+  button,select { font:inherit; color:inherit; border:1px solid var(--line); background:transparent; border-radius:7px; padding:8px 13px; cursor:pointer; }
+  button:hover,select:hover { border-color:var(--ink); }
+  button:focus-visible,select:focus-visible,input:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+  button.primary { background:var(--ink); color:var(--paper); border-color:var(--ink); min-width:118px; }
+  button[aria-pressed="true"] { background:var(--accent); color:var(--ink); border-color:var(--ink); }
+  .range { display:flex; align-items:center; gap:12px; flex:1; min-width:200px; margin:0 12px; }
+  input[type="range"] { min-width:100px; width:100%; accent-color:var(--ink); cursor:pointer; }
+  .time { white-space:nowrap; min-width:76px; }
+  .gap-label { display:flex; align-items:center; gap:8px; font-size:13px; }
+  select { padding:8px; font-size:13px; }
+  .steps { display:flex; align-items:center; gap:4px; margin-top:13px; }
+  .steps button { border:0; color:var(--muted); padding:4px 9px; font-size:12px; }
+  .steps button[aria-pressed="true"] { color:var(--ink); background:#e4e8dc; }
+  .steps span { color:#a3ada3; }
+  .foot { display:flex; justify-content:space-between; gap:20px; margin-top:13px; color:var(--muted); font-size:11px; }
+  .foot a { color:inherit; text-underline-offset:3px; }
+  #mask-key { margin:0; padding-top:3px; color:var(--muted); font-size:12px; }
+  .mask-swatch { display:inline-block; height:9px; width:9px; margin-right:6px; background:var(--accent); }
+  .mask-swatch.dark { margin-left:10px; background:#b2bdb4; }
+  #source-note { max-width:320px; }
+  @media(max-width:760px) {
+    main { padding:24px 22px; } header { display:block; } h1 { font-size:44px; margin-bottom:14px; }
+    .intro { margin:0 0 22px; max-width:400px; font-size:14px; }
+    .study { grid-template-columns:1fr; } .stage svg { height:auto; min-height:260px; }
+    .stage-bottom { right:0; font-size:9px; } .stage-top { top:13px; }
+    aside { border-left:0; border-top:1px solid var(--line); padding:20px 0 12px; }
+    .rules li { padding-bottom:13px; } .controls { gap:8px; }
+    .range { order:5; flex-basis:100%; margin:8px 0 0; }
+    button,select { min-height:42px; } .steps { flex-wrap:wrap; } .foot { flex-direction:column; gap:8px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="eyebrow">Vector animation / Study 01</div><h1>Move the vector.<br>Keep the line.</h1></div>
+    <p class="intro">Whole shapes slide through fixed windows. The edges stay flush in motion. Only the landing opens the gap.</p>
+  </header>
+  <section class="study" aria-label="Vector masking study">
+    <div class="stage">
+      <div class="stage-top meta"><span class="dot"></span><span id="phase">Closed</span></div>
+      <svg id="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="art-title art-desc">
+        <title id="art-title">Three-panel vector mark</title>
+        <desc id="art-desc">Two outlined panels emerge from behind a central rectangle, then a small gap opens at the final pose.</desc>
+        <defs>
+          <mask id="left-window" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="600" height="420" style="mask-type:luminance">
+            <rect width="300" height="420" fill="white"/>
+            <rect id="left-cutout" x="227.3" y="87.3" width="145.4" height="245.4" fill="black"/>
+          </mask>
+          <mask id="right-window" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="600" height="420" style="mask-type:luminance">
+            <rect x="300" width="300" height="420" fill="white"/>
+            <rect id="right-cutout" x="227.3" y="87.3" width="145.4" height="245.4" fill="black"/>
+          </mask>
+        </defs>
+        <!-- Inspection shows the left window; it is never a cover fill in the artwork. -->
+        <g id="inspection" display="none" aria-hidden="true">
+          <rect x="50" y="55" width="500" height="310" rx="4" fill="#e4e8dc"/>
+          <rect x="50" y="55" width="500" height="310" rx="4" fill="#d7ef83" mask="url(#left-window)"/>
+          <rect id="cutout-guide" x="227.3" y="87.3" width="145.4" height="245.4" fill="none" stroke="#8a9b8d" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+        <!-- Every piece remains a complete, unfilled outline. Mask wrappers do not move. -->
+        <g id="animated" fill="none" stroke="#233d39" stroke-width="6">
+          <g id="left-piece" mask="url(#left-window)" display="none"><g id="left-motion"><path d="M412 90H248A18 18 0 0 0 230 108V312A18 18 0 0 0 248 330H412A18 18 0 0 0 430 312V108A18 18 0 0 0 412 90Z"/></g></g>
+          <g id="right-piece" mask="url(#right-window)" display="none"><g id="right-motion"><path d="M188 90H352A18 18 0 0 1 370 108V312A18 18 0 0 1 352 330H188A18 18 0 0 1 170 312V108A18 18 0 0 1 188 90Z"/></g></g>
+          <rect id="front-piece" x="230" y="90" width="140" height="240"/>
+        </g>
+        <!-- Independent, immutable original paths for each final gap variant. No masks. -->
+        <g id="original-8" display="none" fill="none" stroke="#233d39" stroke-width="6">
+          <path d="M219 90H120A18 18 0 0 0 102 108V312A18 18 0 0 0 120 330H219"/>
+          <path d="M381 90H480A18 18 0 0 1 498 108V312A18 18 0 0 1 480 330H381"/>
+          <rect x="230" y="90" width="140" height="240"/>
+        </g>
+        <g id="original-14" display="none" fill="none" stroke="#233d39" stroke-width="6">
+          <path d="M213 90H120A18 18 0 0 0 102 108V312A18 18 0 0 0 120 330H213"/>
+          <path d="M387 90H480A18 18 0 0 1 498 108V312A18 18 0 0 1 480 330H387"/>
+          <rect x="230" y="90" width="140" height="240"/>
+        </g>
+      </svg>
+      <div class="stage-bottom meta"><span id="render-label">Masked geometry</span><span>03 pieces / 6-unit stroke</span></div>
+    </div>
+    <aside>
+      <ol class="rules">
+        <li><span class="number">01</span><div><strong>Keep the whole shape.</strong><p>Hidden edges are still there. Each moving piece has a window of its own.</p></div></li>
+        <li><span class="number">02</span><div><strong>Let the mask do the hiding.</strong><p>The foreground silhouette cuts the window. No painted patches. No fading.</p></div></li>
+        <li><span class="number">03</span><div><strong>Land on the original.</strong><p>Grow the cut-out to open the gap. Settle precisely, then hand over to the source.</p></div></li>
+      </ol>
+      <button id="inspect" aria-pressed="false">Inspect left mask</button>
+      <p id="mask-key" hidden><span class="mask-swatch"></span>Window<span class="mask-swatch dark"></span>Hidden</p>
+    </aside>
+  </section>
+  <div class="controls">
+    <button class="primary" id="play">Play reveal</button><button id="reverse">Reverse</button>
+    <label class="range"><span class="meta">Frame</span><input id="scrub" type="range" min="0" max="75" step="1" value="0" aria-label="Animation frame"><output class="time" id="time" for="scrub">00 / 75</output></label>
+    <label class="gap-label">Final gap<select id="gap"><option value="8">8 units</option><option value="14">14 units</option></select></label>
+    <button id="compare" aria-pressed="false">Compare masked pose</button>
+  </div>
+  <nav class="steps" aria-label="Jump to animation phase">
+    <button data-frame="0">01 Closed</button><span>→</span><button data-frame="18">02 Travel</button><span>→</span><button data-frame="39">03 Landing</button><span>→</span><button data-frame="75">04 Settled</button>
+  </nav>
+  <div class="foot"><span id="source-note">Original geometric study · stationary occluder · 25 fps</span><span><a href="../SKILL.md">Read the skill</a> · <a href="PROMPT.md">Recreate this study</a></span></div>
+</main>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const duration = 3, fps = 25, lastFrame = duration * fps;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = reducedMotion.matches ? lastFrame : 0, gap = 8, playing = false, direction = 1;
+  let previousTime = 0, raf = 0, inspect = false, compare = false, lastState;
+  const clamp = (x, a=0, b=1) => Math.min(b, Math.max(a,x));
+  const smooth = t => { t = clamp(t); return t*t*(3-2*t); };
+  function spring(t) {
+    if (t <= 0) return 0;
+    // The first peak is at pi / 5, when gap growth may begin.
+    return 1-Math.exp(-4*t)*(Math.cos(5*t)+.8*Math.sin(5*t));
+  }
+  function piecePose(seconds, start) {
+    const t = seconds-start;
+    if (t <= 0) return {active:false, x:0, open:0};
+    const peak = Math.PI/5;
+    let position = spring(t), open = t<=peak ? 0 : clamp(spring((t-peak)*1.7));
+    // Reach the exact source pose before the handover; no endless spring tail.
+    const finish = smooth((seconds-2.35)/.4);
+    position += (1-position)*finish;
+    open += (1-open)*finish;
+    return {active:true, x:128*position, open};
+  }
+  function cutout(id, open) {
+    // 0.3 units of travel underlap fades away during landing. Final gap is exact.
+    const grow = -.3*(1-open)+gap*open;
+    const attrs = {x:227-grow, y:87-grow, width:146+2*grow, height:246+2*grow};
+    for (const [key,value] of Object.entries(attrs)) $(id).setAttribute(key,value);
+    return attrs;
+  }
+  function render(value=frame, options={}) {
+    frame = clamp(Number(value),0,lastFrame);
+    const seconds=frame/fps, left=piecePose(seconds,.12), right=piecePose(seconds,.12);
+    const showOriginal = !options.masked && !compare && frame===lastFrame;
+    $('left-piece').setAttribute('display',left.active?'inline':'none');
+    $('right-piece').setAttribute('display',right.active?'inline':'none');
+    $('left-motion').setAttribute('transform',`translate(${-left.x} 0)`);
+    $('right-motion').setAttribute('transform',`translate(${right.x} 0)`);
+    const leftCutout=cutout('left-cutout',left.open);
+    cutout('right-cutout',right.open);
+    for (const [key,value] of Object.entries(leftCutout)) $('cutout-guide').setAttribute(key,value);
+    $('inspection').setAttribute('display',inspect?'inline':'none');
+    $('animated').setAttribute('display',showOriginal?'none':'inline');
+    for (const variant of [8,14]) $('original-'+variant).setAttribute('display',showOriginal&&gap===variant?'inline':'none');
+    const phase=seconds===0?'Closed':seconds>=2.75?'Settled':left.open>0||right.open>0?'Landing':'Travel';
+    $('phase').textContent=phase;
+    $('render-label').textContent=showOriginal?'Original artwork':'Masked geometry';
+    $('scrub').value=Math.round(frame);
+    $('time').textContent=String(Math.round(frame)).padStart(2,'0')+' / 75';
+    $('scrub').setAttribute('aria-valuetext',`${Math.round(frame)} of 75, ${phase.toLowerCase()}`);
+    $('compare').setAttribute('aria-pressed',String(compare));
+    $('compare').textContent=compare?'Show original':'Compare masked pose';
+    document.querySelectorAll('[data-frame]').forEach(button=>button.setAttribute('aria-pressed',String(button.textContent.includes(phase))));
+    lastState={frame,seconds,gap,left,right,phase,showOriginal};
+    return lastState;
+  }
+  function stop() { playing=false; cancelAnimationFrame(raf); $('play').textContent='Play reveal'; }
+  function tick(now) {
+    if (!playing) return;
+    const elapsed=previousTime ? Math.min((now-previousTime)/1000,.06) : 0;
+    previousTime=now;
+    render(frame+elapsed*fps*direction);
+    if ((direction===1&&frame===lastFrame)||(direction===-1&&frame===0)) stop();
+    else raf=requestAnimationFrame(tick);
+  }
+  function play(nextDirection) {
+    stop(); compare=false; direction=nextDirection;
+    if (reducedMotion.matches) { render(direction===1?lastFrame:0); return; }
+    if (direction===1&&frame===lastFrame) frame=0;
+    if (direction===-1&&frame===0) frame=lastFrame;
+    playing=true; previousTime=0; $('play').textContent='Pause'; raf=requestAnimationFrame(tick);
+  }
+  $('play').onclick=()=>playing?stop():play(1);
+  $('reverse').onclick=()=>play(-1);
+  $('scrub').oninput=e=>{stop();compare=false;render(+e.target.value);};
+  $('gap').onchange=e=>{stop();gap=+e.target.value;render();};
+  $('inspect').onclick=()=>{inspect=!inspect;$('inspect').setAttribute('aria-pressed',String(inspect));$('mask-key').hidden=!inspect;render();};
+  $('compare').onclick=()=>{stop();compare=!compare;render(lastFrame);};
+  document.querySelectorAll('[data-frame]').forEach(button=>button.onclick=()=>{stop();compare=false;render(+button.dataset.frame);});
+  reducedMotion.addEventListener('change',()=>{stop();compare=false;render(lastFrame);});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden) stop();});
+  // Deterministic browser capture hooks. Geometry remains in the SVG above.
+  window.vectorMaskDemo={
+    seek(value,options={}){stop();compare=false;return render(value,options);},
+    state(){return lastState;},
+    setGap(value){if(![8,14].includes(value)) throw new RangeError('Use 8 or 14'); gap=value;$('gap').value=value;return render();}
+  };
+  window.__demoPose=()=>window.vectorMaskDemo.seek(75);
+  render();
+})();
+</script>
+</body>
+</html>

@@ -4,34 +4,30 @@ _Updated 2026-10-06._
 
 ## Completed
 
-- Added `blender-polished-chrome` under `skills/3d/materials/`, introducing the **3D** group and **3D Materials** category. The skill separates metal identity/reflectance, finish, reflections and geometry; includes detailed recipes, troubleshooting and preservation checks; and packages an optional feathered reflection-card helper.
-- Created an original generic cylinder/ring demo with three actual Blender renders: satin, lower roughness, and polish with floor reflection control. Includes a portable generator, independent saved-scene verification, native JPEG downloads, accessible pointer/keyboard comparison, recreation prompt and 1280 × 720 preview. No source-project assets or scenes are published.
-- New-skill validation: skill-creator and all 16 repository skill checks pass. Blender 5.2.1 helper tests cover geometry/UVs/orientation, graph/ray visibility, preservation, invalid inputs and save/reopen. Demo runs on Metal and CPU; final 1600 × 1200 PNGs are verified 16-bit, native JPEGs decode, and all three saved revisions preserve geometry/evaluated normals, camera/exposure/look and steel reflectance. Export code explicitly restores PNG depth after JPEG export.
-- Browser validation: desktop 1280 × 720 and narrow mobile layouts; reveal Home/End and image dragging; baseline-specific download targets; no console warnings/errors. Local links, image metadata, Python syntax and public hygiene checked. Automated checks establish preservation, not a measured metal match.
-- Refreshed generated galleries/indexes and root scope. Added 3D demo conventions to `AGENTS.md` and clarified that publishing does not require app-wide installation; `CLAUDE.md` still imports shared guidance.
-- Existing library: nine generated gooey-section skills and six self-contained GSAP page-transition skills. Transition packages retain exact source curves, a 2.25s renderer, shared core, configurable modules, browser bundles, optional Astro adapter and demos. Prior parity, geometry, lifecycle and browser integration checks passed.
-- Expanding scroll panel prototype and reusable prompt published on `main` on 2026-10-02 (`304818e`). Its background expands independently of content; the simplified layout and subtle backdrop fade passed desktop/mobile/reduced-motion browser checks.
+- Added `vector-mask-reveal` under the new `skills/ui/vector-animation/` category. Packaged the supplied masking method as a concise skill plus the full construction reference and SVG, After Effects / Lottie and Figma implementation notes. Preserved whole pieces, constant strokes, flush travel, landing-only gap growth, hidden geometry, chained occluders, symmetry joins and exact artwork handover.
+- Added an original three-panel SVG demo with two final-gap variants, forward/reverse playback, frame scrubbing, phase jumps, mask inspection, static-source comparison and reduced motion. Includes a portable frame-export/check script, recreation prompts and a 1280 × 720 preview. No private source artwork, names or paths are packaged.
+- Validation: skill-creator and all 17 repository skill checks pass. Chromium checks at 600 × 420 show zero changed pixels for closed/front-only and final masked/original comparisons in both gap variants; 152 sampled poses show no foreground-interior leaks or tested travel gaps. Exported and inspected 76 frames, a contact sheet, mask view and 390 px mobile layout. Forward/reverse playback, comparison, keyboard scrubbing, reduced motion, local links and public hygiene pass, with no browser errors.
+- Refreshed library indexes and galleries. Added vector-animation conventions and its verification command to `AGENTS.md`; `CLAUDE.md` continues to import it.
+- Existing library: nine generated gooey-section skills, six self-contained GSAP page-transition skills and `blender-polished-chrome`. Prior transition parity/lifecycle/browser checks and Blender 5.2.1 helper/render/preservation checks passed. Original generic Blender renders remain the material demo assets.
 
 ## Current
 
-- This public repository is `loouis/skills`; use the active checkout and verify its remote before changes. The library now contains 16 skills in 3 categories.
-- The polished-metal skill is self-contained. Its public demo contains generic renders and code; generated `.blend` revisions and PNG masters are local build outputs. It preserves stainless identity even when the requested appearance is described as chrome-like.
-- The expanding scroll panel remains a prototype under `prototypes/expanding-scroll-panel/`, excluded from installation and generated skill lists. Its README documents local preview and packaging work.
-- Louis is testing the gooey skills in receiving projects. Their private generator remains the source of truth; see `AGENTS.md` before rebuilding.
+- This public repository is `loouis/skills`. The library contains 17 skills in 4 categories; verify the active checkout's remote before changes.
+- Vector mask publication is authorised. The web study covers stationary geometric occluders; organic reconstructions, moving-front chains and tapered root gaps are documented methods, not demonstrated by this fixture. After Effects, Lottie, Figma and physical-device behavior remain unverified.
+- The expanding scroll panel remains a prototype under `prototypes/expanding-scroll-panel/`, excluded from installation and generated skill lists. Its background and content stay siblings.
+- Gooey skills remain generated from the private labs source; see `AGENTS.md` before rebuilding. Page-transition shared cores remain identical except for defaults; “Suite” provisionally aliases Tidal sweep.
 
 ## Decisions
 
-- Create groups/categories with their first skill. Use `skills/<group>/<category>/<skill-name>/`; display `3d` as **3D**.
-- Keep one skill per commit and publish only when requested. The new polished-metal skill's GitHub publication is authorised. No app-wide installation or website deployment is part of this change.
-- Page transitions follow one skill per feel. “Suite” provisionally aliases Tidal sweep (`wave`); preserve source curves and mobile constants. The gooey Slosh notch matches the original lab and remains intentional.
-- Blender presets are artistic starting points, not universal metal properties. Geometry changes remain separate from material-only work; reflection cards can influence indirect light.
+- Create groups/categories with their first skill, under `skills/<group>/<category>/<skill-name>/`. Use original generic artwork in public demos and keep private source dependencies out of packages.
+- Keep one skill per commit and publish when requested. Publishing does not require app-wide installation or website deployment.
+- Preserve visible vector curves exactly, including arc commands in the demo; hidden continuations must remain long enough to cover overshoot. Renderer-specific mask behavior and export support need explicit checks.
 
 ## Next
 
-- Package the expanding panel controller and invariant checks when requested.
-- Use the new material workflow on other scenes and adjust from observed defects. Blender versions other than 5.2.1 and physical-device browser behavior remain unverified.
-- Continue transition testing in receiving sites, including real navigation and physical devices; clarify the Suite alias only if a different shape is identified.
+- Apply the vector method to future artwork and adjust from observed defects, checking actual renderer output at joins and handover.
+- Package the expanding panel controller when requested. Continue transition testing in receiving sites and material testing on other Blender versions.
 
 ## Blockers
 
-- None for the packaged skill. No private source-project dependency or external render asset is required.
+- None.
