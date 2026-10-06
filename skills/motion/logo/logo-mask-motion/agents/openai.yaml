@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logo Mask Motion"
+  short_description: "Move the pieces of a line-drawn mark with masks and land on the artwork"
+  default_prompt: "Use $logo-mask-motion to animate the pieces of this outlined logo moving apart and landing back on the artwork exactly, using one mask per piece."

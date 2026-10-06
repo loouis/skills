@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo Mask Motion Demo</title>
+<style>
+:root {
+  --bg: #F6F4EF; --stage: #FFFFFF; --ink: #3D3837; --muted: #6E6A69; --rule: #DCD6CC;
+  --accent: #E85335; --mask: #2962A9;
+  --body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--body); letter-spacing: -0.01em; padding: 28px clamp(16px, 4vw, 48px) 64px; }
+main { max-width: 1120px; margin-inline: auto; display: grid; gap: 28px; }
+h1 { font: 700 30px/1.1 var(--body); letter-spacing: -0.02em; margin: 0; }
+h2 { font: 600 18px/1.3 var(--body); margin: 0; }
+p { margin: 0; color: var(--muted); max-width: 70ch; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+figure { margin: 0; display: grid; gap: 8px; }
+figure svg { display: block; width: 100%; height: auto; background: var(--stage); border: 1px solid var(--rule); border-radius: 10px; }
+figcaption { font-size: 14px; color: var(--muted); }
+figcaption b { display: block; color: var(--ink); font-weight: 600; font-size: 15px; }
+.transport { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.transport button { font: 500 14px/1 var(--body); color: var(--bg); background: var(--ink); border: 0; border-radius: 99px; padding: 10px 16px; min-width: 84px; cursor: pointer; }
+.transport input[type=range] { flex: 1; min-width: 160px; accent-color: var(--accent); }
+.transport label { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.transport label input { accent-color: var(--accent); width: 16px; height: 16px; }
+.transport output { font-variant-numeric: tabular-nums; font-size: 14px; color: var(--muted); min-width: 5ch; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.petal { fill: var(--stage); stroke: var(--ink); stroke-width: 4; stroke-miterlimit: 10; }
+.show { fill: var(--mask); fill-opacity: .25; }
+</style>
+</head>
+<body>
+<main>
+  <header style="display:grid;gap:8px">
+    <h1>Logo mask motion: five leaves</h1>
+    <p>Each petal is a whole leaf with a line all the way round. Its mask is a window with a copy of the petal in front cut out. The mask stays still while the petal swings out, so the petal comes out flush. When the petal starts to bounce back, the mask grows above the waist and the gap opens.</p>
+  </header>
+
+  <section style="display:grid;gap:12px">
+    <h2>The parts of one mask</h2>
+    <div class="grid" id="parts"></div>
+  </section>
+
+  <section style="display:grid;gap:14px">
+    <h2>The same thing moving, two ways to open the gap</h2>
+    <div class="transport">
+      <button id="play" type="button">Pause</button>
+      <input id="scrub" type="range" min="0" max="1" step="0.001" value="0" aria-label="Scrub">
+      <output id="time">0.00s</output>
+      <label><input id="slow" type="checkbox"> Slow motion</label>
+      <label><input id="showMask" type="checkbox"> Show the left petal's mask</label>
+    </div>
+    <div class="grid two">
+      <figure><svg id="tilt" viewBox="-12 -8 113 76"></svg><figcaption><b>A. The copy tilts</b>The copy of the centre petal leans out from the base, like a hinge. The gap is uneven and it nicks the petals near the base.</figcaption></figure>
+      <figure><svg id="top" viewBox="-12 -8 113 76"></svg><figcaption><b>B. The copy grows, top half only</b>The copy of the centre petal gets 3 bigger above the waist and stays as it is below. Even gap at the top, lines still meet at the base. This is the one to use.</figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<script>
+const N = [44.4, 55.8], GAP = 3, DUR = 2.0, HOLD = 0.9;
+const SHAPES = {
+  oL: { at: [0, 27.81], rest: 60.8, side: -1, d: "M 28.84 3.93 C 38.08 9.10 43.63 18.28 44.48 28.05 C 35.66 32.40 24.88 32.48 15.63 27.32 C 6.39 22.15 0.85 12.97 0 3.20 C 8.82 -1.14 19.60 -1.22 28.84 3.93 Z" },
+  oR: { at: [44.29, 27.81], rest: 60.8, side: 1, d: "M 15.63 3.93 C 6.39 9.10 0.85 18.28 0 28.05 C 8.82 32.40 19.60 32.48 28.84 27.32 C 38.08 22.15 43.63 12.97 44.48 3.20 C 35.66 -1.14 24.88 -1.22 15.63 3.93 Z" },
+  iL: { at: [14.75, 12.88], rest: 32.1, side: -1, d: "M 27.56 14.40 C 33.18 23.33 33.60 34.04 29.64 43.01 C 19.79 42.62 10.30 37.55 4.69 28.61 C -0.92 19.67 -1.34 8.97 2.61 0 C 12.46 0.39 21.95 5.46 27.56 14.40 Z" },
+  iR: { at: [41.7, 12.88], rest: 32.1, side: 1, d: "M 4.69 14.40 C -0.92 23.33 -1.34 34.04 2.61 43.01 C 12.46 42.62 21.95 37.55 27.56 28.61 C 33.17 19.67 33.60 8.97 29.64 0 C 19.79 0.39 10.30 5.46 4.69 14.40 Z" },
+  c: { at: [30.19, 2.42], d: "M 28.33 26.64 C 28.33 37.70 22.71 47.48 14.16 53.28 C 5.61 47.48 0 37.70 0 26.64 C 0 15.57 5.61 5.80 14.16 0 C 22.71 5.80 28.33 15.57 28.33 26.64 Z" },
+};
+const WINDOW = "M11 5.42h39v53h-39z";
+
+function spring(t, w, z) {
+  if (t <= 0) return 0;
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+// petals swing out on a spring; the gap opens at the top of the inner petals' swing, on its own small spring
+const INNER_START = 0.22, INNER_W = 6.5, INNER_Z = 0.5;
+const BOUNCE_AT = INNER_START + Math.PI / (INNER_W * Math.sqrt(1 - INNER_Z * INNER_Z));
+function state(t) {
+  return {
+    outer: spring(t - 0.16, 6.0, 0.62),
+    inner: spring(t - INNER_START, INNER_W, INNER_Z),
+    gap: spring(t - BOUNCE_AT, 10, 0.7),
+  };
+}
+
+const at = s => `translate(${s.at[0]} ${s.at[1]})`;
+// the centre leaf as points with outward normals, so its cut-out can be pushed out by a different amount at each height
+const LEAF = (() => {
+  const n = SHAPES.c.d.match(/-?\d*\.?\d+/g).map(Number), segs = [], out = [], STEPS = 24, mid = [14.16, 26.64];
+  for (let i = 2, from = [n[0], n[1]]; i + 5 < n.length; i += 6) {
+    const to = [n[i + 4], n[i + 5]];
+    segs.push([from, [n[i], n[i + 1]], [n[i + 2], n[i + 3]], to]);
+    from = to;
+  }
+  const sample = ([a, b, c, d], t) => {
+    const u = 1 - t;
+    const p = [0, 1].map(i => u * u * u * a[i] + 3 * u * u * t * b[i] + 3 * u * t * t * c[i] + t * t * t * d[i]);
+    const v = [0, 1].map(i => 3 * u * u * (b[i] - a[i]) + 6 * u * t * (c[i] - b[i]) + 3 * t * t * (d[i] - c[i]));
+    const l = Math.hypot(v[0], v[1]), out = [v[1] / l, -v[0] / l];
+    const flip = out[0] * (p[0] - mid[0]) + out[1] * (p[1] - mid[1]) < 0 ? -1 : 1;
+    return { p, n: [out[0] * flip, out[1] * flip] };
+  };
+  segs.forEach((seg, i) => {
+    for (let k = 0; k <= STEPS; k++) out.push(sample(seg, k / STEPS));
+    // at a pointed tip, add the mitre point between this side's normal and the next side's
+    const a = out[out.length - 1], b = sample(segs[(i + 1) % segs.length], 0);
+    const m = [a.n[0] + b.n[0], a.n[1] + b.n[1]], l2 = m[0] * m[0] + m[1] * m[1];
+    if (l2 < 3.99) out.push({ p: a.p, n: [2 * m[0] / l2, 2 * m[1] / l2] });
+  });
+  return out;
+})();
+const smooth = x => { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
+// how much of the gap applies at each height of the centre leaf: all of it above the waist, none near the base
+const reach = y => 1 - smooth((y - 30) / 12);
+// the copy of the centre petal used as the cut-out: its painted shape, half a unit under the stroke's edge when flush
+const cutPath = (gap, weight = () => 1) => "M" + LEAF.map(({ p, n }) => {
+  const o = 1.5 + gap * (GAP + 0.5) * weight(p[1]);
+  return `${(p[0] + n[0] * o).toFixed(2)} ${(p[1] + n[1] * o).toFixed(2)}`;
+}).join("L") + "Z";
+const FLUSH = cutPath(0), TILT = 6;
+const cuts = (mode, side, gap) => mode === "tilt"
+  ? [{ d: FLUSH, tf: at(SHAPES.c) }, { d: FLUSH, tf: `rotate(${side * TILT * gap} ${N[0]} ${N[1]}) ${at(SHAPES.c)}` }]
+  : [{ d: cutPath(gap, reach), tf: at(SHAPES.c) }];
+
+const players = ["tilt", "top"].map(mode => {
+  const svg = document.getElementById(mode);
+  const petal = k => `<path class="petal" data-p="${k}" d="${SHAPES[k].d}"/>`;
+  // the window: a petal only shows on its own side of the centre line, so its pointed base never pokes out past the centre petal's
+  const masked = k => `<mask id="${mode}-${k}" maskUnits="userSpaceOnUse" x="-12" y="-8" width="113" height="76">
+      ${SHAPES[k].side < 0 ? `<rect x="-12" y="-8" width="${N[0] + 12.5}" height="76" fill="#fff"/>` : `<rect x="${N[0] - 0.5}" y="-8" width="${101.5 - N[0]}" height="76" fill="#fff"/>`}
+      <path data-cut="${k}" data-i="0" fill="#000"/><path data-cut="${k}" data-i="1" fill="#000"/>
+      ${k[0] === "o" ? `<path data-front="i${k[1]}" d="${SHAPES["i" + k[1]].d}" fill="#000" stroke="#000" stroke-width="3" stroke-miterlimit="10"/>` : ""}
+    </mask><g mask="url(#${mode}-${k})">${petal(k)}</g>`;
+  svg.innerHTML = masked("oL") + masked("oR") + masked("iL") + masked("iR")
+    + `<path class="petal" d="${SHAPES.c.d}" transform="${at(SHAPES.c)}"/>`
+    + `<path class="show" data-show data-i="0"/><path class="show" data-show data-i="1"/>`;
+  return { mode, svg };
+});
+
+function render(t) {
+  const st = state(t);
+  for (const { mode, svg } of players) {
+    for (const el of svg.querySelectorAll("[data-p]")) {
+      const s = SHAPES[el.dataset.p];
+      const open = el.dataset.p[0] === "o" ? st.outer : st.inner;
+      el.setAttribute("transform", `rotate(${-s.side * s.rest * (1 - open)} ${N[0]} ${N[1]}) ${at(s)}`);
+    }
+    // an outer petal's mask also carries a copy of the inner petal in front of it, which turns with that petal
+    for (const el of svg.querySelectorAll("[data-front]")) {
+      el.setAttribute("transform", svg.querySelector(`[data-p="${el.dataset.front}"]`).getAttribute("transform"));
+    }
+    for (const el of svg.querySelectorAll("[data-cut], [data-show]")) {
+      const list = cuts(mode, el.dataset.cut ? SHAPES[el.dataset.cut].side : -1, st.gap);
+      const c = list[el.dataset.i] ?? list[0];
+      el.setAttribute("d", c.d);
+      el.setAttribute("transform", c.tf);
+      if ("show" in el.dataset) el.style.display = showMask.checked ? "" : "none";
+    }
+  }
+  scrub.value = Math.min(t / DUR, 1);
+  time.value = Math.min(t, DUR).toFixed(2) + "s";
+}
+
+// static breakdown of one mask
+(function parts() {
+  const vb = 'viewBox="2 -4 60 68"';
+  const grey = 'style="fill:#D9D9D9"';
+  const leaf = `<path class="petal" ${grey} d="${SHAPES.iL.d}" transform="${at(SHAPES.iL)}"/>`;
+  const centre = `<path class="petal" d="${SHAPES.c.d}" transform="${at(SHAPES.c)}"/>`;
+  const mask = (id, gap) => `<mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="-10" width="70" height="80">
+    <path d="${WINDOW}" fill="#fff"/><path d="${cutPath(gap, reach)}" transform="${at(SHAPES.c)}" fill="#000"/></mask>`;
+  const hole = `<mask id="p-hole" maskUnits="userSpaceOnUse" x="0" y="-10" width="70" height="80"><rect x="0" y="-10" width="70" height="80" fill="#fff"/>
+    <path d="${SHAPES.c.d}" transform="${at(SHAPES.c)}" fill="#000" stroke="#000" stroke-width="4" stroke-miterlimit="10"/></mask>`;
+  const tiles = [
+    ["1. The petal", "A whole leaf: a fill and a line all the way round, even where the finished mark will not show it.", leaf],
+    ["2. The mask", "A window with the centre petal's painted shape cut out of it. The petal only shows where the mask is solid.", `${hole}<path d="${WINDOW}" style="fill:var(--mask);fill-opacity:.3" mask="url(#p-hole)"/>`],
+    ["3. Petal inside the mask", "The part behind the centre petal is hidden, line included. No gap yet: flush, which is how it travels.", `${mask("p-flush", 0)}<g mask="url(#p-flush)">${leaf}</g>${centre}`],
+    ["4. Mask grown by 3, top half only", "Above the waist the cut-out is now bigger than the centre petal, so the petal stops short of it. Towards the base it has not changed, so the lines still meet.", `${mask("p-gap", 1)}<g mask="url(#p-gap)">${leaf}</g>${centre}`],
+  ];
+  document.getElementById("parts").innerHTML = tiles.map(([b, text, body]) =>
+    `<figure><svg ${vb}>${body}</svg><figcaption><b>${b}</b>${text}</figcaption></figure>`).join("");
+})();
+
+// transport
+const play = document.getElementById("play"), scrub = document.getElementById("scrub"), time = document.getElementById("time");
+const slow = document.getElementById("slow"), showMask = document.getElementById("showMask");
+let t = 0, playing = !new URLSearchParams(location.search).has("still"), last = null;
+function tick(now) {
+  if (playing && last !== null) {
+    t += (now - last) / 1000 * (slow.checked ? 0.2 : 1);
+    if (t > DUR + HOLD) t = 0;
+    render(t);
+  }
+  last = now;
+  requestAnimationFrame(tick);
+}
+function setPlaying(on) { playing = on; play.textContent = on ? "Pause" : "Play"; }
+play.onclick = () => { if (!playing && t >= DUR) t = 0; setPlaying(!playing); };
+scrub.oninput = () => { setPlaying(false); t = scrub.value * DUR; render(t); };
+showMask.onchange = () => render(t);
+window.setT = v => { setPlaying(false); t = v; render(t); };
+window.__demoPose = () => { showMask.checked = true; setT(0.95); };   // the frame the preview shows: gaps opening, mask visible
+setPlaying(playing);
+render(0);
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
