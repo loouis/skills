@@ -1,4 +1,0 @@
-interface:
-  display_name: "Vector Mask Reveal"
-  short_description: "Whole vector pieces, flush reveals and exact landings"
-  default_prompt: "Use $vector-mask-reveal to animate this outlined mark with whole pieces, flush mask reveals and gaps that open only on landing."

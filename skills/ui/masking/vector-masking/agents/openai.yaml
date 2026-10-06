@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vector Masking"
+  short_description: "Accurate vector masks, clean joins and controlled gaps"
+  default_prompt: "Use $vector-masking to build accurate masks for these vector pieces, preserving whole shapes, clean joins and the original artwork."

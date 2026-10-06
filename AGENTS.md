@@ -35,8 +35,8 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 ## Public hygiene (check before every commit)
 - No client or project names, no private file paths, no emails, keys or tokens, nothing from private repos beyond what a skill needs. The validator flags private paths.
 
-## Vector animation skills
-- Logo, icon and illustration motion methods live under `skills/ui/vector-animation/`. `vector-mask-reveal` preserves whole pieces, per-piece stationary windows, constant line weight, landing-only gap growth and exact source-artwork handover.
+## Vector masking skills
+- Mask construction methods live under `skills/ui/masking/`. `vector-masking` teaches whole pieces, accurate occluding silhouettes, clean joins and controlled gaps. Its animation application adds stationary windows, landing-only gap growth and exact source-artwork handover.
 - Keep the full construction method in `references/masking-method.md` and renderer-specific details in `references/tool-notes.md`. Public demos use original generic geometry; they do not establish parity for a private source logo or for other renderers.
 - Run `node demo/verify.cjs <output-directory>` from the masking skill folder with Puppeteer available, then inspect the exported frames before rebuilding the preview. Keep capture output outside the package. `NODE_PATH` and `PUPPETEER_EXECUTABLE_PATH` can select an existing installation.
 

@@ -15,6 +15,16 @@ Create realistic chrome and mirror-polished metal renders in Blender Cycles. Use
 
 ![blender-polished-chrome preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg)
 
+## ui/masking (1)
+
+### vector-masking
+
+Construct accurate masks for overlapping outlined vector logos, icons and illustrations using whole shapes, occluding silhouettes, clean joins and controlled gaps. Use when masking vector pieces, fixing seams or hidden edges, or keeping their occlusion correct as pieces move.
+
+[Open demo](skills/ui/masking/vector-masking/demo/index.html) · [Skill](skills/ui/masking/vector-masking/SKILL.md) · [Prompt](skills/ui/masking/vector-masking/demo/PROMPT.md)
+
+![vector-masking preview](skills/ui/masking/vector-masking/demo/preview.jpg)
+
 ## ui/page-transitions (6)
 
 ### gsap-transition-diagonal-tide
@@ -138,13 +148,3 @@ Rebuilds the 'Wave' gooey section edge from Louis's motion labs (gooey-sections.
 [Open demo](skills/ui/sections/gooey-section-wave/demo/index.html) · [Skill](skills/ui/sections/gooey-section-wave/SKILL.md) · [Prompt](skills/ui/sections/gooey-section-wave/demo/PROMPT.md)
 
 ![gooey-section-wave preview](skills/ui/sections/gooey-section-wave/demo/preview.jpg)
-
-## ui/vector-animation (1)
-
-### vector-mask-reveal
-
-Animate overlapping pieces of outlined vector logos and illustrations with per-piece masks, constant strokes, flush travel and gaps that open only on landing. Use for petals, letters or bars moving apart or assembling when hidden edges, joins and the final artwork must remain exact.
-
-[Open demo](skills/ui/vector-animation/vector-mask-reveal/demo/index.html) · [Skill](skills/ui/vector-animation/vector-mask-reveal/SKILL.md) · [Prompt](skills/ui/vector-animation/vector-mask-reveal/demo/PROMPT.md)
-
-![vector-mask-reveal preview](skills/ui/vector-animation/vector-mask-reveal/demo/preview.jpg)

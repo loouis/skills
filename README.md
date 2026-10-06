@@ -4,7 +4,7 @@ Agent skills for web motion, interfaces and 3D rendering, with [Claude Code](htt
 
 ![The nine gooey section feels](assets/skills-preview.jpg)
 
-The section and page-transition skills rebuild effects from Louis's motion labs, with the original engine, a working demo and parity checks. Vector animation skills package geometry and masking methods with original studies. The 3D skills package material and lighting workflows, tested helpers and original Blender-rendered studies.
+The section and page-transition skills rebuild effects from Louis's motion labs, with the original engine, a working demo and parity checks. Vector masking skills package geometry and masking methods with original studies. The 3D skills package material and lighting workflows, tested helpers and original Blender-rendered studies.
 
 Start with the section edges:
 
@@ -17,7 +17,7 @@ Start with the section edges:
 
 Browse [all demos and their prompts](DEMOS.md), or the [screenshot gallery](SCREENSHOTS.md).
 
-For logos and illustrations, explore [Vector Animation](skills/ui/vector-animation/README.md), starting with [Vector Mask Reveal](skills/ui/vector-animation/vector-mask-reveal/SKILL.md): whole moving pieces, flush reveals and gaps that open only on landing.
+For logos and illustrations, explore [Masking](skills/ui/masking/README.md), starting with [Vector Masking](skills/ui/masking/vector-masking/SKILL.md): whole vector pieces, accurate silhouettes, clean joins and controlled gaps.
 
 For rendering, explore [3D](skills/3d/README.md), starting with [Blender polished chrome](skills/3d/materials/blender-polished-chrome/SKILL.md): mirror-polished metals, reflection control and preservation checks.
 
@@ -61,9 +61,9 @@ skills/
       README.md
       gsap-transition-wide-tide/
       ...
-    vector-animation/
+    masking/
       README.md
-      vector-mask-reveal/
+      vector-masking/
   3d/
     README.md
     materials/
@@ -108,6 +108,12 @@ This snapshot contains **17 skills** across 4 categories. `find skills -name SKI
 
 - [`blender-polished-chrome`](skills/3d/materials/blender-polished-chrome/SKILL.md) - Mirror-polished metal materials and studio reflections
 
+### Masking Skills (1)
+
+[Category guide](skills/ui/masking/README.md)
+
+- [`vector-masking`](skills/ui/masking/vector-masking/SKILL.md) - Accurate vector masks, clean joins and controlled gaps
+
 ### Page Transition Skills (6)
 
 [Category guide](skills/ui/page-transitions/README.md)
@@ -132,12 +138,6 @@ This snapshot contains **17 skills** across 4 categories. `find skills -name SKI
 - [`gooey-section-taffy`](skills/ui/sections/gooey-section-taffy/SKILL.md) - Stretches on scroll, snaps back with one wobble
 - [`gooey-section-twin`](skills/ui/sections/gooey-section-twin/SKILL.md) - Main bulge plus a smaller blob beside it
 - [`gooey-section-wave`](skills/ui/sections/gooey-section-wave/SKILL.md) - Broad flowing crest pulled by scroll speed
-
-### Vector Animation Skills (1)
-
-[Category guide](skills/ui/vector-animation/README.md)
-
-- [`vector-mask-reveal`](skills/ui/vector-animation/vector-mask-reveal/SKILL.md) - Whole vector pieces, flush reveals and exact landings
 <!-- library:end -->
 
 ---

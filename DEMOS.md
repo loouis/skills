@@ -37,15 +37,16 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 - Total: 17
 - With demos: 17
 - 3d/materials: 1
+- ui/masking: 1
 - ui/page-transitions: 6
 - ui/sections: 9
-- ui/vector-animation: 1
 
 ## Demo index
 
 | Skill | Category | Demo | Preview | Prompt |
 | --- | --- | --- | --- | --- |
 | blender-polished-chrome | 3d/materials | [Open](skills/3d/materials/blender-polished-chrome/demo/index.html) | [Preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg) | [Prompt](skills/3d/materials/blender-polished-chrome/demo/PROMPT.md) |
+| vector-masking | ui/masking | [Open](skills/ui/masking/vector-masking/demo/index.html) | [Preview](skills/ui/masking/vector-masking/demo/preview.jpg) | [Prompt](skills/ui/masking/vector-masking/demo/PROMPT.md) |
 | gsap-transition-diagonal-tide | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-diagonal-tide/demo/PROMPT.md) |
 | gsap-transition-double-swell | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-double-swell/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-double-swell/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-double-swell/demo/PROMPT.md) |
 | gsap-transition-figure-eight | ui/page-transitions | [Open](skills/ui/page-transitions/gsap-transition-figure-eight/demo/index.html) | [Preview](skills/ui/page-transitions/gsap-transition-figure-eight/demo/preview.jpg) | [Prompt](skills/ui/page-transitions/gsap-transition-figure-eight/demo/PROMPT.md) |
@@ -61,4 +62,3 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 | gooey-section-taffy | ui/sections | [Open](skills/ui/sections/gooey-section-taffy/demo/index.html) | [Preview](skills/ui/sections/gooey-section-taffy/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-taffy/demo/PROMPT.md) |
 | gooey-section-twin | ui/sections | [Open](skills/ui/sections/gooey-section-twin/demo/index.html) | [Preview](skills/ui/sections/gooey-section-twin/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-twin/demo/PROMPT.md) |
 | gooey-section-wave | ui/sections | [Open](skills/ui/sections/gooey-section-wave/demo/index.html) | [Preview](skills/ui/sections/gooey-section-wave/demo/preview.jpg) | [Prompt](skills/ui/sections/gooey-section-wave/demo/PROMPT.md) |
-| vector-mask-reveal | ui/vector-animation | [Open](skills/ui/vector-animation/vector-mask-reveal/demo/index.html) | [Preview](skills/ui/vector-animation/vector-mask-reveal/demo/preview.jpg) | [Prompt](skills/ui/vector-animation/vector-mask-reveal/demo/PROMPT.md) |
