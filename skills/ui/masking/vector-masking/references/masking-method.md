@@ -9,7 +9,9 @@ artwork exactly. Masks do all of the hiding. Read all of this before you touch t
 
 ## What is fixed
 
-- Strokes never change thickness. Nothing scales.
+- Strokes never change thickness. Nothing scales, with one exception for rings that have to
+  arrive in an open-line mark (see Line marks): a ring may grow about its centre with its line
+  weight held.
 - Nothing fades, and nothing is painted over anything. No background-coloured patches, borders or
   fills to fake a hidden edge or a gap. If something must be hidden, a mask hides it.
 - Lines never overlap or cross each other as lines mid-motion. A line can run under another
@@ -104,6 +106,56 @@ artwork exactly. Masks do all of the hiding. Read all of this before you touch t
   pass the line only inside the other piece's shape (a thin strip clipped to the other piece).
   Plain overlap leaves a sliver sticking out at the join; no overlap at all leaves a hairline seam.
 
+## Line marks: pieces that run under other lines
+
+Some marks are open lines rather than closed shapes: rings with spokes, a monogram whose strokes
+pass under other strokes, a spiral threading in and out of a frame. The model is the same, but the
+artwork has no gaps (every join is lines meeting), so the whole gap stage is skipped and three
+things change. This came out of a second build, a hexagonal mark with six blades between two
+rings, whose draw-on version showed a notch at every junction.
+
+- **The piece is the line, extended straight along its own tangent at both ends**, far enough
+  that each end sits under a front piece in every pose the piece will take. A straight
+  continuation is the true geometry of a line, so if it ever shows during an overshoot it still
+  reads as the same line. Size the extensions from the geometry, not by eye: the butt end, with
+  its corners half a stroke either side, has to stay inside the front piece's painted band at the
+  band's *narrowest* reach (the flat side of a polygon ring, not its corner). A line drawn only to
+  its artwork end stops a fraction short of the ring at some angles and pokes through it at
+  others; that is the notch.
+- **The mask is the front piece's own stroke.** Window: the front ring's path *filled*, to its
+  centreline, which hides everything outside the ring, so the outward extension can be any
+  length. Cut-out: the same path stroked black, `stroke-width − 2 × underlap` wide, plus
+  `fill: black` where the line must never show inside it, such as a ring's hole. For stroked
+  front pieces this replaces the sampled offset polygon: a narrower stroke *is* the underlap.
+- **Either side can move.** The default is a back piece moving out from behind a still front
+  piece. With lines, the strongest reveal is the reverse: the lines stay still and a front piece
+  moves over them (a ring growing from the centre, or contracting to it), so each line is
+  uncovered flush at both ends and no line end is ever visible. The copy in the mask follows the
+  moving ring, as always.
+
+Rings that have to arrive may grow about the centre with the line weight held: scale the geometry
+and set `stroke-width = w / s`, and `(w − 2 × underlap) / s` on the copy in every mask. Two similar
+rings can start as one line (the small one scaled to the big one's size by the ratio of their
+widths) and peel apart; while they coincide the band between them is empty, so the lines behind
+can be present from frame zero without any hiding bookkeeping.
+
+When a line end has to be seen, it is a real end of the line, never a mask edge:
+
+- **Threading**: slide the piece along its own track with the line extended far behind it, so the
+  trailing end starts outside the window and never shows; only the leading end travels, and it
+  finishes under the front piece.
+- **Draw-on gated by the junction**: a line drawing on inside its mask must not reach a front
+  piece that is not painted yet, or it stops dead at an invisible edge. Start each line only after
+  the front piece's own drawing end has passed their junction (the junction's arc position on the
+  front path, the easing inverted to get the time, plus a few frames), and have the front piece at
+  the far end fully drawn before the line arrives.
+- A drawing head or cursor goes in the same mask as the lines, so it dives under the rings instead
+  of crossing them.
+
+A small twist as the lines are uncovered (a few degrees, driven by the moving ring's progress so it
+reaches zero as the ring lands) reads as the mark settling rather than moving; the extensions make
+it safe.
+
 ## The closed state
 
 When pieces are closed up together (for example two petals meeting as one bud) they must read as
@@ -138,6 +190,12 @@ starts to move). Measure these, do not eyeball them.
 - Look especially for: white slivers at joins, hairlines where two shapes abut, lines ending in
   mid-air against an invisible mask, little points poking out at a base, and holes where a hidden
   piece's mask is cutting something it should not.
+- A check that needs no tooling: in the page, clone the SVG, inline the stroke and fill colours on
+  the clone (CSS variables do not survive serialisation), render it to a canvas through a Blob URL
+  at the last masked frame and at the artwork frame, and count the pixels that differ. A few
+  hundred at 800 px, spread along the junctions, is anti-aliasing; thousands in one place is a
+  shape. This caught a spring that had not settled at the hand-over, with the ring a pixel out; the
+  residual-motion ease fixed it. The code is in tool-notes.md.
 
 ## Doing it in different tools
 
@@ -150,3 +208,9 @@ exported frames with the link. When the designer says "flush" they mean no gap a
 should only be there when it lands" means exactly that; "it should look like a continuous stroke"
 means solve the join, not soften it. If they send a Figma file showing how they mask, read its
 layers before building: the model above came from one.
+
+Alongside "show the mask", give them "show hidden parts": the extended pieces drawn unmasked and
+dim, so they can see what the masks hide and why the joins are clean. Keep the old build off the
+review page, or label it: a frame the designer sends with a fault you believe is fixed may come
+from the earlier version, so check which build it is before changing anything. A fault the mask
+makes impossible, such as a line end outside the window, is the tell.
