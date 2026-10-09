@@ -1,0 +1,5 @@
+- [Blender fluid domain settings](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/settings.html)
+- [Blender liquid mesh settings](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/liquid/mesh.html)
+- [Blender Principled BSDF](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html)
+- [Blender Cycles GPU rendering](https://docs.blender.org/manual/en/latest/render/cycles/gpu_rendering.html)
+- [FFmpeg xfade filter](https://ffmpeg.org/ffmpeg-filters.html#xfade)

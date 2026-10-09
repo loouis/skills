@@ -2,8 +2,18 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 18
+- Captured demos: 19
 - Format: JPEG
+
+## 3d/fluids (1)
+
+### blender-screen-water
+
+Build and render a top-fed Blender FLIP water sheet for tall displays, with clear-water optics, dark depth, feathered reflections and clustered 3D bubbles. Use for cold or hot screen-water effects, native rerenders, partial-loop encoding and drain-and-fade playback. Product geometry and camera choreography are separate.
+
+[Open demo](skills/3d/fluids/blender-screen-water/demo/index.html) · [Skill](skills/3d/fluids/blender-screen-water/SKILL.md) · [Prompt](skills/3d/fluids/blender-screen-water/demo/PROMPT.md)
+
+![blender-screen-water preview](skills/3d/fluids/blender-screen-water/demo/preview.jpg)
 
 ## 3d/materials (1)
 

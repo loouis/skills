@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blender Screen Water — material study</title>
+<style>
+:root{color-scheme:light;--paper:#edf0eb;--ink:#1c302b;--dim:#69756f;--line:#c9d2c9;--lime:#d8e99f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,sans-serif}main{max-width:1440px;margin:auto;padding:30px 42px 25px}
+header{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line)}.eyebrow,.micro{font:11px/1.45 ui-monospace,SFMono-Regular,monospace;letter-spacing:.11em;text-transform:uppercase}.micro{color:var(--dim)}
+.study{display:grid;grid-template-columns:minmax(240px,1fr) minmax(330px,1.2fr) minmax(230px,.85fr);gap:34px;padding:22px 0 18px;align-items:start}h1{font-size:clamp(42px,4.5vw,63px);line-height:1.025;letter-spacing:-.058em;font-weight:500;margin:0 0 23px}p{margin:0 0 18px}.intro{max-width:280px;color:var(--dim)}.tag{display:inline-block;padding:6px 10px;background:#dfe5d9;font-size:12px;border-radius:4px}.note{font-size:12px;color:var(--dim);margin-top:21px;max-width:275px}.note strong{font-weight:600;color:var(--ink)}
+.panels{display:flex;justify-content:center;gap:20px}figure{margin:0;width:120px}.image{height:450px;width:120px;background:#030403;border-radius:8px;overflow:hidden}img{display:block;width:100%;height:100%;object-fit:cover}figcaption{margin-top:10px;display:flex;justify-content:space-between;align-items:center;font-size:13px}.arrow{color:var(--dim)}
+.details{padding-top:3px}.details section{padding:0 0 16px;margin:0 0 17px;border-bottom:1px solid var(--line)}h2{font-size:15px;font-weight:600;letter-spacing:-.01em;margin:6px 0}section p{font-size:13px;color:var(--dim);margin:0}.download{font-size:12px;color:var(--ink);text-underline-offset:3px}.inspection{display:flex;gap:8px;margin-top:14px}button{font:inherit;color:inherit;border:1px solid var(--line);border-radius:6px;padding:8px 12px;background:transparent;cursor:pointer;font-size:12px}button:hover{border-color:var(--ink)}button[aria-pressed=true]{background:var(--lime);border-color:var(--ink)}button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+body.detail .image img{height:220%;width:220%;max-width:none;object-fit:cover;transform:translate(-26%,-27%)}
+.timeline{border-top:1px solid var(--line);padding-top:17px;display:grid;grid-template-columns:220px 1fr 190px;gap:24px;align-items:center}.timeline p{font-size:12px;color:var(--dim);margin:4px 0 0}.range{display:flex;gap:12px;align-items:center}.range input{accent-color:var(--ink);width:100%;min-width:90px}.range output{font:12px ui-monospace,monospace;white-space:nowrap}.frame{font:14px ui-monospace,monospace;text-align:right}.frame small{display:block;color:var(--dim);font-size:11px;margin-top:5px}footer{display:flex;justify-content:space-between;gap:20px;margin-top:18px;color:var(--dim);font-size:11px}footer a{color:inherit;text-underline-offset:3px}
+@media(max-width:980px){main{padding:25px}.study{grid-template-columns:1fr 1fr;gap:25px}.details{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.details section{border-bottom:0;margin:0}.inspection{grid-column:1/-1;margin-top:0}.timeline{grid-template-columns:180px 1fr}.frame{grid-column:2}h1{font-size:50px}}
+@media(max-width:580px){main{padding:22px}.study{display:flex;flex-direction:column}.intro,.note{max-width:none}h1{font-size:47px}.panels{align-self:center;gap:20px}.image{height:450px;width:120px}figure{width:120px}.details{display:block}.details section{margin-bottom:20px}.timeline{display:block}.range{margin:14px 0}.frame{text-align:left}footer{flex-direction:column;gap:8px}header .micro{max-width:125px;text-align:right}}
+</style>
+</head>
+<body>
+<main>
+<header><span class="eyebrow">3D fluids / Screen water</span><span class="micro">Blender Cycles · Material study</span></header>
+<div class="study">
+  <div>
+    <h1>Water, lit<br>by its edges.</h1>
+    <p class="intro">Clear folds. Dark depth. Uneven pockets of air. One water material, two bubble treatments.</p>
+    <span class="tag">Colourless water · IOR 1.333</span>
+    <p class="note"><strong>Original geometric study.</strong><br>These are rendered stills of a mathematical folded sheet. They demonstrate the materials and bubbles; they are not frames from a fluid simulation.</p>
+    <div class="inspection"><button id="detail" aria-pressed="false">Inspect detail</button></div>
+  </div>
+  <div class="panels" aria-label="Cold and Hot material comparison">
+    <figure><div class="image"><img src="cold.jpg" alt="Clear folded sheet with sparse clusters of air pockets" width="480" height="1800"></div><figcaption>Cold <span class="arrow">↓ bubbles</span></figcaption></figure>
+    <figure><div class="image"><img src="hot.jpg" alt="The same folded sheet with a denser field of air pockets" width="480" height="1800"></div><figcaption>Hot <span class="arrow">↑ bubbles</span></figcaption></figure>
+  </div>
+  <aside class="details">
+    <section><div class="micro">01 / The sheet</div><h2>Let the liquid descend.</h2><p>The production recipe uses a top-fed FLIP sheet. Its flow stays downward in both modes.</p></section>
+    <section><div class="micro">02 / The air</div><h2>Leave space between clusters.</h2><p>3D air pockets follow prescribed paths. Hot bubbles rise; this is an art-directed effect, not simulated boiling.</p></section>
+    <section><div class="micro">03 / The light</div><h2>Feather the reflections.</h2><p>Soft-edged reflection cards catch clear water above a matte charcoal backing.</p></section>
+    <div><a class="download" href="cold.jpg" download>Cold still</a><span class="micro"> / </span><a class="download" href="hot.jpg" download>Hot still</a></div>
+  </aside>
+</div>
+<div class="timeline">
+  <div><span class="eyebrow">Arrival once. Then repeat.</span><p>Playback mapping · stills stay fixed.</p></div>
+  <label class="range"><span class="micro">Elapsed</span><input id="time" type="range" min="0" max="12000" step="100" value="7100" aria-label="Playback elapsed time in milliseconds"><output id="seconds" for="time">7.1 s</output></label>
+  <output class="frame" id="frame" for="time">Frame 124 / 180<small>Repeat 3–6 seconds</small></output>
+</div>
+<footer><span>480 × 1800 source recipe · 30 fps · 0.6 s seam blend</span><span><a href="../SKILL.md">Read the skill</a> · <a href="PROMPT.md">Recreate the study</a></span></footer>
+</main>
+<script>
+const detail=document.getElementById('detail'),time=document.getElementById('time');
+detail.onclick=()=>{const active=detail.getAttribute('aria-pressed')!=='true';detail.setAttribute('aria-pressed',String(active));document.body.classList.toggle('detail',active);detail.textContent=active?'Show full sheet':'Inspect detail';};
+function showTime(){const ms=Number(time.value),n=Math.floor(ms*30/1000),frame=1+(n<180?n:90+(n-180)%90);document.getElementById('seconds').textContent=(ms/1000).toFixed(1)+' s';document.getElementById('frame').innerHTML=`Frame ${frame} / 180<small>${ms<6000?'Initial arrival · 0–6 seconds':'Repeat · 3–6 seconds'}</small>`;}
+time.oninput=showTime;showTime();window.__demoPose=()=>{time.value=7100;showTime();};
+</script>
+</body>
+</html>

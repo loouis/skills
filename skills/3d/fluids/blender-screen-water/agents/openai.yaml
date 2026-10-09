@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Screen Water"
+  short_description: "Clear FLIP water sheets, clustered bubbles and loops"
+  default_prompt: "Use $blender-screen-water to create a clear descending water sheet with clustered bubbles, dark depth and a forward partial repeat."

@@ -34,8 +34,9 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 18
-- With demos: 18
+- Total: 19
+- With demos: 19
+- 3d/fluids: 1
 - 3d/materials: 1
 - motion/logo: 1
 - ui/masking: 1
@@ -46,6 +47,7 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 | Skill | Category | Demo | Preview | Prompt |
 | --- | --- | --- | --- | --- |
+| blender-screen-water | 3d/fluids | [Open](skills/3d/fluids/blender-screen-water/demo/index.html) | [Preview](skills/3d/fluids/blender-screen-water/demo/preview.jpg) | [Prompt](skills/3d/fluids/blender-screen-water/demo/PROMPT.md) |
 | blender-polished-chrome | 3d/materials | [Open](skills/3d/materials/blender-polished-chrome/demo/index.html) | [Preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg) | [Prompt](skills/3d/materials/blender-polished-chrome/demo/PROMPT.md) |
 | logo-mask-motion | motion/logo | [Open](skills/motion/logo/logo-mask-motion/demo/index.html) | [Preview](skills/motion/logo/logo-mask-motion/demo/preview.jpg) | [Prompt](skills/motion/logo/logo-mask-motion/demo/PROMPT.md) |
 | vector-masking | ui/masking | [Open](skills/ui/masking/vector-masking/demo/index.html) | [Preview](skills/ui/masking/vector-masking/demo/preview.jpg) | [Prompt](skills/ui/masking/vector-masking/demo/PROMPT.md) |

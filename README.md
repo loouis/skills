@@ -21,6 +21,8 @@ For logos and illustrations, explore [Masking](skills/ui/masking/README.md), sta
 
 For rendering, explore [3D](skills/3d/README.md), starting with [Blender polished chrome](skills/3d/materials/blender-polished-chrome/SKILL.md): mirror-polished metals, reflection control and preservation checks.
 
+For fluid effects, [Blender Screen Water](skills/3d/fluids/blender-screen-water/SKILL.md) packages a clear FLIP sheet, clustered bubbles, dark reflections and partial-loop playback, with portable job preparation and an original material study.
+
 ---
 
 ## Agent support
@@ -66,6 +68,9 @@ skills/
       vector-masking/
   3d/
     README.md
+    fluids/
+      README.md
+      blender-screen-water/
     materials/
       README.md
       blender-polished-chrome/
@@ -100,7 +105,13 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **18 skills** across 5 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **19 skills** across 6 categories. `find skills -name SKILL.md | sort` is the source of truth.
+
+### 3D Fluids (1)
+
+[Category guide](skills/3d/fluids/README.md)
+
+- [`blender-screen-water`](skills/3d/fluids/blender-screen-water/SKILL.md) - Clear FLIP water sheets, clustered bubbles and loops
 
 ### 3D Materials (1)
 

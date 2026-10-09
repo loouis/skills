@@ -1,36 +1,34 @@
 # STATUS
 
-_Updated 2026-10-06._
+_Updated 2026-10-09._
 
 ## Completed
 
-- 2026-10-06: published `logo-mask-motion` (`skills/motion/logo/`, the first skill in the `motion` group) and extended it with the open-line case from a second build, a hexagonal mark with six blades between two rings: lines extended along their tangents under the rings, masks cut from the front stroke, rings that grow with their weight held, threading, draw-on gated by the junction, and an in-page landing check. Its demo gained a ring-and-spokes section (turn, grow, thread). `vector-masking` received the same material in its own structure (SKILL.md, `masking-method.md`, `tool-notes.md`). Validated and galleries rebuilt.
-- Renamed the masking skill to `vector-masking` under `skills/ui/masking/` following the clarification that its purpose is teaching vector mask construction. The entrypoint now leads with whole shapes, occluding silhouettes, joins and gaps; motion-specific steps are conditional on animation being requested. Updated metadata, prompts, repository guidance, links and preview labels.
-- Packaged the full supplied construction method and SVG, After Effects / Lottie and Figma implementation notes. Preserved constant strokes, flush travel, landing-only gap growth, hidden geometry, chained occluders, symmetry joins and exact artwork handover for animated masking.
-- Added an original three-panel SVG demo with two final-gap variants, forward/reverse playback, frame scrubbing, phase jumps, mask inspection, static-source comparison and reduced motion. Includes a portable frame-export/check script, recreation prompts and a 1280 × 720 preview. No private source artwork, names or paths are packaged.
-- Validation: skill-creator and all 17 repository skill checks pass. The naming correction leaves demo geometry and runtime unchanged. Prior Chromium checks at 600 × 420 show zero changed pixels for closed/front-only and final masked/original comparisons in both gap variants; 152 sampled poses show no foreground-interior leaks or tested travel gaps. Exported and inspected 76 frames, a contact sheet, mask view and 390 px mobile layout. Forward/reverse playback, comparison, keyboard scrubbing and reduced motion passed with no browser errors. Local links and public hygiene remain checked.
-- Refreshed library indexes and galleries. Added vector-masking conventions and its verification command to `AGENTS.md`; `CLAUDE.md` continues to import it.
-- Existing library: nine generated gooey-section skills, six self-contained GSAP page-transition skills and `blender-polished-chrome`. Prior transition parity/lifecycle/browser checks and Blender 5.2.1 helper/render/preservation checks passed. Original generic Blender renders remain the material demo assets.
+- Added `blender-screen-water` under the new `skills/3d/fluids/` category. The portable recipe preserves a top-fed FLIP sheet, clear-water optics, charcoal backing, feathered reflection cards, deterministic Cold/Hot bubble geometry, six-second encoding with a 3–6 second repeat, and downward clearing/fade timing.
+- Public adaptation uses explicit input/output paths and tool discovery, prepares jobs without executing renders, pins recipe/cache/settings hashes, protects existing outputs and writes render frames atomically. Kept private source packages intact; excluded project identifiers, workstation paths, reference/provenance manifests, caches, scenes, movies and fonts.
+- Created two original generic Blender material-study stills on a mathematical folded slab, plus a portable generator, native JPEG downloads, detail toggle and playback-mapping demo. These are not a FLIP bake or production-motion proof. The skill package is about 600 KB including its images.
+- Water validation: six Python preparation/cache/encoding tests; three Node playback/timing tests; Blender 5.2.1 configure/save/reopen checks without baking; two 480 × 1800 CPU Cycles renders at a 64-sample ceiling; desktop/mobile browser checks including a real synthetic clip, repeat-to-three-seconds, reduced-motion poster and cleanup. Native stills/detail views inspected. Full fluid simulation, production loop appearance, GPU backends and physical display hardware remain unverified in this adaptation.
+- All 19 skills in 6 categories pass repository validation. New-skill validation, relative links, Python syntax, public-content checks and generated indexes/galleries pass. Added fluid workflow and verification conventions to `AGENTS.md`; `CLAUDE.md` still imports it.
+- Existing library: nine generated gooey-section skills, six GSAP transitions, two masking skills and the polished-metal skill. Previous source-parity, masking browser and material-preservation checks remain recorded in their packages/history.
 
 ## Current
 
-- Two skills now teach one masking method in different voices: `vector-masking` (construction first) and `logo-mask-motion` (motion first). They were written in separate sessions from the same source. Keep them in step until Louis decides whether to fold one into the other.
-- This public repository is `loouis/skills`. The library contains 17 skills in 4 categories; verify the active checkout's remote before changes.
-- Vector mask publication is authorised. The web study covers stationary geometric occluders; organic reconstructions, moving-front chains and tapered root gaps are documented methods, not demonstrated by this fixture. After Effects, Lottie, Figma and physical-device behavior remain unverified.
-- The expanding scroll panel remains a prototype under `prototypes/expanding-scroll-panel/`, excluded from installation and generated skill lists. Its background and content stay siblings.
+- This public repository is `loouis/skills`; verify the active checkout and remote before changes. The water handoff explicitly authorises the scoped library integration and publication. No product geometry, camera work, app-wide installation or website deployment is included.
+- `vector-masking` and `logo-mask-motion` teach the same method with different entrypoints. Both contain the open-line/ring construction update; keep them in step until Louis decides whether to consolidate them.
 - Gooey skills remain generated from the private labs source; see `AGENTS.md` before rebuilding. Page-transition shared cores remain identical except for defaults; “Suite” provisionally aliases Tidal sweep.
+- The expanding scroll panel remains a prototype, excluded from installation/generated skill lists; background and content remain siblings.
 
 ## Decisions
 
-- Create groups/categories with their first skill, under `skills/<group>/<category>/<skill-name>/`. Classify vector masking by its construction technique; animation is an application of the method. Use original generic artwork in public demos and keep private source dependencies out of packages.
-- Keep one skill per commit and publish when requested. Publishing does not require app-wide installation or website deployment.
-- Preserve visible vector curves exactly, including arc commands in the demo; hidden continuations must remain long enough to cover overshoot. Renderer-specific mask behavior and export support need explicit checks.
+- Add groups/categories with their first skill. Vector masking is classified by construction technique; fluid generation belongs under 3D.
+- Public visual examples use original generic geometry. Distinguish recipe/setup tests and material proxies from validated production simulations. A higher pixel count does not add simulation detail, and a movie under glass remains flat internal imagery.
+- Keep one skill per commit and publish when requested. Preserve existing outputs and use fresh working directories outside the skill for render jobs.
 
 ## Next
 
-- Apply the vector method to future artwork and adjust from observed defects, checking actual renderer output at joins and handover.
-- Package the expanding panel controller when requested. Continue transition testing in receiving sites and material testing on other Blender versions.
+- Review native probes and at least two repeated cycles whenever the water recipe is used for a new production bake, resolution or display integration.
+- Continue masking/transition validation in receiving projects and material testing on other Blender versions. Package the expanding panel controller when requested.
 
 ## Blockers
 
-- None.
+- None for the portable skill/library integration.
