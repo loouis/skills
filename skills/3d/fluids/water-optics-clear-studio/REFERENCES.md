@@ -1,0 +1,5 @@
+- [Blender Glass BSDF](https://docs.blender.org/manual/en/5.2/render/shader_nodes/shader/glass.html)
+- [Blender Cycles light paths](https://docs.blender.org/manual/en/5.2/render/cycles/render_settings/light_paths.html)
+- [Blender shadow caustics](https://docs.blender.org/manual/en/5.2/render/cycles/object_settings/object_data.html)
+- [PBRT dielectric BSDF](https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF)
+- [MIT wetting notes](https://web.mit.edu/nnf/education/wettability/wetting.html)

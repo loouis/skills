@@ -34,6 +34,8 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 - Fluid recipes live under `skills/3d/fluids/`. `blender-screen-water` prepares portable jobs with explicit input/output paths; never bundle source-project scenes, caches, frames, movies or asset manifests. Its demo uses new mathematical proxy geometry and must remain labelled as a material study, not a completed FLIP simulation.
 - For screen water, run `python3 -B scripts/test_recipe.py --blender <executable>`, `node --test scripts/test_playback.mjs`, Blender with `--python-exit-code 1 -P scripts/test_blender.py`, and `node scripts/verify_demo.cjs <fresh-output-directory>` from the skill folder. Rebuild its generic stills with `scripts/render_demo.py`; see `demo/PROMPT.md`. A full fluid bake or production rerender is not required for packaging; distinguish setup/fixture checks from production-motion validation.
 
+- `water-optics-clear-studio` keeps procedural optical benches separate from the authored product-contact field. Run `scripts/test_field.py` with NumPy and render the generic demo through Blender using `scripts/render_demo.py` into a fresh directory outside the package. Preserve raw/denoised evidence and distinguish formula parity, technical checks, visual scores and user choices. Current contact guidance is still-scoped; no complete new motion is validated.
+
 ## Public hygiene (check before every commit)
 - No client or project names, no private file paths, no emails, keys or tokens, nothing from private repos beyond what a skill needs. The validator flags private paths.
 

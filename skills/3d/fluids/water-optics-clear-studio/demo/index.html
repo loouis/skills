@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Water Optics · Clear Studio</title>
+<style>
+:root{color-scheme:light;--ink:#20323c;--dim:#586f7c;--line:#c3cfd5}*{box-sizing:border-box}body{margin:0;background:#e9eef1;color:var(--ink);font:15px/1.5 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:24px 32px}header{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:15px;font:11px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}.intro{display:flex;justify-content:space-between;gap:32px;align-items:end;margin:20px 0}h1{font-size:46px;font-weight:500;letter-spacing:-.045em;line-height:1.05;margin:0}p{max-width:420px;color:var(--dim);margin:0}.controls{display:flex;gap:8px;margin:14px 0}button{padding:8px 14px;border:1px solid var(--line);border-radius:5px;background:transparent;color:inherit;cursor:pointer;font:12px system-ui}button[aria-pressed=true]{background:#20323c;color:#fff}button:focus-visible,a:focus-visible{outline:2px solid #27889c;outline-offset:4px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}figure{margin:0}.picture{position:relative;aspect-ratio:1;overflow:hidden;background:#dce5e9;border-radius:6px}img{display:block;width:100%;height:100%;object-fit:cover}svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:none}.boxed svg{display:block}rect{fill:none;stroke:#c87517;stroke-width:2}text{fill:#79450b;font:13px system-ui}figcaption{padding:10px 0 0;display:flex;justify-content:space-between;font-size:13px}figcaption small{font-size:11px;color:var(--dim)}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:22px;padding-top:13px;font-size:11px;color:var(--dim)}a{color:inherit;text-underline-offset:3px}.caption{font-size:12px;color:var(--dim);margin-top:8px}
+@media(max-width:800px){main{padding:24px}.intro{display:block}h1{font-size:40px}.intro p{margin-top:16px}.grid{grid-template-columns:1fr}.picture{max-width:640px}.controls{flex-wrap:wrap}footer{flex-direction:column}header{gap:24px;font-size:10px}}
+</style>
+<main>
+<header><span>3D / Water optics</span><span>Blender Cycles · Original geometric studies</span></header>
+<div class="intro"><h1>Clear centres.<br>Curved boundaries.</h1><p>One colourless water material. Three different interfaces. Portable optical rigs, plus a field recipe for small ripples and curved product contact.</p></div>
+<div class="controls"><button id="raw" aria-pressed="false">Show raw samples</button><button id="boxes" aria-pressed="false">Show inspection boxes</button></div>
+<div class="grid">
+<figure><div class="picture"><img src="droplet.jpg" data-kind="droplet" alt="Transparent rounded droplet with thin varied silver and dark contour" width="640" height="640"><svg viewBox="0 0 640 640" aria-hidden="true"><rect x="158" y="176" width="100" height="280" rx="9"/><text x="166" y="169">1 · edge</text></svg></div><figcaption>01 / Water droplet <small>Water in air</small></figcaption></figure>
+<figure><div class="picture"><img src="cavity.jpg" data-kind="cavity" alt="Shallow asymmetric air pocket surrounded by water" width="640" height="640"><svg viewBox="0 0 640 640" aria-hidden="true"><rect x="164" y="197" width="320" height="249" rx="9"/><text x="172" y="189">2 · inward boundary</text></svg></div><figcaption>02 / Air cavity <small>Air inside water</small></figcaption></figure>
+<figure><div class="picture"><img src="fold.jpg" data-kind="fold" alt="Broad transparent folded water surface with subordinate fine ripples" width="640" height="640"><svg viewBox="0 0 640 640" aria-hidden="true"><rect x="126" y="206" width="216" height="319" rx="9"/><text x="134" y="198">3 · crest hierarchy</text></svg></div><figcaption>03 / Folded surface <small>Closed curved volume</small></figcaption></figure>
+</div>
+<div class="caption" id="mode">Denoised · 640 × 640 native stills · CPU · 256-sample ceiling / 45 s cap</div>
+<footer><span>Prescribed geometry, not a fluid simulation. These demo renders have no production beauty score.</span><span><a href="../SKILL.md">Read the skill</a> · <a href="PROMPT.md">Recreate</a></span></footer>
+</main>
+<script>
+const raw=document.getElementById('raw'),boxes=document.getElementById('boxes');
+raw.onclick=()=>{const on=raw.getAttribute('aria-pressed')!=='true';raw.setAttribute('aria-pressed',String(on));raw.textContent=on?'Show denoised':'Show raw samples';document.querySelectorAll('img[data-kind]').forEach(img=>img.src=img.dataset.kind+(on?'-raw':'')+'.jpg');document.getElementById('mode').textContent=(on?'Same-render raw (display-transformed)':'Denoised')+' · 640 × 640 native stills · CPU · 256-sample ceiling / 45 s cap';};
+boxes.onclick=()=>{const on=boxes.getAttribute('aria-pressed')!=='true';boxes.setAttribute('aria-pressed',String(on));document.body.classList.toggle('boxed',on);boxes.textContent=on?'Hide inspection boxes':'Show inspection boxes';};
+window.__demoPose=()=>{if(raw.getAttribute('aria-pressed')==='true')raw.click();if(boxes.getAttribute('aria-pressed')==='true')boxes.click();};
+</script>
+</html>

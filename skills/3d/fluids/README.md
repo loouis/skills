@@ -6,4 +6,5 @@ Simulation, rendering and playback recipes for fluid effects. Distinguish simula
 | Skill | Use it for |
 | --- | --- |
 | [Blender Screen Water](blender-screen-water/SKILL.md) | Clear FLIP water sheets, clustered bubbles and loops |
+| [Water Optics · Clear Studio](water-optics-clear-studio/SKILL.md) | Clear water, curved contact and controlled reflections |
 <!-- skills:end -->

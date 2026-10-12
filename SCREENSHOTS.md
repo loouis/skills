@@ -2,10 +2,10 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 19
+- Captured demos: 20
 - Format: JPEG
 
-## 3d/fluids (1)
+## 3d/fluids (2)
 
 ### blender-screen-water
 
@@ -14,6 +14,14 @@ Build and render a top-fed Blender FLIP water sheet for tall displays, with clea
 [Open demo](skills/3d/fluids/blender-screen-water/demo/index.html) · [Skill](skills/3d/fluids/blender-screen-water/SKILL.md) · [Prompt](skills/3d/fluids/blender-screen-water/demo/PROMPT.md)
 
 ![blender-screen-water preview](skills/3d/fluids/blender-screen-water/demo/preview.jpg)
+
+### water-optics-clear-studio
+
+Reproduce and refine clear studio water in Blender with droplet, immersed air-cavity, folded-surface and curved product-contact recipes. Use for transparent contours, reflected lettering, calm pools and local ripples; evaluate motion and fluid dynamics separately.
+
+[Open demo](skills/3d/fluids/water-optics-clear-studio/demo/index.html) · [Skill](skills/3d/fluids/water-optics-clear-studio/SKILL.md) · [Prompt](skills/3d/fluids/water-optics-clear-studio/demo/PROMPT.md)
+
+![water-optics-clear-studio preview](skills/3d/fluids/water-optics-clear-studio/demo/preview.jpg)
 
 ## 3d/materials (1)
 

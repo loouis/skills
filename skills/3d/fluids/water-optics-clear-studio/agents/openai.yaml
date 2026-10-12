@@ -1,0 +1,4 @@
+interface:
+  display_name: "Water Optics · Clear Studio"
+  short_description: "Clear water, curved contact and controlled reflections"
+  default_prompt: "Use $water-optics-clear-studio to refine this Blender water scene against my reference, preserving the product and scoring native contact, reflection and open-water details separately."

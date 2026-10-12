@@ -23,6 +23,8 @@ For rendering, explore [3D](skills/3d/README.md), starting with [Blender polishe
 
 For fluid effects, [Blender Screen Water](skills/3d/fluids/blender-screen-water/SKILL.md) packages a clear FLIP sheet, clustered bubbles, dark reflections and partial-loop playback, with portable job preparation and an original material study.
 
+For clear studio water, [Water Optics · Clear Studio](skills/3d/fluids/water-optics-clear-studio/SKILL.md) includes droplet, air-cavity and folded-surface benches, curved product contact, small local ripples, reflected-lettering diagnosis and scored reference review.
+
 ---
 
 ## Agent support
@@ -71,6 +73,7 @@ skills/
     fluids/
       README.md
       blender-screen-water/
+      water-optics-clear-studio/
     materials/
       README.md
       blender-polished-chrome/
@@ -105,13 +108,14 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **19 skills** across 6 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **20 skills** across 6 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
-### 3D Fluids (1)
+### 3D Fluids (2)
 
 [Category guide](skills/3d/fluids/README.md)
 
 - [`blender-screen-water`](skills/3d/fluids/blender-screen-water/SKILL.md) - Clear FLIP water sheets, clustered bubbles and loops
+- [`water-optics-clear-studio`](skills/3d/fluids/water-optics-clear-studio/SKILL.md) - Clear water, curved contact and controlled reflections
 
 ### 3D Materials (1)
 
