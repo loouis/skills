@@ -1,0 +1,5 @@
+- [SideFX Particle Fluid Surface](https://www.sidefx.com/docs/houdini/nodes/sop/particlefluidsurface)
+- [Blender liquid domain settings](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/liquid/index.html)
+- [Blender liquid flow settings](https://docs.blender.org/manual/en/latest/physics/fluid/type/flow.html)
+- [Visual Education splash photography](https://visualeducation.com/class/floating-cosmetics-splash-shot/)
+- [Photigy beer splash photography](https://www.photigy.com/school/liquid-splash-beer-photography-tutorial/)

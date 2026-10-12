@@ -1,0 +1,4 @@
+interface:
+  display_name: "Water · Product Splash"
+  short_description: "Folded water sheets, torn rims and product splashes"
+  default_prompt: "Use $water-product-splash to reconstruct a suspended product splash, review each pass, and save newly demonstrated lessons."

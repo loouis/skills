@@ -25,6 +25,8 @@ For fluid effects, [Blender Screen Water](skills/3d/fluids/blender-screen-water/
 
 For clear studio water, [Water Optics · Clear Studio](skills/3d/fluids/water-optics-clear-studio/SKILL.md) includes droplet, air-cavity and folded-surface benches, curved product contact, small local ripples, reflected-lettering diagnosis and scored reference review.
 
+For suspended product splashes, [Water · Product Splash](skills/3d/fluids/water-product-splash/SKILL.md) covers folded sheets, torn rims, droplets, reflection control and a workflow for adding tested lessons as the work develops.
+
 ---
 
 ## Agent support
@@ -74,6 +76,7 @@ skills/
       README.md
       blender-screen-water/
       water-optics-clear-studio/
+      water-product-splash/
     materials/
       README.md
       blender-polished-chrome/
@@ -108,14 +111,15 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **20 skills** across 6 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **21 skills** across 6 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
-### 3D Fluids (2)
+### 3D Fluids (3)
 
 [Category guide](skills/3d/fluids/README.md)
 
 - [`blender-screen-water`](skills/3d/fluids/blender-screen-water/SKILL.md) - Clear FLIP water sheets, clustered bubbles and loops
 - [`water-optics-clear-studio`](skills/3d/fluids/water-optics-clear-studio/SKILL.md) - Clear water, curved contact and controlled reflections
+- [`water-product-splash`](skills/3d/fluids/water-product-splash/SKILL.md) - Folded water sheets, torn rims and product splashes
 
 ### 3D Materials (1)
 

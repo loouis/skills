@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "tested_renderer": "Blender 5.2.1 LTS / CPU / 8 threads",
+  "native_helper_checks": {
+    "refuses_existing_output": true,
+    "bounded_field": true,
+    "bounded_offset": true,
+    "vertex_group_cleanup": true,
+    "source_role_velocity": true,
+    "rejects_unbaked_freeze": true,
+    "resolved_frozen_geometry": true,
+    "cache_independent_frozen_mesh": true,
+    "frozen_reopens": true,
+    "default_filter_changes_shape": true,
+    "default_filter_preserves_topology": true,
+    "subdivision_restored": true
+  },
+  "generic_demo_checks": {
+    "size": true,
+    "ior": true,
+    "neutral": true,
+    "roughness": true,
+    "closed_shell": true,
+    "no_fluid_claim": true,
+    "raw_pair": true
+  },
+  "demo_hashes": {
+    "beauty.png": "f7906b1b124048022b389166e11603dbed88af1dba3df754fd1640937c6d14dd",
+    "raw-Image.png": "138f1ec3ad7a2bbbda790d817bb7e2c4e14f583758165c2f8fe61c7cf8713b31"
+  },
+  "browser_checks": {
+    "native_image": true,
+    "raw_toggle": true,
+    "box_toggle": true,
+    "detail_toggle": true,
+    "reset": true,
+    "mobile_no_overflow": true,
+    "clean_console": true
+  },
+  "browser_errors": [],
+  "scope": "Generic component fixture and low-resolution helper checks; no production motion validation",
+  "scripts_sha256": {
+    "splash_tools.py": "15cabd07c3ca692fdf3c3773172ee858f876f9bfee03da39045bae540e076ec9",
+    "render_demo.py": "3e74022a8a3c5c4353f62487e970b1e0651f6c601e7fca6244062ade4019678e",
+    "test_native.py": "0cddb1f9419a84ea5fae3cb94c68f4941bc7baf9a85e03e3d508ea2da68dae68"
+  }
+}

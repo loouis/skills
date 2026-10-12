@@ -2,10 +2,10 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 20
+- Captured demos: 21
 - Format: JPEG
 
-## 3d/fluids (2)
+## 3d/fluids (3)
 
 ### blender-screen-water
 
@@ -22,6 +22,14 @@ Reproduce and refine clear studio water in Blender with droplet, immersed air-ca
 [Open demo](skills/3d/fluids/water-optics-clear-studio/demo/index.html) · [Skill](skills/3d/fluids/water-optics-clear-studio/SKILL.md) · [Prompt](skills/3d/fluids/water-optics-clear-studio/demo/PROMPT.md)
 
 ![water-optics-clear-studio preview](skills/3d/fluids/water-optics-clear-studio/demo/preview.jpg)
+
+### water-product-splash
+
+Reconstruct and refine suspended product-water splashes in Blender, including folded sheets, torn rims, jets, ligaments, droplets and optical distortion. Use for water wrapping around or breaking away from a product, reference-led splash studies, and adapting a reviewed splash to another product. Still reconstruction is tested; validate new collisions and motion separately.
+
+[Open demo](skills/3d/fluids/water-product-splash/demo/index.html) · [Skill](skills/3d/fluids/water-product-splash/SKILL.md) · [Prompt](skills/3d/fluids/water-product-splash/demo/PROMPT.md)
+
+![water-product-splash preview](skills/3d/fluids/water-product-splash/demo/preview.jpg)
 
 ## 3d/materials (1)
 

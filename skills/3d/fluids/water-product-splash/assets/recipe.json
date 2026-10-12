@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "units": "metres",
+  "scope": "Recorded shape-led frozen still settings; original source geometry is not bundled; no validated motion",
+  "domain": {"location": [0, -0.015, 0.175], "dimensions": [0.50, 0.40, 0.49], "resolution": 320, "mesh_scale": 2, "mesh_radius": 1.3, "mesh_smoothing": [3,3], "flip_ratio": 0.90, "randomness": 0.05, "frames": [1,14], "fps": 120, "time_scale": 0.7, "timesteps": [2,12], "cfl": 2, "diffusion": false, "surface_tension_field": 0.04, "gravity": [0,0,-9.81]},
+  "source": {"expansion_voxels": 0.55, "velocity": {"sheet": [0.08,0,0.10], "plume": [-0.025,0,0.48], "trail": [0.09,0,-0.06]}},
+  "freeze_frame": 9,
+  "filter": {"base_factor": 0.48, "base_iterations": 3, "factor": 0.62, "iterations": 42, "quantization": 128, "outward_offset": 0.0018, "subdivision": 1, "field": {"x_outer": 0.162, "x_fade": 0.050, "z_low": 0.105, "z_low_fade": 0.020, "z_high": 0.237, "z_high_fade": 0.026}},
+  "optics": {"shader": "Glass BSDF", "distribution": "BECKMANN", "ior": 1.333, "roughness": 0, "colour": [1,1,1,1]}
+}

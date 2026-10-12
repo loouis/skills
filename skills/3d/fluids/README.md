@@ -7,4 +7,5 @@ Simulation, rendering and playback recipes for fluid effects. Distinguish simula
 | --- | --- |
 | [Blender Screen Water](blender-screen-water/SKILL.md) | Clear FLIP water sheets, clustered bubbles and loops |
 | [Water Optics · Clear Studio](water-optics-clear-studio/SKILL.md) | Clear water, curved contact and controlled reflections |
+| [Water · Product Splash](water-product-splash/SKILL.md) | Folded water sheets, torn rims and product splashes |
 <!-- skills:end -->
