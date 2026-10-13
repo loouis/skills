@@ -48,6 +48,16 @@ New exit drops need clearance against the actual visible assembly. Requiring eve
 
 When excluding a product accessory, materialize `list(collection.all_objects)` before mutating visibility. A live traversal in the tested scene changed only its first matching object; a separate snapshot correctly changed all intended parts. Verify the final visible assembly and retain the original geometry.
 
+## Refine branches as surfaces and breakaway packets
+
+A bounded tip-splitting displacement with reduced taper preserved topology but stretched both plume tips into broad, ribbed fins. It did not create natural branching ligaments and was rejected. A continuous membrane deformation cannot be assumed to supply rupture or rounded branch junctions. Compare the actual silhouette and cross-section, and retain the prior plume when a fork-like outline is carried by a visibly stretched sheet.
+
+A later rounded-branch union kept the entire protected lower mesh exact, but a hard cross-section classification cut through one parent plume and produced long horizontal stretches above that boundary. Add before/after edge-length checks in the edited region, and place branch separators in actual empty gaps. Whole/native images must validate the branch junctions; exact unchanged coordinates elsewhere cannot certify the edited surface.
+
+The gap-corrected follow-up removed stretched strips and produced a closed joined surface while retaining the protected lower vertices. Narrower parent plumes and directional droplets improved the silhouette, but long, nearly uniform side tubes still looked like glass rods. Natural breakup needs uneven curvature and cross-section, necks, rounded ends and irregular packet spacing; a valid tubular fork alone is insufficient.
+
+Shortening those side tubes and introducing restrained curvature, varying radii, necks and rounded ends improved the rigid-rod appearance in full and native review. Unequal directional drop packets helped but remained ordered, while the two retained main tips stayed simple. Score these features separately: an overall9/10 average must not conceal an unfinished local correction.
+
 ## Recheck thin contours when changing the background
 
 A matched dark-to-white backdrop comparison retained the product and water geometry but weakened the upper plumes, detached beads and thin outer margin. Clear transmission through a pale field did not compensate for the lost contour contrast. Compare both the broad membrane and the finest silhouette features; a white background is not automatically clearer. Backdrop changes also leave repeated geometric curls untouched. Keep background preference separate from whether the water shape is convincing.
@@ -55,6 +65,8 @@ A matched dark-to-white backdrop comparison retained the product and water geome
 ## Compare inherited thickness before blaming the normals
 
 A transferred fluid membrane showed a heavy glass-like rim and angular tonal patches. The original pre-offset source was available. Reapplying its bounded smoothing and 1.8mm normal offset reproduced the selected source vertices exactly; only then was the offset reduced to0.3mm for a matched native comparison. The rim became thinner, but the patches remained in raw and denoised pixels. This proves a limited thickness effect, not a complete repair or a normal/backend diagnosis. Preserve the old treatment, verify reconstruction and inspect the local shape before introducing another filter. Smooth polygon flags and subdivision alone do not establish optical quality.
+
+A later correctly bounded extra-smoothing beauty control preserved every zero-weight vertex and softened broad central reflections, but angular internal borders remained and became broader. A valid filter support audit therefore does not establish the desired optical repair. Compare raw native pixels and keep the unaffected or stronger prior shape available.
 
 ## Separate airborne drops from attached wetness
 
@@ -73,3 +85,17 @@ A second smoothing operation silently received an empty vertex-group name from a
 A patchy clear-water region appeared almost identically on CPU and Metal. Higher transmission/total/glossy limits changed nearby bright detail but retained the patch structure. An opaque shading-normal diagnostic showed smooth transitions across the visible region, with no custom normals or sharp edges. These controls reject a backend-only explanation and do not support literal first-surface faceting; they do not isolate later refracted surfaces or source visibility. Inspect those optical paths before adding more geometry smoothing. An appended water collection also does not bring its source scene's global integrator settings: record and compare them explicitly.
 
 A matched zero-glossy-filter control produced almost no visible change in the same water window, so disabling filtering was not a demonstrated repair. Sampled straight camera rays through the evaluated water had alternating entry/exit face orientations; this did not expose a reversed boundary in those samples. Straight-ray checks do not follow refracted paths and cannot prove the whole mesh is free of intersections. Keep such negative controls as limits on a diagnosis, not evidence that every optical path is correct.
+
+A matched full-density region with main-surface subdivision increased from1 to2 retained the angular patch layout in raw and denoised views. Finer contour detail and higher mesh density did not demonstrate a local repair. Keep this as a negative control and investigate the reflected/transmitted field rather than escalating subdivision automatically.
+
+A following true-geometric-normal glass control changed fine reflection/noise but retained those large angular borders. In that region, merely replacing interpolated normals was not a repair. These controls still do not establish the full internal ray path or rule out shape/source effects; preserve the smooth-shaded baseline while testing those separately.
+
+Removing receiver restrictions from the two added diffusion sources also retained the angular window in a matched native region. This does not rule out all source visibility or internal-path effects; it only rejects those receiver restrictions as a demonstrated repair. Keep the original lighting while testing a distinct geometry variable.
+
+A compact, positive-Jacobian depth-compression field preserved source lateral/vertical coordinates and all outside-mask vertices, yet a native comparison retained angular internal borders. Even a monotone deformation can redistribute highlights without solving their cause. Source-plane coordinates do not guarantee an unchanged projected silhouette. Retain the original surface when the proposed repair is not visible.
+
+A separate matched native control hid the inherited finite product-studio cards while preserving the world, water geometry/material and new water sources. The same angular borders remained. Testing only new water lights would have left this variable unexamined; the additional control still does not identify the complete internal optical path. Restore the original product lighting when hiding it does not repair the water.
+
+A main-water roughness control at0.045 softened nearby highlights while retaining the same large angular borders. It was rejected rather than accepted as an optical repair. Keep microsurface changes separate from geometry, and compare the targeted border and the lost highlight clarity together.
+
+A subsequent zero-outward-offset comparison changed fine folds/margins but retained the large angular borders. The prior reduction in added thickness had therefore not simply stopped short of a complete zero-offset fix. Preserve the stronger reviewed rim treatment; neither tested offset is established as a universal preset.
