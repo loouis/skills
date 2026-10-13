@@ -1,8 +1,10 @@
 # STATUS
 
-_Updated 2026-10-13._
+_Updated 2026-10-14._
 
 ## Completed
+
+- Splash branch studies now distinguish camera-plane displacement from rigid cross-section rotation and document rejected triangular webs, post-cache scallops and folded lips. These refine construction/diagnosis guidance without promoting an unfinished upper-plume result or changing the generic demo.
 
 - Water Product Splash now records stage-by-stage cached-region checks, rejected exact-checkpoint claims, and the tested planar temporary cap/direct-bisect/exact-splice repair. Closure does not establish natural appearance; the production crop review is still pending. Portable and installed guidance match, and all21 library skills validate.
 
