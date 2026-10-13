@@ -34,3 +34,17 @@ blender -b -t 8 --python-exit-code 1 -P scripts/splash_tools.py -- refine --inpu
 Adapt the weight region to a new object/camera. Never apply these world coordinates blindly to a scaled or moved tap. Use a copy and inspect actual thickness, closedness, penetrations, silhouette and reflections afterward. This static correction has not been validated over an animation.
 
 During dense edits, defer subdivision. Batch coordinate/normal operations, quantize the field into 128 weight levels, apply smoothing at native density, clear the temporary group and restore subdivision. Reacquire Blender data after destructive modifier operations; retained vertex-group Python references can become stale.
+
+
+## Turn a stiff root fold in depth
+
+In a connected lower-runout study, narrowing and forward bowing improved a broad dark root only modestly. An enclosed hole looked punched out, and a small open-edge cut created ragged teeth. A bounded twist about the local flow axis produced a much clearer turning fold without adding a light or changing the water shader. Extending the turn reduced the abrupt lower transition; native/raw review still governs the final crease treatment.
+
+For an authored static field, use an orthonormal flow/across/depth basis. Let `s` be axial position and `(u,v)` its cross-section, with radius `r`. Rotate `(u,v)` through `theta = angle * max(1-(s/L)^2,0)^3 * max(1-(r/R)^2,0)^3`. In the ideal continuous field, `s` and `r` are retained, so the twist is invertible; restore zero-weight coordinates exactly after floating-point conversion. This avoids the collapsing cross-section of an unrestricted squeeze. Fit the support and axis to the visible incoming flow and outgoing ribbon; do not apply a product-independent world-axis preset. Recheck product clearance, intersections, native reflections and the full shot. This is explicit still shaping, not evidence of liquid dynamics or a motion-ready flow.
+
+
+## Blend branch deformations across their boundaries
+
+A plume-widening control used hard coordinate partitions and independent height-bin medians. Its edge-length guard caught an18.7mm stretch before rendering. Smoothing the median profiles and blending the branch fields across a finite transition reduced the maximum edge growth to1.06mm in the next control. This passed the geometric guard but still produced an angular elbow and a broad flap at the branch junction. Smooth weights alone do not establish a natural water silhouette.
+
+Keep the preflight failure and reject the resulting visual defect separately. Fit curvature, taper and accumulated water at the junction rather than uniformly widening an entire branch. Move detached droplets rigidly when adjusting their path; stretching the mesh of every drop with the parent field can destroy the useful round/elongated breakup hierarchy. Review parent mass, each daughter curve, necks and separated beads at native density before adopting a shaping field. These are still-image corrections, not evidence of trajectories from a fluid solve.
