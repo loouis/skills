@@ -19,6 +19,7 @@ _Updated 2026-10-13._
 
 ## Current
 
+- Active `water-product-splash` adaptation lessons cover native-surface audits, evaluated import transforms, receiver linking versus source visibility, destructive Boolean rejection, distance-gated deformation, broad-shape versus fine-detail smoothing, and background contour contrast. Native final composition review remains in progress; no production-readiness claim. All19 installed files match and all21 library skills validate; unchanged generic helpers/demo retain their earlier tests.
 - This public repository is `loouis/skills`; verify the active checkout and remote before changes. The splash package is now added locally; publishing it has not been requested. No production scene, film, app-wide installation or website deployment is included.
 - `vector-masking` and `logo-mask-motion` teach the same method with different entrypoints. Both contain the open-line/ring construction update; keep them in step until Louis decides whether to consolidate them.
 - Gooey skills remain generated from the private labs source; see `AGENTS.md` before rebuilding. Page-transition shared cores remain identical except for defaults; “Suite” provisionally aliases Tidal sweep.
