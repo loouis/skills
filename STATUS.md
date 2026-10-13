@@ -4,6 +4,8 @@ _Updated 2026-10-13._
 
 ## Completed
 
+- Water Product Splash now records stage-by-stage cached-region checks, rejected exact-checkpoint claims, and the tested planar temporary cap/direct-bisect/exact-splice repair. Closure does not establish natural appearance; the production crop review is still pending. Portable and installed guidance match, and all21 library skills validate.
+
 - Added `water-product-splash` (Water · Product Splash) under `skills/3d/fluids/`. It records broad-fold/edge-breakup hierarchy, ray-guided reflections, exact native/filter settings, retained failures, product adaptation and an explicit learn-as-you-work process. New portable Blender helpers configure sources, freeze a baked frame and refine a bounded membrane; the separate original demo demonstrates optics only.
 - Splash package validation: 12 native helper checks including a tiny three-frame liquid bake and frozen reopening, 7 saved-demo checks, and 7 desktop/mobile browser checks pass. Generic full/native raw/denoised evidence inspected. No private source assets were copied; source-study 8.1 remains an assistant still assessment and does not transfer to the demo or motion. A matching Codex skill is installed. This addition is committed locally; no push was requested.
 
