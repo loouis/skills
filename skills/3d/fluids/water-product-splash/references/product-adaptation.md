@@ -46,3 +46,23 @@ When excluding a product accessory, materialize `list(collection.all_objects)` b
 ## Recheck thin contours when changing the background
 
 A matched dark-to-white backdrop comparison retained the product and water geometry but weakened the upper plumes, detached beads and thin outer margin. Clear transmission through a pale field did not compensate for the lost contour contrast. Compare both the broad membrane and the finest silhouette features; a white background is not automatically clearer. Backdrop changes also leave repeated geometric curls untouched. Keep background preference separate from whether the water shape is convincing.
+
+## Compare inherited thickness before blaming the normals
+
+A transferred fluid membrane showed a heavy glass-like rim and angular tonal patches. The original pre-offset source was available. Reapplying its bounded smoothing and 1.8mm normal offset reproduced the selected source vertices exactly; only then was the offset reduced to0.3mm for a matched native comparison. The rim became thinner, but the patches remained in raw and denoised pixels. This proves a limited thickness effect, not a complete repair or a normal/backend diagnosis. Preserve the old treatment, verify reconstruction and inspect the local shape before introducing another filter. Smooth polygon flags and subdivision alone do not establish optical quality.
+
+## Separate airborne drops from attached wetness
+
+When a polished cylindrical product needs attached beads, a small closed cap with a cylinder-conforming underside can preserve its original finish. In the tested still, each cap had a nominal5µm clearance, shared rim vertices and two incident faces per edge; evaluated face/edge clearance and single instances were checked separately from the large splash. This is an authored wetness cue, not a wetting or drainage solve. Keep their object/receiver set separate so adding beads does not invalidate the imported splash count. Check the final adapted geometry before attributing an apparently flat drop to reflected light.
+
+## Preserve detached particles through envelope changes
+
+An independent source audit showed rounded drops, but the adapted image showed flat ovals. The plume-spreading field had been applied pointwise to every vertex, stretching one detached drop by more than3× in a principal dimension. Move each detached particle as a rigid body through an envelope-placement field unless its deformation is intentional; keep continuous deformation on the connected sheet. In the tested correction, using the average field displacement per particle retained the desired distribution, recovered rounded native silhouettes and preserved114 final particle shapes to a relative principal-scale tolerance of1e-4 after accounting for uniform placement scale. Audit the final geometry, not just the imported source. This check does not validate trajectories or aerodynamic deformation.
+
+## Verify modifier support after applying earlier modifiers
+
+A second smoothing operation silently received an empty vertex-group name from a retained RNA group wrapper after the first modifier was applied. It smoothed the entire connected surface and softened the plumes. The first filter had exact weights and zero motion outside its mask; the second moved every intended zero-weight vertex. Re-resolving the group by its stored string name fixed the test: the same zero-weight vertices remained exactly unchanged through both operations. Store stable identifiers, look up the current item after destructive operators, assert the modifier binding and measure displacement outside the intended support. A group assignment in source code is not proof that the evaluated operation stayed local.
+
+## Distinguish a tonal patch from first-surface faceting
+
+A patchy clear-water region appeared almost identically on CPU and Metal. Higher transmission/total/glossy limits changed nearby bright detail but retained the patch structure. An opaque shading-normal diagnostic showed smooth transitions across the visible region, with no custom normals or sharp edges. These controls reject a backend-only explanation and do not support literal first-surface faceting; they do not isolate later refracted surfaces or source visibility. Inspect those optical paths before adding more geometry smoothing. An appended water collection also does not bring its source scene's global integrator settings: record and compare them explicitly.
