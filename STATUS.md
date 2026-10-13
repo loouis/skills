@@ -44,3 +44,5 @@ _Updated 2026-10-14._
 ## Blockers
 
 - None for the portable skill/library integration.
+
+-14October: suspended-splash review lesson now records the demonstrated distinction between three passed local gates and a newly exposed whole-frame exit defect. Scores remain scoped; no generic10/10 preset or motion claim.
