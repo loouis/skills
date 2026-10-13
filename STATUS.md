@@ -46,3 +46,5 @@ _Updated 2026-10-14._
 - None for the portable skill/library integration.
 
 -14October: suspended-splash review lesson now records the demonstrated distinction between three passed local gates and a newly exposed whole-frame exit defect. Scores remain scoped; no generic10/10 preset or motion claim.
+
+-14October: splash diagnosis now distinguishes unchanged exterior coordinates from unchanged topology after Boolean cuts; exact face restoration repaired a closedness failure, but its eye-like opening was rejected visually. Construction notes cover checking both ends of a bounded twist and restoring first-drop separation.
