@@ -58,6 +58,8 @@ The gap-corrected follow-up removed stretched strips and produced a closed joine
 
 Shortening those side tubes and introducing restrained curvature, varying radii, necks and rounded ends improved the rigid-rod appearance in full and native review. Unequal directional drop packets helped but remained ordered, while the two retained main tips stayed simple. Score these features separately: an overall9/10 average must not conceal an unfinished local correction.
 
+Raising fork roots made more offshoots visible above the product, while localized parent-tip necks and wider sideways packet scatter improved breakup. Some fine curved ends still read as sculpted twigs. Judge branch geometry in the actual product view: a well-shaped fork hidden behind the product contributes little, and adding visible branches is not enough to establish natural rupture.
+
 ## Recheck thin contours when changing the background
 
 A matched dark-to-white backdrop comparison retained the product and water geometry but weakened the upper plumes, detached beads and thin outer margin. Clear transmission through a pale field did not compensate for the lost contour contrast. Compare both the broad membrane and the finest silhouette features; a white background is not automatically clearer. Backdrop changes also leave repeated geometric curls untouched. Keep background preference separate from whether the water shape is convincing.
@@ -101,3 +103,13 @@ A main-water roughness control at0.045 softened nearby highlights while retainin
 A subsequent zero-outward-offset comparison changed fine folds/margins but retained the large angular borders. The prior reduction in added thickness had therefore not simply stopped short of a complete zero-offset fix. Preserve the stronger reviewed rim treatment; neither tested offset is established as a universal preset.
 
 A directly rendered closed boundary reconstructed at finer spacing contained more vertices than the original evaluated/subdivided mesh, yet retained the same large angular borders in native raw/clean comparison. Do not keep a more expensive geometry representation solely because it passes closedness/density checks. This weakens a simple boundary-tessellation explanation without proving which reflected or transmitted contribution causes the appearance.
+
+A glossy-visibility exclusion of the product changed reflected details but retained the large angular water borders. This was an explicit diagnostic alteration to product reflections/self-reflections, with geometry, finish and transmission visibility preserved. Restore the original flags when the target remains; do not silently adopt a product-visibility change as a water fix.
+
+## Review authored membrane openings separately
+
+A local Boolean opening preserved the surrounding geometry and produced a closed surface, but its enclosed silhouette still looked cookie-cut in native raw/clean review. A mathematically irregular outline is not automatically natural breakup; inspect its relationship to existing voids and accumulated margins before keeping it. This is explicit shape art direction, not proof of the angular-reflection cause or a rupture solve.
+
+Assign the existing water material to a Boolean cutter before applying it, then verify all resulting slots and faces. In the tested failure, otherwise valid closed geometry introduced an empty slot and the material audit stopped the render; explicit operand binding corrected it. Closedness alone does not certify optical interfaces.
+
+Widening that opening into an existing void, with a small compact-support outward rim field, replaced the broad panel with an open tear and improved its local appearance. An even left margin and sharp lower tip remained. The useful lesson is relational: judge new openings against nearby voids and sheet/rim thickness, rather than scoring the cutter outline by itself.

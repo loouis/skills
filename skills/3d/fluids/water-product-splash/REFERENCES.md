@@ -3,3 +3,4 @@
 - [Blender liquid flow settings](https://docs.blender.org/manual/en/latest/physics/fluid/type/flow.html)
 - [Visual Education splash photography](https://visualeducation.com/class/floating-cosmetics-splash-shot/)
 - [Photigy beer splash photography](https://www.photigy.com/school/liquid-splash-beer-photography-tutorial/)
+- [Blender Cycles performance and Persistent Data](https://docs.staging.blender.org/manual/en/latest/render/cycles/render_settings/performance.html)

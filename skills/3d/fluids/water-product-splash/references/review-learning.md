@@ -1,6 +1,6 @@
 # Review each pass and write what it teaches
 
-Before a pass, identify the visible defect and the change intended to test it. Keep unrelated variables fixed when a causal claim matters. After rendering, inspect the full image and native clean/raw crops of centre, plume, rims, trail and product interaction.
+Before a pass, identify the visible defect and the change intended to test it. Keep unrelated variables fixed when a causal claim matters. For a local correction, start with a cropped border render at native pixel density and modest samples with denoising. Inspect its clean/raw pixels before another change. Review the whole image at agreed milestones and at final quality, including centre, plume, rims, trail and product interaction.
 
 Use separate overlay boxes with numbered notes. Keep the clean image untouched. Each note names the visible feature, why it falls short and the next useful control. Match reference and render framing; do not upscale a crop and describe it as new detail.
 
@@ -21,3 +21,12 @@ After a meaningful result, add a concise entry to the relevant maintained refere
 Store the detailed pass record beside the receiving project assets. Keep the portable skill focused on decisions another shot can reuse. Merge a new lesson into the relevant section rather than accumulating a chronological transcript. Promote new defaults only after supported improvement; keep former recipes reproducible and mark superseded readiness clearly.
 
 Public packages should contain generic explanations, reusable code and newly generated examples. Keep supplied references, client names, product geometry/artwork, scenes/caches and private paths in the source project. Revalidate changed code, local links and public content; update the library and maintained installed copy deliberately. Learning is part of the current rendering task, not an unattended schedule.
+
+
+## Keep section review feasible in memory
+
+Use one heavy Blender process at a time. Disable Persistent Data, restart between expensive stages and reuse frozen mesh geometry for light/material/bounce changes. Do not rebake fluid for shading. If a simulation is required, bake in a separate session, exit it, and render the cache in a fresh process. Lower preview samples reduce tracing work; render borders reduce output/pixel work, but neither guarantees a small geometry/BVH footprint. Inspect mesh density before increasing it, and accept a reduction only after native contour, tiny-feature and optical comparisons.
+
+An expensive authored reconstruction can be frozen once as a water-only checkpoint for repeated crop experiments. Record why it is needed, an output budget, source pins, object/geometry hashes and dependencies; avoid duplicating the product/studio/images per pass. Verify a fresh load and compare matching pixels before treating the snapshot as equivalent. Reconstructed Boolean geometry can fail an exact digest even under the same recipe; record the discrepancy and investigate rather than silently declaring exactness.
+
+Use an explicit local score for each marked defect. A high whole-image average does not clear a weak rim, connection or plume. Follow the user's milestone for a full-quality frame; a10/10 gate requires an honest scoped visual judgment, not automatic promotion or an absolute claim of perfection. Full-frame review can reopen a previously accepted section. Record interrupted jobs without invented images or beauty scores.
