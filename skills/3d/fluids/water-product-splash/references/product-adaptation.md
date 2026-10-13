@@ -41,6 +41,11 @@ A field intended to widen the lower trail used height alone. It also caught low 
 A stronger local smoothing control softened fine detail without removing broad repeated bends. A following wider, polynomial-centreline-faired trail introduced stretched transition ridges and a stiffer strip; that combined change was rejected. Treat mean curvature, cross-section, local detail and width as different controls. Preserve the strongest prior branch when a technically valid deformation weakens the liquid shape.
 
 
+A lower ribbon ended in a heavy fold apparently resting on the product base. Moving only its terminal region down and out, with spatially bounded cross-section narrowing, opened the silhouette without stretching the upper root. The first exit was still paddle-like; increasing only the target narrowing factor from0.5 to0.85 produced a thinner terminal ligament. Four separate authored drops continued the direction. This is still composition, not a validated pinch-off trajectory. Preserve the upstream envelope and inspect the exit at native size; do not apply the tested dimensions or taper universally.
+
+New exit drops need clearance against the actual visible assembly. Requiring every drop to lie below an arbitrary world height can reject a safely outboard arrangement without measuring collision. Use conservative per-part bounding-box separation or appropriate evaluated geometry checks, retain a real clearance margin, and verify frame coverage separately. A passed geometric check still does not establish liquid realism.
+
+
 When excluding a product accessory, materialize `list(collection.all_objects)` before mutating visibility. A live traversal in the tested scene changed only its first matching object; a separate snapshot correctly changed all intended parts. Verify the final visible assembly and retain the original geometry.
 
 ## Recheck thin contours when changing the background
