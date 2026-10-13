@@ -99,3 +99,5 @@ A separate matched native control hid the inherited finite product-studio cards 
 A main-water roughness control at0.045 softened nearby highlights while retaining the same large angular borders. It was rejected rather than accepted as an optical repair. Keep microsurface changes separate from geometry, and compare the targeted border and the lost highlight clarity together.
 
 A subsequent zero-outward-offset comparison changed fine folds/margins but retained the large angular borders. The prior reduction in added thickness had therefore not simply stopped short of a complete zero-offset fix. Preserve the stronger reviewed rim treatment; neither tested offset is established as a universal preset.
+
+A directly rendered closed boundary reconstructed at finer spacing contained more vertices than the original evaluated/subdivided mesh, yet retained the same large angular borders in native raw/clean comparison. Do not keep a more expensive geometry representation solely because it passes closedness/density checks. This weakens a simple boundary-tessellation explanation without proving which reflected or transmitted contribution causes the appearance.
