@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Director Film"
+  short_description: "Direct, animate, score and QA a finished short film in code"
+  default_prompt: "Use $motion-director-film to make a finished short film from this brief: plan it, build it in code on one timeline, score it, and run critic passes until it clears the quality bar."

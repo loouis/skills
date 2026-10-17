@@ -1,8 +1,10 @@
 # STATUS
 
-_Updated 2026-10-14._
+_Updated 2026-10-17._
 
 ## Completed
+
+- Added `motion-director-film` under the new `skills/motion/film/` category, adapted from @minchoi's public motion director prompt (credited in `REFERENCES.md`). It turns the prompt into a procedural skill: brief template with defaults for blank lines, four modes, asset and craft rules, audio-first `timing.json`, frame-based build, gated workflow, independent critic loop and a measured quality bar with ffprobe/ffmpeg checks. Text-only skill with no `demo/`; no film has been rendered with it yet. All 22 library skills validate. Committed locally; no push requested.
 
 - Splash branch studies now distinguish camera-plane displacement from rigid cross-section rotation and document rejected triangular webs, post-cache scallops and folded lips. These refine construction/diagnosis guidance without promoting an unfinished upper-plume result or changing the generic demo.
 

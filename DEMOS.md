@@ -34,10 +34,11 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 21
+- Total: 22
 - With demos: 21
 - 3d/fluids: 3
 - 3d/materials: 1
+- motion/film: 1
 - motion/logo: 1
 - ui/masking: 1
 - ui/page-transitions: 6

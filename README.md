@@ -111,7 +111,7 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **21 skills** across 6 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **22 skills** across 7 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
 ### 3D Fluids (3)
 
@@ -126,6 +126,12 @@ This snapshot contains **21 skills** across 6 categories. `find skills -name SKI
 [Category guide](skills/3d/materials/README.md)
 
 - [`blender-polished-chrome`](skills/3d/materials/blender-polished-chrome/SKILL.md) - Mirror-polished metal materials and studio reflections
+
+### Film Skills (1)
+
+[Category guide](skills/motion/film/README.md)
+
+- [`motion-director-film`](skills/motion/film/motion-director-film/SKILL.md) - Direct, animate, score and QA a finished short film in code
 
 ### Logo Skills (1)
 
