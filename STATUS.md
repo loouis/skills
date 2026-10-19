@@ -50,3 +50,9 @@ _Updated 2026-10-17._
 -14October: suspended-splash review lesson now records the demonstrated distinction between three passed local gates and a newly exposed whole-frame exit defect. Scores remain scoped; no generic10/10 preset or motion claim.
 
 -14October: splash diagnosis now distinguishes unchanged exterior coordinates from unchanged topology after Boolean cuts; exact face restoration repaired a closedness failure, but its eye-like opening was rejected visually. Construction notes cover checking both ends of a bounded twist and restoring first-drop separation.
+
+## Coastal interior render — 19 October 2026
+
+- Added `coastal-interior-render` under `skills/3d/interiors/` in the active SSD working copy. The complete package includes 12 reference chapters, portable render/review helpers, generic demo assets and source attribution. Existing motion and fluid skills are preserved.
+- The relocated files are byte-verified against the original package. No production apartment scenes or licensed reference pixels are bundled. The original checkout remains a recovery copy; current work uses this repository.
+- Location correction only: existing native-demo validation remains historical evidence, not a new scene render or quality claim. Validation from this checkout passes: all 23 library skills, three helper tests, the skill validator and 42 local reference/demo links. GitHub publication remains unperformed.

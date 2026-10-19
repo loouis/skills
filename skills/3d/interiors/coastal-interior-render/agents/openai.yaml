@@ -1,0 +1,6 @@
+interface:
+  display_name: "Coastal Interior Render"
+  short_description: "Warm coastal interiors with rigorous realism review"
+  default_prompt: "Use $coastal-interior-render to build an editable premium coastal kitchen and living room with warm timber, quiet stone, natural daylight and a fully reviewed render."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+{
+  "views": [
+    {"camera": "Study hero", "slug": "hero", "width": 1280, "height": 720, "samples": 64},
+    {"camera": "Study detail", "slug": "detail", "width": 1280, "height": 720, "samples": 64}
+  ]
+}

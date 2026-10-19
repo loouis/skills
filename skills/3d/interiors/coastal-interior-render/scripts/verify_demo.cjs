@@ -1,0 +1,33 @@
+// NODE_PATH can select an existing Playwright installation. No network required.
+const fs=require('node:fs'), path=require('node:path'), {pathToFileURL}=require('node:url');
+const {chromium}=require('playwright');
+const output=path.resolve(process.argv[2]||'');
+if(!process.argv[2] || fs.existsSync(output)) throw Error('Provide a fresh output directory');
+fs.mkdirSync(output,{recursive:true});
+const html=path.resolve(__dirname,'../demo/index.html');
+(async()=>{
+  const browser=await chromium.launch({headless:true, executablePath:process.env.BROWSER_EXECUTABLE_PATH||undefined});
+  const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(pathToFileURL(html).href);await page.evaluate(()=>document.fonts.ready);
+  await page.locator('#render').evaluate(img=>img.decode());
+  const assert=(condition,message)=>{if(!condition)throw Error(message)};
+  assert(await page.locator('#render').evaluate(i=>i.naturalWidth===1280),'Hero dimensions');
+  await page.screenshot({path:path.join(output,'preview.jpg'),type:'jpeg',quality:85});
+  await page.locator('#boxes').click();
+  assert(await page.locator('#overlay').evaluate(e=>!e.hasAttribute('hidden') && getComputedStyle(e).display!=='none'),'Boxes visible');
+  await page.locator('[data-view="detail"]').click();
+  await page.locator('#render').evaluate(img=>img.decode());
+  assert((await page.locator('#download').getAttribute('href'))==='detail.png','Download follows view');
+  await page.screenshot({path:path.join(output,'detail-boxes.png')});
+  await page.locator('#boxes').click();
+  assert(await page.locator('#overlay').evaluate(e=>e.hasAttribute('hidden') && getComputedStyle(e).display==='none'),'Boxes hidden');
+  await page.setViewportSize({width:390,height:844});
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No mobile horizontal overflow');
+  await page.screenshot({path:path.join(output,'mobile.png'),fullPage:true});
+  assert(errors.length===0,'No browser errors: '+errors.join(', '));
+  const result={checks:6,passed:true,scope:'Desktop/mobile demo controls and layout; not production image quality'};
+  fs.writeFileSync(path.join(output,'browser-checks.json'),JSON.stringify(result,null,2)+'\n');
+  console.log('DEMO_BROWSER_COMPLETE',JSON.stringify(result));
+  await browser.close();
+})().catch(e=>{console.error(e);process.exitCode=1});

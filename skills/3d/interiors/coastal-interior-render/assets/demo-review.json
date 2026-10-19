@@ -1,0 +1,8 @@
+{
+  "title": "Generic material fixture — inspection and remaining limits",
+  "notes": [
+    {"title":"Procedural veneer is still uniform","status":"open","box":[0.3,0.05,0.47,0.36],"observation":"The vertical direction is clear, but the grain lacks the panel-specific variation of production veneer.","action":"For a full scene, use licensed physically scaled veneer maps and compare every exposed face."},
+    {"title":"Corner remains a simple assembly","status":"check","box":[0.63,0.60,0.17,0.18],"observation":"The fixture has matching 70 mm top/end thickness. Its straight corner seam is not a resolved bonded mitre.","action":"Use the kitchen chapter to separate exposed arris easing from bonded-joint easing and inspect a dedicated corner view."},
+    {"title":"Textile is only a surface sample","status":"open","box":[0.25,0.44,0.28,0.20],"observation":"The authored folds are orderly and the fine weave is weak at this scale. This is not the production throw.","action":"For a sofa, build weighted support, unequal overlap, scaled yarn and attached full fringe, then review overhead and the full hem."}
+  ]
+}

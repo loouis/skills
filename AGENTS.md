@@ -56,3 +56,8 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 - Demos use a pinned GSAP CDN or the skill's loopback `scripts/serve_preview.py --gsap <local-gsap.min.js>` for offline playback. Keep each demo's selected default and preview aligned with its skill.
 
 - `water-product-splash` covers suspended product splashes and keeps its learning workflow in `references/review-learning.md`. Record demonstrated findings during work; keep private pass ledgers and assets in the receiving project. Validate the portable helpers with Blender `--python-exit-code 1 -P scripts/test_native.py`, rebuild its original optical fixture with `scripts/render_demo.py`, then inspect native/raw and browser views. The low-resolution native test and authored demo do not validate a full production bake or motion.
+
+## Coastal interiors
+
+- `coastal-interior-render` lives under `skills/3d/interiors/`. Read its routed references before scene work; preserve observed/published/proposed distinctions and keep technical gates separate from visual scores. Public demos are original procedural material fixtures, not exported production apartments or licensed furniture.
+- Validate helpers with `python3 -B scripts/test_tools.py` from the skill folder. Build the fresh Blender fixture with `scripts/render_demo.py`, render both cameras through `scripts/render_views.py`, and inspect native outputs plus separate review boards. Use `node scripts/verify_demo.cjs <fresh-output-directory>` with Playwright for desktop/mobile evidence. Its CPU fixture checks do not validate GPU backends, production cloth or a complete apartment.

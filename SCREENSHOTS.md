@@ -2,7 +2,7 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 21
+- Captured demos: 22
 - Format: JPEG
 
 ## 3d/fluids (3)
@@ -30,6 +30,16 @@ Reconstruct and refine suspended product-water splashes in Blender, including fo
 [Open demo](skills/3d/fluids/water-product-splash/demo/index.html) · [Skill](skills/3d/fluids/water-product-splash/SKILL.md) · [Prompt](skills/3d/fluids/water-product-splash/demo/PROMPT.md)
 
 ![water-product-splash preview](skills/3d/fluids/water-product-splash/demo/preview.jpg)
+
+## 3d/interiors (1)
+
+### coastal-interior-render
+
+Build and refine editable Blender/Cycles coastal apartment interiors with warm timber, restrained stone, natural daylight and tactile furniture. Use for premium beachfront kitchen/living scenes, Burly- or MIRA-inspired art direction, practical layout, kitchen construction, upholstery, throws/fringe, glazing, balconies, reference comparison and annotated realism reviews. Includes detailed modelling, material, lighting and failure-recovery methods. Do not use as a promise of an automatic quality score, a construction specification or a substitute for a requested direct 3D render.
+
+[Open demo](skills/3d/interiors/coastal-interior-render/demo/index.html) · [Skill](skills/3d/interiors/coastal-interior-render/SKILL.md) · [Prompt](skills/3d/interiors/coastal-interior-render/demo/PROMPT.md)
+
+![coastal-interior-render preview](skills/3d/interiors/coastal-interior-render/demo/preview.jpg)
 
 ## 3d/materials (1)
 

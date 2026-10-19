@@ -111,7 +111,7 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **22 skills** across 7 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **23 skills** across 8 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
 ### 3D Fluids (3)
 
@@ -120,6 +120,12 @@ This snapshot contains **22 skills** across 7 categories. `find skills -name SKI
 - [`blender-screen-water`](skills/3d/fluids/blender-screen-water/SKILL.md) - Clear FLIP water sheets, clustered bubbles and loops
 - [`water-optics-clear-studio`](skills/3d/fluids/water-optics-clear-studio/SKILL.md) - Clear water, curved contact and controlled reflections
 - [`water-product-splash`](skills/3d/fluids/water-product-splash/SKILL.md) - Folded water sheets, torn rims and product splashes
+
+### 3D Interiors (1)
+
+[Category guide](skills/3d/interiors/README.md)
+
+- [`coastal-interior-render`](skills/3d/interiors/coastal-interior-render/SKILL.md) - Warm coastal interiors with rigorous realism review
 
 ### 3D Materials (1)
 

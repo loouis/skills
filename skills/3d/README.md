@@ -4,5 +4,6 @@ Reusable materials, lighting, fluid simulation and rendering workflows for 3D sc
 
 <!-- categories:start -->
 - [3D Fluids](fluids/README.md) - 3 skills
+- [3D Interiors](interiors/README.md) - 1 skill
 - [3D Materials](materials/README.md) - 1 skill
 <!-- categories:end -->

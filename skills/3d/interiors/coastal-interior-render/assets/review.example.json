@@ -1,0 +1,12 @@
+{
+  "title": "FORMAT EXAMPLE — replace notes and boxes after inspecting the actual render",
+  "notes": [
+    {
+      "title": "Inspect material separation",
+      "status": "check",
+      "box": [0.2, 0.25, 0.3, 0.35],
+      "observation": "This example box is a placeholder, not evidence of a defect or a pass.",
+      "action": "Compare stone, timber and metal at matched reference scale and replace this note with an observed finding."
+    }
+  ]
+}
