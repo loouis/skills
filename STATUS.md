@@ -59,5 +59,5 @@ _Updated 2026-10-17._
 
 ## GitHub title — 11 November 2026
 
-- The GitHub About description, which GitHub uses for the page title and search results show as `loouis/skills: …`, was the outdated "Claude Code skills that rebuild effects from my motion labs, exactly". It is now the README's opening line: "Agent skills for web motion, interfaces and 3D rendering, with Claude Code, Codex and other AI coding agents" (set live with `gh repo edit`). The README line now says "AI coding agents" to match, and `AGENTS.md` records that the two change together.
+- The GitHub About description, which GitHub uses for the page title and search results show as `loouis/skills: …`, was the outdated "Claude Code skills that rebuild effects from my motion labs, exactly". It is now the README's opening line: "Agent skills for web designers and 3D builders using Claude Code, Codex and other AI coding agents" (set live with `gh repo edit`; Louis chose the audience wording over a first version that listed web motion, interfaces and 3D rendering). The README line was changed to match, and `AGENTS.md` records that the two change together.
 - Search results update when Google next crawls the page. The repo name stays lowercase `skills`. Only this change was committed; the separate water-pool-sunlight work is still uncommitted, and nothing was pushed.
