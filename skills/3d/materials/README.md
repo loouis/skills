@@ -5,5 +5,5 @@ Blender material and reflection workflows with generic rendered demos. Keep mate
 <!-- skills:start -->
 | Skill | Use it for |
 | --- | --- |
-| [Blender Polished Chrome](blender-polished-chrome/SKILL.md) | Mirror-polished metal materials and studio reflections |
+| [Blender Polished Chrome](blender-polished-chrome) | Mirror-polished metal materials and studio reflections |
 <!-- skills:end -->

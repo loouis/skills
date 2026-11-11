@@ -5,7 +5,7 @@ Skills for making finished short films in code: showreels, product films, launch
 <!-- skills:start -->
 | Skill | Use it for |
 | --- | --- |
-| [Motion Director Film](motion-director-film/SKILL.md) | Direct, animate, score and QA a finished short film in code |
+| [Motion Director Film](motion-director-film) | Direct, animate, score and QA a finished short film in code |
 <!-- skills:end -->
 
 ## Use a skill

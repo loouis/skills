@@ -1,0 +1,290 @@
+{
+  "blender-polished-chrome": {
+    "title": "Blender Polished Chrome: realistic chrome and mirror-polished metal",
+    "tags": [
+      "Blender",
+      "Cycles",
+      "chrome material",
+      "polished metal",
+      "stainless steel",
+      "reflections",
+      "product rendering"
+    ]
+  },
+  "blender-screen-water": {
+    "title": "Blender Screen Water: FLIP water sheet and bubbles for tall displays",
+    "tags": [
+      "Blender",
+      "Cycles",
+      "FLIP fluid simulation",
+      "water sheet",
+      "bubbles",
+      "tall screen displays",
+      "seamless loop"
+    ]
+  },
+  "coastal-interior-render": {
+    "title": "Coastal Interior Render: photoreal Blender interiors in natural daylight",
+    "tags": [
+      "Blender",
+      "Cycles",
+      "interior rendering",
+      "architectural visualization",
+      "archviz",
+      "photorealism",
+      "daylight"
+    ]
+  },
+  "gooey-section-drift": {
+    "title": "Gooey section edge: Drift, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-elastic": {
+    "title": "Gooey section edge: Elastic, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-goo": {
+    "title": "Gooey section edge: Goo, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-honey": {
+    "title": "Gooey section edge: Honey, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-peel": {
+    "title": "Gooey section edge: Peel, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-slosh": {
+    "title": "Gooey section edge: Slosh, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-taffy": {
+    "title": "Gooey section edge: Taffy, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-twin": {
+    "title": "Gooey section edge: Twin, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gooey-section-wave": {
+    "title": "Gooey section edge: Wave, a liquid scroll effect between page sections",
+    "tags": [
+      "gooey effect",
+      "scroll animation",
+      "liquid section divider",
+      "canvas",
+      "Webflow",
+      "React",
+      "Next.js"
+    ]
+  },
+  "gsap-transition-diagonal-tide": {
+    "title": "Diagonal Tide: hand-drawn GSAP page transition for websites",
+    "tags": [
+      "GSAP",
+      "page transitions",
+      "route transitions",
+      "SVG",
+      "web animation",
+      "Astro",
+      "Barba.js"
+    ]
+  },
+  "gsap-transition-double-swell": {
+    "title": "Double Swell: hand-drawn GSAP page transition for websites",
+    "tags": [
+      "GSAP",
+      "page transitions",
+      "route transitions",
+      "SVG",
+      "web animation",
+      "Astro",
+      "Barba.js"
+    ]
+  },
+  "gsap-transition-figure-eight": {
+    "title": "Figure Eight: hand-drawn GSAP page transition for websites",
+    "tags": [
+      "GSAP",
+      "page transitions",
+      "route transitions",
+      "SVG",
+      "web animation",
+      "Astro",
+      "Barba.js"
+    ]
+  },
+  "gsap-transition-signature-loop": {
+    "title": "Signature Loop: hand-drawn GSAP page transition for websites",
+    "tags": [
+      "GSAP",
+      "page transitions",
+      "route transitions",
+      "SVG",
+      "web animation",
+      "Astro",
+      "Barba.js"
+    ]
+  },
+  "gsap-transition-suite": {
+    "title": "Suite: hand-drawn GSAP page transition for websites",
+    "tags": [
+      "GSAP",
+      "page transitions",
+      "route transitions",
+      "SVG",
+      "web animation",
+      "Astro",
+      "Barba.js"
+    ]
+  },
+  "gsap-transition-wide-tide": {
+    "title": "Wide Tide: hand-drawn GSAP page transition for websites",
+    "tags": [
+      "GSAP",
+      "page transitions",
+      "route transitions",
+      "SVG",
+      "web animation",
+      "Astro",
+      "Barba.js"
+    ]
+  },
+  "logo-mask-motion": {
+    "title": "Logo Mask Motion: animate a line logo with masks and land on the artwork",
+    "tags": [
+      "logo animation",
+      "SVG animation",
+      "masking",
+      "motion design",
+      "monogram",
+      "Lottie",
+      "After Effects"
+    ]
+  },
+  "motion-director-film": {
+    "title": "Motion Director Film: product films and showreels made in code",
+    "tags": [
+      "Remotion",
+      "GSAP",
+      "motion design",
+      "product video",
+      "showreel",
+      "explainer video",
+      "ffmpeg"
+    ]
+  },
+  "vector-masking": {
+    "title": "Vector Masking: clean masks for overlapping vector logos and illustrations",
+    "tags": [
+      "SVG",
+      "vector masks",
+      "logo design",
+      "illustration",
+      "Figma",
+      "motion design"
+    ]
+  },
+  "water-optics-clear-studio": {
+    "title": "Water Optics · Clear Studio: clear water and droplets on products in Blender",
+    "tags": [
+      "Blender",
+      "Cycles",
+      "clear water",
+      "water droplets",
+      "refraction",
+      "ripples",
+      "product rendering"
+    ]
+  },
+  "water-pool-sunlight": {
+    "title": "Water Pool · Sunlight: pool caustics and underwater sun rays in Blender",
+    "tags": [
+      "Blender",
+      "Cycles",
+      "caustics",
+      "god rays",
+      "light shafts",
+      "underwater",
+      "swimming pool",
+      "seamless loop"
+    ]
+  },
+  "water-product-splash": {
+    "title": "Water · Product Splash: product water splash renders in Blender",
+    "tags": [
+      "Blender",
+      "Cycles",
+      "water splash",
+      "liquid simulation",
+      "droplets",
+      "product CGI",
+      "product rendering"
+    ]
+  }
+}

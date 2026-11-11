@@ -5,5 +5,5 @@ Reference-led Blender/Cycles interiors: practical layouts, furniture, textiles, 
 <!-- skills:start -->
 | Skill | Use it for |
 | --- | --- |
-| [Coastal Interior Render](coastal-interior-render/SKILL.md) | Warm coastal interiors with rigorous realism review |
+| [Coastal Interior Render](coastal-interior-render) | Warm coastal interiors with rigorous realism review |
 <!-- skills:end -->

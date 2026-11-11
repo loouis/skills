@@ -5,15 +5,15 @@ Skills for the edges and transitions between page sections. Each gooey section s
 <!-- skills:start -->
 | Skill | Use it for |
 | --- | --- |
-| [Gooey Section: Drift](gooey-section-drift/SKILL.md) | Crest that surfs sideways as you scroll |
-| [Gooey Section: Elastic](gooey-section-elastic/SKILL.md) | Springy edge that overshoots and twangs back |
-| [Gooey Section: Goo](gooey-section-goo/SKILL.md) | Tight sticky bulge with sinking flanks |
-| [Gooey Section: Honey](gooey-section-honey/SKILL.md) | Heavy blob: slow rise, very slow droop |
-| [Gooey Section: Peel](gooey-section-peel/SKILL.md) | Fast drain from full stretch, slow peeling tail |
-| [Gooey Section: Slosh](gooey-section-slosh/SKILL.md) | Liquid lean: rises one side, dips the other |
-| [Gooey Section: Taffy](gooey-section-taffy/SKILL.md) | Stretches on scroll, snaps back with one wobble |
-| [Gooey Section: Twin](gooey-section-twin/SKILL.md) | Main bulge plus a smaller blob beside it |
-| [Gooey Section: Wave](gooey-section-wave/SKILL.md) | Broad flowing crest pulled by scroll speed |
+| [Gooey Section: Drift](gooey-section-drift) | Crest that surfs sideways as you scroll |
+| [Gooey Section: Elastic](gooey-section-elastic) | Springy edge that overshoots and twangs back |
+| [Gooey Section: Goo](gooey-section-goo) | Tight sticky bulge with sinking flanks |
+| [Gooey Section: Honey](gooey-section-honey) | Heavy blob: slow rise, very slow droop |
+| [Gooey Section: Peel](gooey-section-peel) | Fast drain from full stretch, slow peeling tail |
+| [Gooey Section: Slosh](gooey-section-slosh) | Liquid lean: rises one side, dips the other |
+| [Gooey Section: Taffy](gooey-section-taffy) | Stretches on scroll, snaps back with one wobble |
+| [Gooey Section: Twin](gooey-section-twin) | Main bulge plus a smaller blob beside it |
+| [Gooey Section: Wave](gooey-section-wave) | Broad flowing crest pulled by scroll speed |
 <!-- skills:end -->
 
 ## Use a skill

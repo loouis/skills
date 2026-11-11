@@ -1,8 +1,8 @@
 // node scripts/validate-skills.cjs
 // Checks every skill against the folder contract in README.md. Exits 1 on any failure.
 const fs = require('node:fs'), path = require('node:path'), crypto = require('node:crypto');
-const { ROOT, SKILLS, listSkills, categories } = require('./lib.cjs');
-const skills = listSkills(), failures = [];
+const { ROOT, SKILLS, listSkills, categories, skillPages } = require('./lib.cjs');
+const skills = listSkills(), pages = skillPages(), failures = [];
 const fail = (where, msg) => failures.push(`${where}: ${msg}`);
 
 function jpegSize(file) {
@@ -47,6 +47,12 @@ for (const s of skills) {
     const p = path.join(s.dir, 'demo/preview.jpg');
     if (fs.existsSync(p)) { const z = jpegSize(p); if (!z || z.w !== 1280 || z.h !== 720) fail(at, `demo/preview.jpg is ${z ? z.w + 'x' + z.h : 'not a JPEG'}, expected 1280x720`); }
   }
+  // landing page: a search title and tags in scripts/skill-pages.json, rendered into README.md
+  const page = pages[s.name];
+  if (!page || !page.title || !Array.isArray(page.tags) || !page.tags.length) fail(at, 'needs a title and tags in scripts/skill-pages.json');
+  else if (page.title.length > 80) fail(at, `skill-pages.json title is ${page.title.length} chars (keep it under 80 so search results show it)`);
+  const landing = path.join(s.dir, 'README.md');
+  if (!fs.existsSync(landing) || !fs.readFileSync(landing, 'utf8').includes(page ? `# ${page.title}\n` : '\0')) fail(at, 'README.md landing page is missing or out of date (run node scripts/build-gallery.cjs)');
   // public hygiene
   for (const f of fs.readdirSync(s.dir, { recursive: true })) {
     const full = path.join(s.dir, f);

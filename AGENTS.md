@@ -2,7 +2,7 @@
 
 Louis's agent skills, published at https://github.com/loouis/skills. **This repo is public.** Multiple local checkouts may exist; use the active project checkout and verify its `origin` before making changes. Resolve the private labs generator location before rebuilding generated skills in a different checkout. Skills live in category folders, each skill with `SKILL.md`, `REFERENCES.md`, `agents/openai.yaml` and, for visual skills, a `demo/`.
 
-The GitHub About description is the README's opening line, word for word. GitHub shows it in the page title (`loouis/skills: …`), so it is the title search results show; change both together with `gh repo edit loouis/skills --description "…"`.
+The GitHub About description is the README's opening line, word for word. GitHub shows it in the page title (`loouis/skills: …`), so it is the title search results show; change both together with `gh repo edit loouis/skills --description "…"`. The repository has 20 topics (GitHub's maximum) for search; keep them matched to what the library covers with `gh repo edit --add-topic`/`--remove-topic`.
 
 ## What to do here
 - Add new skills under `skills/<group>/<category>/`, for example `skills/ui/sections/`.
@@ -16,12 +16,12 @@ The GitHub About description is the README's opening line, word for word. GitHub
 - Commits here use GitHub's no-reply address for `loouis`, set automatically by `~/.gitconfig` for any `github.com/loouis/...` remote, so Louis's email stays out of the public history. Don't add a per-repo `user.email`.
 
 ## Folder contract
-See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-name>/` with `SKILL.md` (frontmatter `name` = folder name, a `description` that says what and when), `agents/openai.yaml` (`display_name`, `short_description`, `default_prompt` invoking `$<skill-name>`), `REFERENCES.md` (links only), and optional `assets/`, `references/`, `scripts/`, `demo/` (`index.html`, `PROMPT.md`, `preview.jpg` at 1280×720). Every group and category has a `README.md`; the category skills tables, the group category lists and the root README's library list are generated between `<!-- skills:… -->`, `<!-- categories:… -->` and `<!-- library:… -->` markers.
+See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-name>/` with `SKILL.md` (frontmatter `name` = folder name, a `description` that says what and when), `agents/openai.yaml` (`display_name`, `short_description`, `default_prompt` invoking `$<skill-name>`), `REFERENCES.md` (links only), and optional `assets/`, `references/`, `scripts/`, `demo/` (`index.html`, `PROMPT.md`, `preview.jpg` at 1280×720). Every group and category has a `README.md`; the category skills tables, the group category lists and the root README's library list are generated between `<!-- skills:… -->`, `<!-- categories:… -->` and `<!-- library:… -->` markers. Each skill folder also gets a generated `README.md` landing page (the page GitHub shows for the folder, so it is what search engines index): its search title (under 80 characters, name first, then the plain search phrase) and tags come from `scripts/skill-pages.json`. Add an entry there for every new skill; the validator fails without one or when the page is stale. Never hand-edit a skill's `README.md`.
 
 ## Commands
 - `python3 install.py` — link every skill into `~/.claude/skills/` (`--dry-run` to preview).
 - `node scripts/build-previews.cjs [skill-name…]` — render `demo/preview.jpg` and `assets/skills-preview.jpg` (needs puppeteer; `NODE_PATH` may point at an existing install).
-- `node scripts/build-gallery.cjs` — regenerate DEMOS.md, SCREENSHOTS.md/.html and the generated README lists.
+- `node scripts/build-gallery.cjs` — regenerate DEMOS.md, SCREENSHOTS.md/.html, the generated README lists and every skill's landing page.
 - `node scripts/validate-skills.cjs` — check every skill against the contract. Run before committing.
 
 ## Prototypes
@@ -48,7 +48,7 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 - Run `node demo/verify.cjs <output-directory>` from the masking skill folder with Puppeteer available, then inspect the exported frames before rebuilding the preview. Keep capture output outside the package. `NODE_PATH` and `PUPPETEER_EXECUTABLE_PATH` can select an existing installation.
 
 ## gooey-section family
-- Generated: the sources (engine, `engine.md`, `demo.html`, `PROMPT.md`, `REFERENCES.md`, per-variant text and `build.py`) live in Louis's private labs repo at `../labs/skills/gooey-section/`, next to the original lab. Edit them there and run `python3 skills/gooey-section/build.py` from the labs repo; it writes into `skills/ui/sections/` here. Never hand-edit `skills/ui/sections/gooey-section-*`.
+- Generated: the sources (engine, `engine.md`, `demo.html`, `PROMPT.md`, `REFERENCES.md`, per-variant text and `build.py`) live in Louis's private labs repo at `../labs/skills/gooey-section/`, next to the original lab. Edit them there and run `python3 skills/gooey-section/build.py` from the labs repo; it writes into `skills/ui/sections/` here. Never hand-edit `skills/ui/sections/gooey-section-*`. `build.py` deletes and rewrites those folders, so run `node scripts/build-gallery.cjs` here afterwards to restore their landing pages.
 - The engine must stay a 1:1 port of the original lab. After changing it or rebuilding, run `node tests/gooey-section-parity.cjs` and `node tests/gooey-section-browser.cjs` in the labs repo.
 
 ## hand-drawn page transitions

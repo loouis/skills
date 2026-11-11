@@ -5,5 +5,5 @@ Construct masks that control which parts of artwork are visible. These skills co
 <!-- skills:start -->
 | Skill | Use it for |
 | --- | --- |
-| [Vector Masking](vector-masking/SKILL.md) | Accurate vector masks, clean joins and controlled gaps |
+| [Vector Masking](vector-masking) | Accurate vector masks, clean joins and controlled gaps |
 <!-- skills:end -->

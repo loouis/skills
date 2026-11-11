@@ -67,4 +67,7 @@ function replaceBetween(text, tag, body) {
   if (i < 0 || j < i) return null;
   return text.slice(0, i + a.length) + '\n' + body.trim() + '\n' + text.slice(j);
 }
-module.exports = { ROOT, SKILLS, listSkills, categories, replaceBetween, frontmatter, yamlInterface };
+// Search titles and tags for each skill's generated landing page (README.md in the skill folder).
+const PAGES = path.join(__dirname, 'skill-pages.json');
+function skillPages() { return fs.existsSync(PAGES) ? JSON.parse(fs.readFileSync(PAGES, 'utf8')) : {}; }
+module.exports = { ROOT, SKILLS, listSkills, categories, replaceBetween, frontmatter, yamlInterface, skillPages };

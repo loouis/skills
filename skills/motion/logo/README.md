@@ -5,7 +5,7 @@ Skills for animating logos and other line-drawn marks: taking a flat piece of ar
 <!-- skills:start -->
 | Skill | Use it for |
 | --- | --- |
-| [Logo Mask Motion](logo-mask-motion/SKILL.md) | Move the pieces of a line-drawn mark with masks and land on the artwork |
+| [Logo Mask Motion](logo-mask-motion) | Move the pieces of a line-drawn mark with masks and land on the artwork |
 <!-- skills:end -->
 
 ## Use a skill
