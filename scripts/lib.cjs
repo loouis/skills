@@ -70,4 +70,7 @@ function replaceBetween(text, tag, body) {
 // Search titles and tags for each skill's generated landing page (README.md in the skill folder).
 const PAGES = path.join(__dirname, 'skill-pages.json');
 function skillPages() { return fs.existsSync(PAGES) ? JSON.parse(fs.readFileSync(PAGES, 'utf8')) : {}; }
-module.exports = { ROOT, SKILLS, listSkills, categories, replaceBetween, frontmatter, yamlInterface, skillPages };
+// Where the repository and its GitHub Pages site live (scripts/build-site.cjs builds the site).
+const REPO = 'https://github.com/loouis/skills';
+const SITE = 'https://loouis.github.io/skills';
+module.exports = { ROOT, SKILLS, REPO, SITE, listSkills, categories, replaceBetween, frontmatter, yamlInterface, skillPages };
