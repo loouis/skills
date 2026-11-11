@@ -27,6 +27,8 @@ For clear studio water, [Water Optics · Clear Studio](skills/3d/fluids/water-op
 
 For suspended product splashes, [Water · Product Splash](skills/3d/fluids/water-product-splash/SKILL.md) covers folded sheets, torn rims, droplets, reflection control and a workflow for adding tested lessons as the work develops.
 
+For sunlit pools, [Water Pool · Sunlight](skills/3d/fluids/water-pool-sunlight/SKILL.md) puts the net of sunlight on the pool floor and the sun rays through the water, both read from one light map so every ray stands on a bright patch of floor.
+
 ---
 
 ## Agent support
@@ -111,14 +113,15 @@ Conventions:
 ## Current library
 
 <!-- library:start -->
-This snapshot contains **23 skills** across 8 categories. `find skills -name SKILL.md | sort` is the source of truth.
+This snapshot contains **24 skills** across 8 categories. `find skills -name SKILL.md | sort` is the source of truth.
 
-### 3D Fluids (3)
+### 3D Fluids (4)
 
 [Category guide](skills/3d/fluids/README.md)
 
 - [`blender-screen-water`](skills/3d/fluids/blender-screen-water/SKILL.md) - Clear FLIP water sheets, clustered bubbles and loops
 - [`water-optics-clear-studio`](skills/3d/fluids/water-optics-clear-studio/SKILL.md) - Clear water, curved contact and controlled reflections
+- [`water-pool-sunlight`](skills/3d/fluids/water-pool-sunlight/SKILL.md) - Floor sunlight and sun rays for pool water, from one light map
 - [`water-product-splash`](skills/3d/fluids/water-product-splash/SKILL.md) - Folded water sheets, torn rims and product splashes
 
 ### 3D Interiors (1)

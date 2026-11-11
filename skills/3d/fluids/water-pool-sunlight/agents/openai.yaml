@@ -1,0 +1,4 @@
+interface:
+  display_name: "Water Pool · Sunlight"
+  short_description: "Floor sunlight and sun rays for pool water, from one light map"
+  default_prompt: "Use $water-pool-sunlight to give this Blender pool scene sunlight on the floor and sun rays through the water, matched to my reference, with the light placed where the picture needs it."

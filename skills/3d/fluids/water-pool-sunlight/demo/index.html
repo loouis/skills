@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Water Pool · Sunlight</title>
+<style>
+:root{color-scheme:light;--ink:#20323c;--dim:#586f7c;--line:#c3cfd5}*{box-sizing:border-box}body{margin:0;background:#e9eef1;color:var(--ink);font:15px/1.5 system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:36px 32px}header{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:15px;font:11px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-rows:auto auto 1fr;column-gap:32px;margin-top:20px}figure{margin:0;grid-column:1;grid-row:1/4}.intro{grid-column:2;grid-row:1}h1{font-size:40px;font-weight:500;letter-spacing:-.045em;line-height:1.05;margin:0}p{color:var(--dim);margin:16px 0 0}.controls{grid-column:2;grid-row:2;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}button{padding:8px 12px;border:1px solid var(--line);border-radius:5px;background:transparent;color:inherit;cursor:pointer;font:12px system-ui}button[aria-pressed=true]{background:#20323c;color:#fff}button:focus-visible,a:focus-visible{outline:2px solid #27889c;outline-offset:4px}.picture{aspect-ratio:16/9;overflow:hidden;background:#dce5e9;border-radius:6px}img{display:block;width:100%;height:100%;object-fit:cover}figcaption{padding:10px 0 0;display:flex;justify-content:space-between;gap:20px;font-size:13px}figcaption small{font-size:11px;color:var(--dim);text-align:right}.caption{grid-column:2;grid-row:3;align-self:end;border-top:1px solid var(--line);padding-top:10px;font-size:12px;color:var(--dim)}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:22px;padding-top:13px;font-size:11px;color:var(--dim)}a{color:inherit;text-underline-offset:3px}
+@media(max-width:900px){main{padding:24px}.stage{display:block}.controls{margin:18px 0 14px}.caption{border:0;padding-top:0;margin-top:8px}figcaption{display:block}figcaption small{display:block;text-align:left;margin-top:2px}footer{flex-direction:column}header{font-size:10px}}
+</style>
+<main>
+<header><span>3D / Pool sunlight</span><span>Blender Cycles · Original geometric study</span></header>
+<div class="stage">
+<div class="intro"><h1>Light on the floor.<br>Rays in the water.</h1><p>One map of where the sun's rays land. It lights the pool floor, and the water reads the same map along the slanted sun, so every ray stands on a bright patch of tiles.</p></div>
+<div class="controls"><button data-mode="both" aria-pressed="true">Both</button><button data-mode="floor" aria-pressed="false">Floor light only</button><button data-mode="rays" aria-pressed="false">Sun rays only</button></div>
+<figure><div class="picture"><img id="shot" src="both.jpg" alt="A plain tiled pool seen under water, with sunlight gathered on the pale floor and sun rays slanting down through the water" width="1280" height="720"></div><figcaption><span id="label">01 / Floor light and sun rays</span><small id="note">Both read from one ray-density map</small></figcaption></figure>
+<div class="caption">1280 × 720 native stills · CPU · 320 samples, denoised · one light map for all three</div>
+</div>
+<footer><span>Prescribed ripples, not a fluid simulation. These demo renders have no production beauty score.</span><span><a href="../SKILL.md">Read the skill</a> · <a href="PROMPT.md">Recreate</a></span></footer>
+</main>
+<script>
+const modes={
+both:['01 / Floor light and sun rays','Both read from one ray-density map','A plain tiled pool seen under water, with sunlight gathered on the pale floor and sun rays slanting down through the water'],
+floor:['02 / Floor light only','Ray density on the tiles, under a broad wash','The same pool with sunlight gathered on the floor and no sun rays in the water'],
+rays:['03 / Sun rays only','The same map, read along the slanted sun. The grey on the floor is their shade','The same pool with sun rays in the water and a plain floor that carries only the soft grey shade of the rays']};
+const shot=document.getElementById('shot'),label=document.getElementById('label'),note=document.getElementById('note'),buttons=[...document.querySelectorAll('button[data-mode]')];
+function show(mode){const m=modes[mode];shot.src=mode+'.jpg';shot.alt=m[2];label.textContent=m[0];note.textContent=m[1];buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));}
+buttons.forEach(b=>b.onclick=()=>show(b.dataset.mode));
+['floor','rays'].forEach(m=>{new Image().src=m+'.jpg';});
+window.__demoPose=()=>show('both');
+</script>
+</html>

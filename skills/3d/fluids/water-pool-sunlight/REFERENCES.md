@@ -1,0 +1,8 @@
+- [Blender Volume Scatter](https://docs.blender.org/manual/en/5.2/render/shader_nodes/shader/volume_scatter.html)
+- [Blender Volume Absorption](https://docs.blender.org/manual/en/5.2/render/shader_nodes/shader/volume_absorption.html)
+- [Blender Light Path node](https://docs.blender.org/manual/en/5.2/render/shader_nodes/input/light_path.html)
+- [Blender light linking](https://docs.blender.org/manual/en/5.2/render/lights/light_linking.html)
+- [Blender Image Texture node](https://docs.blender.org/manual/en/5.2/render/shader_nodes/textures/image.html)
+- [Blender Glass BSDF](https://docs.blender.org/manual/en/5.2/render/shader_nodes/shader/glass.html)
+- [Blender Cycles light paths](https://docs.blender.org/manual/en/5.2/render/cycles/render_settings/light_paths.html)
+- [Blender colour management](https://docs.blender.org/manual/en/5.2/render/color_management.html)

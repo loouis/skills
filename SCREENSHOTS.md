@@ -2,10 +2,10 @@
 
 Every demo, rendered in a real browser at 1280 x 720. See [DEMOS.md](DEMOS.md) for how to run and rebuild them, or open the [visual gallery](SCREENSHOTS.html) locally.
 
-- Captured demos: 22
+- Captured demos: 23
 - Format: JPEG
 
-## 3d/fluids (3)
+## 3d/fluids (4)
 
 ### blender-screen-water
 
@@ -22,6 +22,14 @@ Reproduce and refine clear studio water in Blender with droplet, immersed air-ca
 [Open demo](skills/3d/fluids/water-optics-clear-studio/demo/index.html) · [Skill](skills/3d/fluids/water-optics-clear-studio/SKILL.md) · [Prompt](skills/3d/fluids/water-optics-clear-studio/demo/PROMPT.md)
 
 ![water-optics-clear-studio preview](skills/3d/fluids/water-optics-clear-studio/demo/preview.jpg)
+
+### water-pool-sunlight
+
+Make sunlit swimming-pool water in Blender Cycles with the net of sunlight on the pool floor (caustics) and the sun rays coming down through the water, both read from one ray-density map so every shaft stands on a bright patch of floor. Use for any underwater or pool scene that needs floor caustics, light shafts, god rays or dappled water light, as a still or a seamless loop, and whenever a caustic texture reads as a tiled pattern, cracks, marble or wire; evaluate the water surface seen from below and fluid simulation separately.
+
+[Open demo](skills/3d/fluids/water-pool-sunlight/demo/index.html) · [Skill](skills/3d/fluids/water-pool-sunlight/SKILL.md) · [Prompt](skills/3d/fluids/water-pool-sunlight/demo/PROMPT.md)
+
+![water-pool-sunlight preview](skills/3d/fluids/water-pool-sunlight/demo/preview.jpg)
 
 ### water-product-splash
 

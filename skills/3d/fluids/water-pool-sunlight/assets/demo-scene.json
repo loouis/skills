@@ -1,0 +1,11 @@
+{
+ "pool": {"x": [-3200, 3200], "y": [-1600, 3000], "depth": 700, "rim": 120},
+ "camera": {"location": [-250, -200, -150], "pitch_down": 14, "lens": 35, "ray_clear": [400, 1400]},
+ "sun_travel": [0.45, 0.65, -0.62],
+ "floor_tiles": {"a": [0.62, 0.9, 0.88], "b": [0.7, 0.94, 0.92], "grout": [0.36, 0.62, 0.66]},
+ "wall_tiles": {"a": [0.08, 0.38, 0.52], "b": [0.11, 0.43, 0.57], "grout": [0.8, 0.88, 0.9]},
+ "sky": {"horizon": [0.55, 0.7, 0.92], "zenith": [0.24, 0.42, 0.8], "strength": 0.42},
+ "render": {"size": [1280, 720], "samples": 320, "adaptive": 0.03, "exposure": 0.05, "white_balance": 7800},
+ "recipe": {"floor": {"wash": {"base": 0.75, "lobes": [[-760, 1420, 800, 700, 1.2], [-980, 2500, 1200, 1100, 0.9], [190, 1100, 550, 550, -0.45]]}}, "water": {"absorb_density": 0.0017, "scatter_density": 6e-05}},
+ "subject": {"location": [-150, 1250, -330], "radius": 170, "rgb": [0.95, 0.45, 0.12], "clear": [400, 650], "clear_lift": 200}
+}

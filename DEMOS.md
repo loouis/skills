@@ -34,9 +34,9 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 
 ## Library coverage
 
-- Total: 23
-- With demos: 22
-- 3d/fluids: 3
+- Total: 24
+- With demos: 23
+- 3d/fluids: 4
 - 3d/interiors: 1
 - 3d/materials: 1
 - motion/film: 1
@@ -51,6 +51,7 @@ node scripts/validate-skills.cjs     # check every skill against the folder cont
 | --- | --- | --- | --- | --- |
 | blender-screen-water | 3d/fluids | [Open](skills/3d/fluids/blender-screen-water/demo/index.html) | [Preview](skills/3d/fluids/blender-screen-water/demo/preview.jpg) | [Prompt](skills/3d/fluids/blender-screen-water/demo/PROMPT.md) |
 | water-optics-clear-studio | 3d/fluids | [Open](skills/3d/fluids/water-optics-clear-studio/demo/index.html) | [Preview](skills/3d/fluids/water-optics-clear-studio/demo/preview.jpg) | [Prompt](skills/3d/fluids/water-optics-clear-studio/demo/PROMPT.md) |
+| water-pool-sunlight | 3d/fluids | [Open](skills/3d/fluids/water-pool-sunlight/demo/index.html) | [Preview](skills/3d/fluids/water-pool-sunlight/demo/preview.jpg) | [Prompt](skills/3d/fluids/water-pool-sunlight/demo/PROMPT.md) |
 | water-product-splash | 3d/fluids | [Open](skills/3d/fluids/water-product-splash/demo/index.html) | [Preview](skills/3d/fluids/water-product-splash/demo/preview.jpg) | [Prompt](skills/3d/fluids/water-product-splash/demo/PROMPT.md) |
 | coastal-interior-render | 3d/interiors | [Open](skills/3d/interiors/coastal-interior-render/demo/index.html) | [Preview](skills/3d/interiors/coastal-interior-render/demo/preview.jpg) | [Prompt](skills/3d/interiors/coastal-interior-render/demo/PROMPT.md) |
 | blender-polished-chrome | 3d/materials | [Open](skills/3d/materials/blender-polished-chrome/demo/index.html) | [Preview](skills/3d/materials/blender-polished-chrome/demo/preview.jpg) | [Prompt](skills/3d/materials/blender-polished-chrome/demo/PROMPT.md) |
