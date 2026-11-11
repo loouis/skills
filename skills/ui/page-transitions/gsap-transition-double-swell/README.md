@@ -4,9 +4,9 @@
 
 Double Swell draw, swell and reveal transition. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Double Swell: hand-drawn GSAP page transition for websites](demo/preview.jpg)
+[![Double Swell: hand-drawn GSAP page transition for websites](demo/preview.jpg)](https://loouis.github.io/skills/gsap-transition-double-swell/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/gsap-transition-double-swell/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -28,4 +28,4 @@ Build the Double Swell hand-drawn GSAP page transition. Two rounded waves rise a
 - [Suite Page Transition](../gsap-transition-suite) - Suite draw, swell and reveal transition
 - [Wide Tide Page Transition](../gsap-transition-wide-tide) - Wide Tide draw, swell and reveal transition
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

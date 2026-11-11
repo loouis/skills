@@ -4,9 +4,9 @@
 
 Accurate vector masks, clean joins and controlled gaps. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Vector Masking: clean masks for overlapping vector logos and illustrations](demo/preview.jpg)
+[![Vector Masking: clean masks for overlapping vector logos and illustrations](demo/preview.jpg)](https://loouis.github.io/skills/vector-masking/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/vector-masking/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -20,4 +20,4 @@ Construct accurate masks for overlapping outlined vector logos, icons and illust
 
 **Tags:** SVG · vector masks · logo design · illustration · Figma · motion design
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

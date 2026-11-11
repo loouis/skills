@@ -4,9 +4,9 @@
 
 Main bulge plus a smaller blob beside it. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Gooey section edge: Twin, a liquid scroll effect between page sections](demo/preview.jpg)
+[![Gooey section edge: Twin, a liquid scroll effect between page sections](demo/preview.jpg)](https://loouis.github.io/skills/gooey-section-twin/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/gooey-section-twin/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -31,4 +31,4 @@ Rebuilds the 'Twin' gooey section edge from Louis's motion labs (gooey-sections.
 - [Gooey Section: Taffy](../gooey-section-taffy) - Stretches on scroll, snaps back with one wobble
 - [Gooey Section: Wave](../gooey-section-wave) - Broad flowing crest pulled by scroll speed
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

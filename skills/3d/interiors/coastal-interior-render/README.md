@@ -4,9 +4,9 @@
 
 Warm coastal interiors with rigorous realism review. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Coastal Interior Render: photoreal Blender interiors in natural daylight](demo/preview.jpg)
+[![Coastal Interior Render: photoreal Blender interiors in natural daylight](demo/preview.jpg)](https://loouis.github.io/skills/coastal-interior-render/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/coastal-interior-render/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -20,4 +20,4 @@ Build and refine editable Blender/Cycles coastal apartment interiors with warm t
 
 **Tags:** Blender · Cycles · interior rendering · architectural visualization · archviz · photorealism · daylight
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

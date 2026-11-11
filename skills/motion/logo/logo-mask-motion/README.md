@@ -4,9 +4,9 @@
 
 Move the pieces of a line-drawn mark with masks and land on the artwork. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Logo Mask Motion: animate a line logo with masks and land on the artwork](demo/preview.jpg)
+[![Logo Mask Motion: animate a line logo with masks and land on the artwork](demo/preview.jpg)](https://loouis.github.io/skills/logo-mask-motion/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/logo-mask-motion/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -20,4 +20,4 @@ Animates a line-drawn logo or illustration by moving its pieces (petals fanning 
 
 **Tags:** logo animation · SVG animation · masking · motion design · monogram · Lottie · After Effects
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

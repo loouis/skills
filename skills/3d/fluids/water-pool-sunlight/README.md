@@ -4,9 +4,9 @@
 
 Floor sunlight and sun rays for pool water, from one light map. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Water Pool · Sunlight: pool caustics and underwater sun rays in Blender](demo/preview.jpg)
+[![Water Pool · Sunlight: pool caustics and underwater sun rays in Blender](demo/preview.jpg)](https://loouis.github.io/skills/water-pool-sunlight/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/water-pool-sunlight/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -26,4 +26,4 @@ Make sunlit swimming-pool water in Blender Cycles with the net of sunlight on th
 - [Water Optics · Clear Studio](../water-optics-clear-studio) - Clear water, curved contact and controlled reflections
 - [Water · Product Splash](../water-product-splash) - Folded water sheets, torn rims and product splashes
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

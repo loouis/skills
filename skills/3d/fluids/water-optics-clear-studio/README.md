@@ -4,9 +4,9 @@
 
 Clear water, curved contact and controlled reflections. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Water Optics · Clear Studio: clear water and droplets on products in Blender](demo/preview.jpg)
+[![Water Optics · Clear Studio: clear water and droplets on products in Blender](demo/preview.jpg)](https://loouis.github.io/skills/water-optics-clear-studio/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/water-optics-clear-studio/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -26,4 +26,4 @@ Reproduce and refine clear studio water in Blender with droplet, immersed air-ca
 - [Water Pool · Sunlight](../water-pool-sunlight) - Floor sunlight and sun rays for pool water, from one light map
 - [Water · Product Splash](../water-product-splash) - Folded water sheets, torn rims and product splashes
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

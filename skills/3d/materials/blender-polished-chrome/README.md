@@ -4,9 +4,9 @@
 
 Mirror-polished metal materials and studio reflections. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Blender Polished Chrome: realistic chrome and mirror-polished metal](demo/preview.jpg)
+[![Blender Polished Chrome: realistic chrome and mirror-polished metal](demo/preview.jpg)](https://loouis.github.io/skills/blender-polished-chrome/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/blender-polished-chrome/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -20,4 +20,4 @@ Create realistic chrome and mirror-polished metal renders in Blender Cycles. Use
 
 **Tags:** Blender · Cycles · chrome material · polished metal · stainless steel · reflections · product rendering
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

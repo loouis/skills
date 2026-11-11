@@ -4,9 +4,9 @@
 
 Wide Tide draw, swell and reveal transition. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Wide Tide: hand-drawn GSAP page transition for websites](demo/preview.jpg)
+[![Wide Tide: hand-drawn GSAP page transition for websites](demo/preview.jpg)](https://loouis.github.io/skills/gsap-transition-wide-tide/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/gsap-transition-wide-tide/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -28,4 +28,4 @@ Build the Wide Tide hand-drawn GSAP page transition. Long horizontal sweeps with
 - [Signature Loop Page Transition](../gsap-transition-signature-loop) - Signature Loop draw, swell and reveal transition
 - [Suite Page Transition](../gsap-transition-suite) - Suite draw, swell and reveal transition
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

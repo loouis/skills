@@ -4,6 +4,9 @@ Louis's agent skills, published at https://github.com/loouis/skills. **This repo
 
 The GitHub About description is the README's opening line, word for word. GitHub shows it in the page title (`loouis/skills: …`), so it is the title search results show; change both together with `gh repo edit loouis/skills --description "…"`. The repository has 20 topics (GitHub's maximum) for search; keep them matched to what the library covers with `gh repo edit --add-topic`/`--remove-topic`.
 
+## Website
+https://loouis.github.io/skills/ is the repository's homepage. `.github/workflows/pages.yml` validates, runs `build-site.cjs` and deploys on every push to `main`, so a push also publishes the site. It has a home page, one page per skill at `/<skill-name>/` (title and tags from `scripts/skill-pages.json`, plus description, canonical link, Open Graph image and structured data) and a copy of each skill folder beside it, so each demo runs live at `/<skill-name>/demo/`. Demos must only load files inside their own skill folder or pinned CDN files. The README landing pages, DEMOS.md and the gallery link to the live demos.
+
 ## What to do here
 - Add new skills under `skills/<group>/<category>/`, for example `skills/ui/sections/`.
 - Improve existing skills: `SKILL.md` first, then `REFERENCES.md`, then the demo.
@@ -23,6 +26,7 @@ See README.md → "Repo structure". In short: `skills/<group>/<category>/<skill-
 - `node scripts/build-previews.cjs [skill-name…]` — render `demo/preview.jpg` and `assets/skills-preview.jpg` (needs puppeteer; `NODE_PATH` may point at an existing install).
 - `node scripts/build-gallery.cjs` — regenerate DEMOS.md, SCREENSHOTS.md/.html, the generated README lists and every skill's landing page.
 - `node scripts/validate-skills.cjs` — check every skill against the contract. Run before committing.
+- `node scripts/build-site.cjs [out-dir]` — build the website into `_site/` (not committed); `node scripts/serve-site.cjs` previews it at http://localhost:4317/ (also under `/skills/`).
 
 ## Prototypes
 - User-requested motion studies can live under `prototypes/<name>/` while their behavior is being reviewed. These are not installed skills and are excluded from generated library lists. Each prototype documents its local preview command and the remaining work before skill packaging.

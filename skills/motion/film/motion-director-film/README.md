@@ -18,4 +18,4 @@ Directs, animates, scores and QAs a finished short film entirely in code (Remoti
 
 **Tags:** Remotion · GSAP · motion design · product video · showreel · explainer video · ffmpeg
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).

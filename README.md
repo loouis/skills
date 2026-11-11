@@ -2,6 +2,8 @@
 
 Agent skills for web designers and 3D builders using [Claude Code](https://claude.com/claude-code), Codex and other AI coding agents.
 
+**Browse every skill with its live demo at [loouis.github.io/skills](https://loouis.github.io/skills/).**
+
 ![Gooey section edges: nine liquid scroll effects between page sections](assets/skills-preview.jpg)
 
 The section and page-transition skills rebuild effects from Louis's motion labs, with the original engine, a working demo and parity checks. Vector masking skills package geometry and masking methods with original studies. The 3D skills package material and lighting workflows, tested helpers and original Blender-rendered studies.
@@ -15,7 +17,7 @@ Start with the section edges:
 3. **[Gooey section: Wave](skills/ui/sections/gooey-section-wave)**
    A broad, flowing crest with a soft shoulder. The calm one.
 
-Browse [all demos and their prompts](DEMOS.md), or the [screenshot gallery](SCREENSHOTS.md).
+Browse [the live site](https://loouis.github.io/skills/), [all demos and their prompts](DEMOS.md), or the [screenshot gallery](SCREENSHOTS.md).
 
 For logos and illustrations, explore [Masking](skills/ui/masking/README.md), starting with [Vector Masking](skills/ui/masking/vector-masking): whole vector pieces, accurate silhouettes, clean joins and controlled gaps.
 

@@ -4,9 +4,9 @@
 
 Folded water sheets, torn rims and product splashes. An agent skill for Claude Code, Codex and other AI coding agents.
 
-![Water · Product Splash: product water splash renders in Blender](demo/preview.jpg)
+[![Water · Product Splash: product water splash renders in Blender](demo/preview.jpg)](https://loouis.github.io/skills/water-product-splash/demo/)
 
-[Open the demo](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
+[Open the live demo](https://loouis.github.io/skills/water-product-splash/demo/) · [Demo source](demo/index.html) · [Demo prompt](demo/PROMPT.md) · [SKILL.md](SKILL.md) · [References](REFERENCES.md)
 
 ## What it does
 
@@ -26,4 +26,4 @@ Reconstruct and refine suspended product-water splashes in Blender, including fo
 - [Water Optics · Clear Studio](../water-optics-clear-studio) - Clear water, curved contact and controlled reflections
 - [Water Pool · Sunlight](../water-pool-sunlight) - Floor sunlight and sun rays for pool water, from one light map
 
-Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders.
+Part of [loouis/skills](../../../../README.md): agent skills for web designers and 3D builders. Browse them all with live demos at [loouis.github.io/skills](https://loouis.github.io/skills/).
