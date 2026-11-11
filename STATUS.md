@@ -56,3 +56,8 @@ _Updated 2026-10-17._
 - Added `coastal-interior-render` under `skills/3d/interiors/` in the active SSD working copy. The complete package includes 12 reference chapters, portable render/review helpers, generic demo assets and source attribution. Existing motion and fluid skills are preserved.
 - The relocated files are byte-verified against the original package. No production apartment scenes or licensed reference pixels are bundled. The original checkout remains a recovery copy; current work uses this repository.
 - Location correction only: existing native-demo validation remains historical evidence, not a new scene render or quality claim. Validation from this checkout passes: all 23 library skills, three helper tests, the skill validator and 42 local reference/demo links. GitHub publication remains unperformed.
+
+## GitHub title — 11 November 2026
+
+- The GitHub About description, which GitHub uses for the page title and search results show as `loouis/skills: …`, was the outdated "Claude Code skills that rebuild effects from my motion labs, exactly". It is now the README's opening line: "Agent skills for web motion, interfaces and 3D rendering, with Claude Code, Codex and other AI coding agents" (set live with `gh repo edit`). The README line now says "AI coding agents" to match, and `AGENTS.md` records that the two change together.
+- Search results update when Google next crawls the page. The repo name stays lowercase `skills`. Only this change was committed; the separate water-pool-sunlight work is still uncommitted, and nothing was pushed.

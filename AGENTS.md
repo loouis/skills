@@ -2,6 +2,8 @@
 
 Louis's agent skills, published at https://github.com/loouis/skills. **This repo is public.** Multiple local checkouts may exist; use the active project checkout and verify its `origin` before making changes. Resolve the private labs generator location before rebuilding generated skills in a different checkout. Skills live in category folders, each skill with `SKILL.md`, `REFERENCES.md`, `agents/openai.yaml` and, for visual skills, a `demo/`.
 
+The GitHub About description is the README's opening line, word for word. GitHub shows it in the page title (`loouis/skills: …`), so it is the title search results show; change both together with `gh repo edit loouis/skills --description "…"`.
+
 ## What to do here
 - Add new skills under `skills/<group>/<category>/`, for example `skills/ui/sections/`.
 - Improve existing skills: `SKILL.md` first, then `REFERENCES.md`, then the demo.

@@ -1,6 +1,6 @@
 # Skills
 
-Agent skills for web motion, interfaces and 3D rendering, with [Claude Code](https://claude.com/claude-code), Codex and other coding agents.
+Agent skills for web motion, interfaces and 3D rendering, with [Claude Code](https://claude.com/claude-code), Codex and other AI coding agents.
 
 ![The nine gooey section feels](assets/skills-preview.jpg)
 
